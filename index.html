@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Awareness Training</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Cybersecurity Awareness</h1>
+            </div>
+            <div class="user-info">
+                <div id="user-profile">
+                    <span id="user-name">Guest User</span>
+                    <button id="login-btn" class="btn">Login</button>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="overall-progress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progress-percentage">0%</span> Complete
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div id="welcome-screen" class="content-section active">
+                <h2>Welcome to Cybersecurity Awareness Training</h2>
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <p>This comprehensive training program will help you understand the importance of cybersecurity and how to protect yourself and your organization from cyber threats.</p>
+                        <p>The course consists of 10 modules, each followed by a quiz to test your knowledge. Upon completion of all modules and quizzes, you will receive a personalized certificate.</p>
+                        <h3>Course Modules:</h3>
+                        <ol class="module-list">
+                            <li>Introduction to Information Security</li>
+                            <li>Common Cyber Threats and Attacks</li>
+                            <li>Password Security and Authentication</li>
+                            <li>Email and Communication Security</li>
+                            <li>Safe Internet Browsing</li>
+                            <li>Mobile Device and Remote Work Security</li>
+                            <li>Data Protection and Privacy</li>
+                            <li>Document and File Security</li>
+                            <li>Company Security Policies</li>
+                            <li>Incident Reporting and Response</li>
+                        </ol>
+                    </div>
+                    <div class="intro-image">
+                        <img src="images/cybersecurity-intro.png" alt="Cybersecurity Concept" id="intro-image">
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="start-course-btn" class="btn btn-primary">Start Course</button>
+                </div>
+            </div>
+
+            <div id="module-container" class="content-section">
+                <!-- Module content will be loaded here dynamically -->
+            </div>
+
+            <div id="quiz-container" class="content-section">
+                <!-- Quiz content will be loaded here dynamically -->
+            </div>
+
+            <div id="certificate-container" class="content-section">
+                <!-- Certificate will be generated here -->
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Course Navigation</h3>
+            <ul id="module-navigation">
+                <!-- Module navigation will be generated here -->
+            </ul>
+            <div class="sidebar-footer">
+                <button id="reset-progress-btn" class="btn btn-small">Reset Progress</button>
+            </div>
+        </aside>
+
+        <footer>
+            <p>&copy; 2025 Cybersecurity Awareness Training. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Your Information</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Information</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/certificate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "module_title": "Company Security Policies",
+  "questions": [
+    {
+      "question": "What is the primary purpose of security policies?",
+      "options": [
+        "To make work more difficult for employees",
+        "To provide a framework for protecting an organization's information assets",
+        "To satisfy auditors only during compliance checks",
+        "To give IT departments more control over employees"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Security policies provide a framework for protecting an organization's information assets by establishing expectations, requirements, and guidelines for how employees should protect company information and systems."
+    },
+    {
+      "question": "What is an Acceptable Use Policy (AUP)?",
+      "options": [
+        "A policy that defines how employees may use company systems and resources",
+        "A policy that only applies to the IT department",
+        "A policy that allows unlimited personal use of company resources",
+        "A policy that only applies to executives"
+      ],
+      "correctAnswer": 0,
+      "feedback": "An Acceptable Use Policy (AUP) defines how employees may use company systems and resources, including authorized uses, prohibited activities, personal use guidelines, and monitoring notices."
+    },
+    {
+      "question": "What is the principle of 'least privilege' in access control?",
+      "options": [
+        "Giving all employees the same level of access",
+        "Providing access based on seniority",
+        "Users should have only the minimum access needed to perform their job functions",
+        "Restricting access to only IT personnel"
+      ],
+      "correctAnswer": 2,
+      "feedback": "The principle of 'least privilege' means users should have only the minimum access needed to perform their job functions, reducing the risk of unauthorized access to sensitive information."
+    },
+    {
+      "question": "What should you do if you observe a policy violation?",
+      "options": [
+        "Ignore it if it seems minor",
+        "Confront the person directly",
+        "Report it through appropriate channels",
+        "Handle it yourself without reporting"
+      ],
+      "correctAnswer": 2,
+      "feedback": "You should report policy violations through appropriate channels, even if they seem minor. This helps maintain security standards and allows proper handling of the situation by authorized personnel."
+    },
+    {
+      "question": "What is a Clean Desk Policy?",
+      "options": [
+        "A policy requiring employees to clean their own workspaces",
+        "A policy requiring desks to be free of sensitive documents when not in use",
+        "A policy prohibiting food at desks",
+        "A policy about desk ergonomics"
+      ],
+      "correctAnswer": 1,
+      "feedback": "A Clean Desk Policy requires workspaces to be free of sensitive documents when not in use, with materials stored in locked drawers or cabinets, screens locked when stepping away, and proper document disposal procedures followed."
+    }
+  ]
+}

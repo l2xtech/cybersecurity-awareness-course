@@ -1,0 +1,60 @@
+{
+  "module_title": "Incident Reporting and Response",
+  "questions": [
+    {
+      "question": "What is a security incident?",
+      "options": [
+        "Any event that potentially compromises the confidentiality, integrity, or availability of information or systems",
+        "Only events that result in data loss",
+        "Only incidents that involve malware",
+        "Only incidents reported by the IT department"
+      ],
+      "correctAnswer": 0,
+      "feedback": "A security incident is any event that potentially compromises the confidentiality, integrity, or availability of information or systems, regardless of whether it results in actual data loss or damage."
+    },
+    {
+      "question": "When should you report a potential security incident?",
+      "options": [
+        "Only after you've confirmed it's definitely a security issue",
+        "At the end of the workday",
+        "Immediately upon discovery, even if you're not certain",
+        "Only if it affects your ability to work"
+      ],
+      "correctAnswer": 2,
+      "feedback": "You should report potential security incidents immediately upon discovery, even if you're not certain it's a security issue. Early reporting is critical for effective response and can significantly reduce the impact of incidents."
+    },
+    {
+      "question": "What should you do if you suspect your computer is infected with malware?",
+      "options": [
+        "Turn off the computer immediately and don't tell anyone",
+        "Try to fix it yourself by downloading antivirus software",
+        "Disconnect from the network and report it to IT security",
+        "Continue working but avoid using sensitive applications"
+      ],
+      "correctAnswer": 2,
+      "feedback": "If you suspect your computer is infected with malware, you should disconnect from the network to prevent potential spread and immediately report it to your IT security team for proper handling."
+    },
+    {
+      "question": "What is the incident response lifecycle?",
+      "options": [
+        "Detect, delete, and forget",
+        "Preparation, detection, containment, eradication, recovery, and post-incident analysis",
+        "Report, ignore, and continue working",
+        "Blame, shame, and retrain"
+      ],
+      "correctAnswer": 1,
+      "feedback": "The incident response lifecycle includes preparation (establishing procedures before incidents occur), detection and analysis, containment (limiting impact), eradication (removing the cause), recovery (restoring normal operations), and post-incident analysis (learning from the incident)."
+    },
+    {
+      "question": "What is your role during a security incident?",
+      "options": [
+        "Take charge and direct the response efforts",
+        "Spread the news to warn all colleagues",
+        "Report promptly, preserve evidence, document observations, and follow instructions",
+        "Determine who is at fault for the incident"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Your role during a security incident is to report promptly, preserve evidence (avoid actions that might destroy evidence), document your observations with timestamps, and follow instructions from the security team."
+    }
+  ]
+}

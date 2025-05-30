@@ -1,0 +1,60 @@
+{
+  "module_title": "Data Protection and Privacy",
+  "questions": [
+    {
+      "question": "What is a key principle common to most data protection regulations?",
+      "options": [
+        "Collecting as much data as possible",
+        "Storing data indefinitely",
+        "Data minimization - only collecting what's necessary",
+        "Sharing data freely with third parties"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Data minimization is a key principle in most data protection regulations, requiring organizations to only collect and retain the minimum amount of data necessary for the specified purpose."
+    },
+    {
+      "question": "What is the difference between 'Confidential' and 'Restricted' data classification?",
+      "options": [
+        "There is no difference; the terms are interchangeable",
+        "Confidential data is more sensitive than Restricted data",
+        "Restricted data has stricter access controls than Confidential data",
+        "Restricted data can be shared publicly while Confidential cannot"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Restricted data typically has stricter access controls than Confidential data. Restricted is usually the highest sensitivity level, requiring the most stringent protection measures, while Confidential is sensitive but with slightly less strict controls."
+    },
+    {
+      "question": "What is the 'Right to be Forgotten' in data protection regulations?",
+      "options": [
+        "The right to use anonymous browsing",
+        "The right to have your data deleted under certain circumstances",
+        "The right to be excluded from marketing emails",
+        "The right to use encryption"
+      ],
+      "correctAnswer": 1,
+      "feedback": "The 'Right to be Forgotten' (or Right to Erasure) is an individual's right to request the deletion of their personal data under certain circumstances, such as when the data is no longer necessary for its original purpose."
+    },
+    {
+      "question": "What is 'Privacy by Design'?",
+      "options": [
+        "Designing visually appealing privacy policies",
+        "An approach that incorporates privacy into systems and practices from the start",
+        "A specific type of encryption algorithm",
+        "A privacy certification program for designers"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Privacy by Design is an approach that incorporates privacy into the design and operation of IT systems, business practices, and products from the start, rather than adding it later as an afterthought."
+    },
+    {
+      "question": "What should you do if you suspect a data breach has occurred?",
+      "options": [
+        "Try to fix the problem yourself before telling anyone",
+        "Wait to see if anyone else notices",
+        "Immediately report it through proper channels",
+        "Delete any evidence of the breach to protect the company"
+      ],
+      "correctAnswer": 2,
+      "feedback": "If you suspect a data breach, you should immediately report it through your organization's proper reporting channels. Quick reporting is essential for effective response and may be required by regulations (e.g., GDPR requires notification within 72 hours)."
+    }
+  ]
+}

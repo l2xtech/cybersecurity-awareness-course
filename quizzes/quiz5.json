@@ -1,0 +1,60 @@
+{
+  "module_title": "Safe Internet Browsing",
+  "questions": [
+    {
+      "question": "What is a key indicator of a secure website?",
+      "options": [
+        "The website has colorful graphics",
+        "The URL begins with 'http://'",
+        "The URL begins with 'https://' and shows a padlock icon",
+        "The website has a privacy policy link at the bottom"
+      ],
+      "correctAnswer": 2,
+      "feedback": "A secure website will have a URL that begins with 'https://' (note the 's' which stands for secure) and displays a padlock icon in the address bar, indicating the connection is encrypted."
+    },
+    {
+      "question": "Which of the following is a warning sign of an unsafe website?",
+      "options": [
+        "The website has a professional design",
+        "The website has numerous pop-ups and alerts",
+        "The website has a search function",
+        "The website has a contact page"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Numerous pop-ups and alerts are often warning signs of unsafe websites. Legitimate websites typically avoid excessive pop-ups that create pressure or urgency."
+    },
+    {
+      "question": "What is the safest approach when using public Wi-Fi?",
+      "options": [
+        "Connect to any available network with a strong signal",
+        "Use a VPN to encrypt your internet traffic",
+        "Conduct financial transactions immediately",
+        "Share your login credentials with the network"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Using a VPN (Virtual Private Network) is the safest approach when using public Wi-Fi as it encrypts your internet traffic, protecting it from potential interception on unsecured networks."
+    },
+    {
+      "question": "What should you do before downloading software from the internet?",
+      "options": [
+        "Download from any source that offers it for free",
+        "Verify the source is legitimate and scan the file before opening",
+        "Disable your antivirus temporarily to speed up the download",
+        "Share the download link with colleagues first"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Before downloading software, always verify the source is legitimate (official websites or app stores) and scan the file with antivirus software before opening it to ensure it doesn't contain malware."
+    },
+    {
+      "question": "Which browser security feature helps protect against malicious websites?",
+      "options": [
+        "Bookmark manager",
+        "Download manager",
+        "Pop-up blocker",
+        "History cleaner"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Pop-up blockers help protect against malicious websites by preventing unwanted pop-up windows that may contain malicious content or deceptive messages designed to trick users."
+    }
+  ]
+}

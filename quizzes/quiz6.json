@@ -1,0 +1,60 @@
+{
+  "module_title": "Mobile Device and Remote Work Security",
+  "questions": [
+    {
+      "question": "What is the most basic security measure for mobile devices?",
+      "options": [
+        "Installing antivirus software",
+        "Using a strong passcode or biometric authentication",
+        "Keeping Bluetooth turned off",
+        "Installing a VPN"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Using a strong passcode, PIN, or biometric authentication (fingerprint/facial recognition) is the most basic and essential security measure for mobile devices, as it prevents unauthorized access if your device is lost or stolen."
+    },
+    {
+      "question": "What is a VPN and why is it important for remote work?",
+      "options": [
+        "Virtual Private Network - it creates a secure, encrypted connection for transmitting data",
+        "Virtual Protection Node - it blocks all incoming connections to your device",
+        "Virtual Password Network - it generates secure passwords for all your accounts",
+        "Virtual Personal Network - it creates a personal profile for each website you visit"
+      ],
+      "correctAnswer": 0,
+      "feedback": "A VPN (Virtual Private Network) creates a secure, encrypted connection between your device and the internet or your company's network, protecting your data from interception when using potentially insecure networks like public Wi-Fi."
+    },
+    {
+      "question": "What is a key security risk of using public Wi-Fi?",
+      "options": [
+        "It's always too slow to be useful",
+        "It costs too much money",
+        "Your data can be intercepted by attackers on the same network",
+        "It uses too much battery power"
+      ],
+      "correctAnswer": 2,
+      "feedback": "A key security risk of using public Wi-Fi is that your data can be intercepted by attackers on the same network through techniques like 'man-in-the-middle' attacks, potentially exposing sensitive information."
+    },
+    {
+      "question": "What does BYOD stand for and what security challenges does it present?",
+      "options": [
+        "Bring Your Own Data - challenges with data ownership",
+        "Build Your Own Device - challenges with hardware compatibility",
+        "Bring Your Own Device - challenges with mixing personal and work data",
+        "Backup Your Own Data - challenges with data recovery"
+      ],
+      "correctAnswer": 2,
+      "feedback": "BYOD stands for Bring Your Own Device. It presents security challenges related to mixing personal and work data, varying security levels across different devices, limited organizational control, and difficulties removing company data when employees leave."
+    },
+    {
+      "question": "What is a best practice for securing your home network for remote work?",
+      "options": [
+        "Share your Wi-Fi password with neighbors so they can help monitor your network",
+        "Use the default administrator credentials that came with your router",
+        "Change default passwords, use WPA3/WPA2 encryption, and keep firmware updated",
+        "Disable all passwords to make it easier to connect devices"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Best practices for securing your home network include changing default administrator credentials, using strong encryption (WPA3 or WPA2), keeping router firmware updated, using strong Wi-Fi passwords, and considering changing the default network name (SSID)."
+    }
+  ]
+}

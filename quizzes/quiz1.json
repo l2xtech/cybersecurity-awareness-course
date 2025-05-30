@@ -1,0 +1,60 @@
+{
+  "module_title": "Introduction to Information Security",
+  "questions": [
+    {
+      "question": "What is the primary goal of information security?",
+      "options": [
+        "To prevent all employees from accessing sensitive data",
+        "To protect confidentiality, integrity, and availability of information",
+        "To install antivirus software on all computers",
+        "To encrypt all company emails"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Information security aims to protect the confidentiality, integrity, and availability of information (the CIA triad)."
+    },
+    {
+      "question": "Which of the following is NOT one of the three main components of the CIA triad?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Authentication",
+        "Availability"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Authentication is not part of the CIA triad. The CIA triad consists of Confidentiality, Integrity, and Availability."
+    },
+    {
+      "question": "Why is information security important for organizations?",
+      "options": [
+        "It's only important for government agencies",
+        "It's only required for financial institutions",
+        "It protects against financial loss, reputation damage, and regulatory penalties",
+        "It's only necessary for companies with over 1000 employees"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Information security is crucial for all organizations as it protects against financial losses, reputation damage, and regulatory penalties."
+    },
+    {
+      "question": "Who is responsible for information security in an organization?",
+      "options": [
+        "Only the IT department",
+        "Only the Chief Information Security Officer",
+        "Only senior management",
+        "Every employee in the organization"
+      ],
+      "correctAnswer": 3,
+      "feedback": "Information security is everyone's responsibility. While IT and security teams lead efforts, all employees play a crucial role."
+    },
+    {
+      "question": "Which of the following best describes the concept of 'defense in depth'?",
+      "options": [
+        "Using the strongest possible firewall",
+        "Implementing multiple layers of security controls",
+        "Focusing all security resources on the most critical assets",
+        "Training only the IT department on security practices"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Defense in depth involves implementing multiple layers of security controls so that if one fails, others are still in place to protect the information."
+    }
+  ]
+}

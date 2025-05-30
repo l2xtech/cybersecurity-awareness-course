@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8: Document and File Security</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>Module 8: Document and File Security</h2>
+        <p>Learn how to manage and share documents securely</p>
+    </div>
+
+    <div class="module-content">
+        <div class="module-section">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this module, you will be able to:</p>
+            <ul>
+                <li>Manage documents securely</li>
+                <li>Implement proper file access controls</li>
+                <li>Securely share and dispose of documents</li>
+                <li>Recognize sensitive documents</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Introduction</h3>
+            <p>Documents and files contain some of an organization's most valuable information assets. Whether they're contracts, financial records, product designs, or customer data, securing these files is essential for protecting intellectual property and maintaining compliance. This module will help you understand how to manage, share, and dispose of documents securely.</p>
+        </div>
+
+        <div class="module-section">
+            <h3>Document Classification Systems</h3>
+            <p>Document classification is the foundation of effective document security, helping employees understand how to handle different types of information:</p>
+            
+            <h4>Common Classification Categories</h4>
+            <ul>
+                <li><strong>Public</strong>: Documents that can be freely shared with the public (e.g., marketing materials, press releases).</li>
+                <li><strong>Internal</strong>: Documents for employees only, but not particularly sensitive (e.g., company newsletters, general announcements).</li>
+                <li><strong>Confidential</strong>: Sensitive documents that should only be shared with authorized individuals (e.g., business strategies, employee records).</li>
+                <li><strong>Restricted</strong>: Highly sensitive documents with strict access controls (e.g., financial records, intellectual property, merger plans).</li>
+            </ul>
+            
+            <h4>Classification Methods</h4>
+            <ul>
+                <li><strong>Visual Markings</strong>: Headers, footers, or watermarks indicating classification level.</li>
+                <li><strong>Metadata Tags</strong>: Electronic classification embedded in document properties.</li>
+                <li><strong>Color Coding</strong>: Using different colors for different sensitivity levels.</li>
+                <li><strong>File Naming Conventions</strong>: Including classification level in file names.</li>
+            </ul>
+            
+            <h4>Implementing Classification</h4>
+            <ul>
+                <li><strong>Document Assessment</strong>: Evaluate content to determine appropriate classification.</li>
+                <li><strong>Consistent Application</strong>: Apply classification consistently across similar documents.</li>
+                <li><strong>Regular Review</strong>: Periodically review classifications to ensure they remain appropriate.</li>
+                <li><strong>Clear Guidelines</strong>: Provide employees with clear criteria for each classification level.</li>
+            </ul>
+            
+            <div class="tip-box">
+                <p>When in doubt about a document's classification, treat it as one level higher than you think it might be until you can confirm the correct classification.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Secure File Storage and Sharing</h3>
+            <p>How and where you store documents significantly impacts their security:</p>
+            
+            <h4>Secure Storage Options</h4>
+            <ul>
+                <li><strong>Company File Servers</strong>: Centralized, controlled storage with access restrictions.</li>
+                <li><strong>Document Management Systems</strong>: Specialized systems with security features like version control and audit trails.</li>
+                <li><strong>Cloud Storage Services</strong>: Company-approved platforms with appropriate security controls.</li>
+                <li><strong>Encrypted Storage</strong>: Local or removable media with encryption.</li>
+            </ul>
+            
+            <h4>Storage Best Practices</h4>
+            <ul>
+                <li><strong>Structured Organization</strong>: Use logical folder structures with clear access permissions.</li>
+                <li><strong>Regular Backups</strong>: Maintain backups of important documents.</li>
+                <li><strong>Version Control</strong>: Track document changes and maintain version history.</li>
+                <li><strong>Clean Desk Policy</strong>: Secure physical documents when not in use.</li>
+                <li><strong>Minimal Local Storage</strong>: Avoid storing sensitive documents on local devices when possible.</li>
+            </ul>
+            
+            <h4>Secure File Sharing Methods</h4>
+            <ul>
+                <li><strong>Company-Approved Platforms</strong>: Use organization-sanctioned sharing tools.</li>
+                <li><strong>Access Controls</strong>: Limit access to only those who need it.</li>
+                <li><strong>Expiring Links</strong>: Use time-limited access when possible.</li>
+                <li><strong>Password Protection</strong>: Secure shared documents with passwords.</li>
+                <li><strong>Encryption</strong>: Encrypt sensitive files before sharing.</li>
+                <li><strong>Secure Transmission</strong>: Use secure channels for document transfer.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>Real-World Example</h4>
+                <p>A law firm implemented a document classification system for client files. All case documents were classified as "Confidential" or "Restricted" and stored in an encrypted document management system with strict access controls. When sharing documents with clients, they used a secure client portal with expiring links and two-factor authentication. This comprehensive approach protected sensitive client information and helped maintain attorney-client privilege.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Digital Rights Management</h3>
+            <p>Digital Rights Management (DRM) provides advanced control over document access and usage:</p>
+            
+            <h4>DRM Capabilities</h4>
+            <ul>
+                <li><strong>Access Control</strong>: Determine who can open documents.</li>
+                <li><strong>Usage Restrictions</strong>: Control what users can do with documents (view, edit, print, copy).</li>
+                <li><strong>Expiration</strong>: Set documents to expire after a certain date.</li>
+                <li><strong>Revocation</strong>: Remove access to previously shared documents.</li>
+                <li><strong>Tracking</strong>: Monitor document access and usage.</li>
+                <li><strong>Watermarking</strong>: Add visible or invisible watermarks to identify document origin.</li>
+            </ul>
+            
+            <h4>When to Use DRM</h4>
+            <ul>
+                <li><strong>Highly Sensitive Information</strong>: Intellectual property, financial data, strategic plans.</li>
+                <li><strong>Regulated Content</strong>: Information subject to regulatory requirements.</li>
+                <li><strong>External Sharing</strong>: When sharing sensitive documents outside the organization.</li>
+                <li><strong>Confidential Agreements</strong>: NDAs, contracts, and legal documents.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Secure Document Disposal</h3>
+            <p>Proper document disposal is often overlooked but is crucial for preventing data breaches:</p>
+            
+            <h4>Physical Document Disposal</h4>
+            <ul>
+                <li><strong>Shredding</strong>: Use cross-cut shredders for sensitive documents.</li>
+                <li><strong>Secure Disposal Services</strong>: Professional services that certify destruction.</li>
+                <li><strong>Pulping or Incineration</strong>: For highly sensitive materials.</li>
+                <li><strong>Locked Disposal Bins</strong>: Secure containers for documents awaiting destruction.</li>
+            </ul>
+            
+            <h4>Digital Document Disposal</h4>
+            <ul>
+                <li><strong>Secure Deletion</strong>: Use specialized software that overwrites deleted files.</li>
+                <li><strong>Device Sanitization</strong>: Properly wipe storage devices before reuse or disposal.</li>
+                <li><strong>Cloud Data Removal</strong>: Ensure data is properly deleted from cloud services.</li>
+                <li><strong>Decommissioning Procedures</strong>: Follow proper protocols when retiring equipment containing sensitive data.</li>
+            </ul>
+            
+            <h4>Disposal Documentation</h4>
+            <ul>
+                <li><strong>Destruction Certificates</strong>: Maintain records of document destruction.</li>
+                <li><strong>Disposal Logs</strong>: Track what was disposed of, when, and how.</li>
+                <li><strong>Compliance Records</strong>: Document disposal activities for regulatory compliance.</li>
+            </ul>
+            
+            <div class="tip-box">
+                <p>Remember that simply deleting a file or emptying the recycle bin doesn't permanently remove the data. Proper secure deletion methods are essential for sensitive information.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Preventing Data Leakage</h3>
+            <p>Data leakage through documents can occur in various ways. Here's how to prevent it:</p>
+            
+            <h4>Common Document Leakage Vectors</h4>
+            <ul>
+                <li><strong>Email Attachments</strong>: Sending sensitive documents to incorrect recipients.</li>
+                <li><strong>Unsecured File Sharing</strong>: Using insecure methods to share documents.</li>
+                <li><strong>Printing</strong>: Leaving sensitive documents on shared printers.</li>
+                <li><strong>Screen Sharing</strong>: Exposing confidential documents during presentations or video calls.</li>
+                <li><strong>Metadata</strong>: Hidden information in documents that may contain sensitive data.</li>
+                <li><strong>Mobile Devices</strong>: Accessing documents on unsecured personal devices.</li>
+            </ul>
+            
+            <h4>Data Loss Prevention (DLP) Strategies</h4>
+            <ul>
+                <li><strong>Content Inspection</strong>: Automated scanning of documents for sensitive information.</li>
+                <li><strong>Policy Enforcement</strong>: Automated enforcement of security policies for documents.</li>
+                <li><strong>Endpoint Protection</strong>: Controls on how documents can be used on devices.</li>
+                <li><strong>User Education</strong>: Training employees to recognize and protect sensitive documents.</li>
+                <li><strong>Monitoring and Alerting</strong>: Systems that detect and alert on potential data leakage.</li>
+            </ul>
+            
+            <h4>Document Security Features</h4>
+            <ul>
+                <li><strong>Document Passwords</strong>: Password protection for individual files.</li>
+                <li><strong>Redaction</strong>: Permanently removing sensitive information from documents.</li>
+                <li><strong>Hidden Text Removal</strong>: Cleaning metadata and hidden content before sharing.</li>
+                <li><strong>Track Changes Removal</strong>: Ensuring previous edits and comments are removed.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Quick Tips</h3>
+            <div class="tip-box">
+                <ul>
+                    <li>✅ <strong>Always check document classification</strong> before sharing or storing</li>
+                    <li>✅ <strong>Use company-approved sharing methods</strong> rather than personal email or services</li>
+                    <li>✅ <strong>Remove sensitive metadata</strong> from documents before external sharing</li>
+                    <li>✅ <strong>Shred physical documents</strong> when they're no longer needed</li>
+                    <li>✅ <strong>Lock your screen</strong> when viewing sensitive documents and step away</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Summary</h3>
+            <p>In this module, we've explored document and file security, including:</p>
+            <ul>
+                <li>Document classification systems</li>
+                <li>Secure file storage and sharing methods</li>
+                <li>Digital Rights Management capabilities</li>
+                <li>Proper document disposal procedures</li>
+                <li>Strategies for preventing data leakage</li>
+            </ul>
+            <p>By implementing these practices, you'll help protect your organization's valuable information assets contained in documents and files. In the next module, we'll discuss company security policies and their importance.</p>
+        </div>
+    </div>
+</body>
+</html>

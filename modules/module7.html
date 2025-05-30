@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7: Data Protection and Privacy</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>Module 7: Data Protection and Privacy</h2>
+        <p>Learn about data protection regulations and how to handle sensitive information</p>
+    </div>
+
+    <div class="module-content">
+        <div class="module-section">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this module, you will be able to:</p>
+            <ul>
+                <li>Understand data protection regulations (GDPR/LGPD)</li>
+                <li>Classify and handle data appropriately</li>
+                <li>Prevent data breaches and leaks</li>
+                <li>Recognize personal data and its sensitivity</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Introduction</h3>
+            <p>Data is one of an organization's most valuable assets. Protecting this data is not only a business imperative but also a legal requirement in many jurisdictions. This module will help you understand data protection regulations, how to classify and handle different types of data, and best practices for preventing data breaches.</p>
+        </div>
+
+        <div class="module-section">
+            <h3>Introduction to Data Protection Regulations</h3>
+            <p>Organizations worldwide must comply with various data protection laws that govern how personal data is collected, processed, stored, and shared:</p>
+            
+            <h4>Key Data Protection Regulations</h4>
+            <ul>
+                <li><strong>General Data Protection Regulation (GDPR)</strong>: The European Union's comprehensive data protection law that applies to organizations worldwide that process EU residents' personal data.</li>
+                <li><strong>Lei Geral de Proteção de Dados (LGPD)</strong>: Brazil's data protection law, similar to GDPR in many respects.</li>
+                <li><strong>California Consumer Privacy Act (CCPA)</strong>: Provides California residents with rights regarding their personal information.</li>
+                <li><strong>Health Insurance Portability and Accountability Act (HIPAA)</strong>: U.S. regulation protecting sensitive patient health information.</li>
+                <li><strong>Payment Card Industry Data Security Standard (PCI DSS)</strong>: Requirements for organizations that handle credit card information.</li>
+            </ul>
+            
+            <h4>Common Principles Across Regulations</h4>
+            <p>Despite differences, most data protection regulations share these core principles:</p>
+            <ul>
+                <li><strong>Lawfulness and Transparency</strong>: Organizations must have a legal basis for processing personal data and be transparent about their practices.</li>
+                <li><strong>Purpose Limitation</strong>: Data should only be collected for specified, explicit, and legitimate purposes.</li>
+                <li><strong>Data Minimization</strong>: Only collect and retain the minimum amount of data necessary.</li>
+                <li><strong>Accuracy</strong>: Personal data should be accurate and kept up to date.</li>
+                <li><strong>Storage Limitation</strong>: Data should not be kept longer than necessary.</li>
+                <li><strong>Integrity and Confidentiality</strong>: Data must be processed securely.</li>
+                <li><strong>Accountability</strong>: Organizations must demonstrate compliance with data protection principles.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>Understanding data protection regulations is essential for all employees, not just legal and IT teams. Everyone who handles data has a role to play in compliance.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Data Classification and Handling</h3>
+            <p>Not all data requires the same level of protection. Data classification helps organizations apply appropriate security controls based on sensitivity:</p>
+            
+            <h4>Common Data Classification Levels</h4>
+            <ul>
+                <li><strong>Public</strong>: Information that can be freely shared with the public (e.g., marketing materials, public financial reports).</li>
+                <li><strong>Internal</strong>: Information for employees only, but not particularly sensitive (e.g., internal announcements, office policies).</li>
+                <li><strong>Confidential</strong>: Sensitive information that should only be shared with authorized individuals (e.g., business strategies, customer data).</li>
+                <li><strong>Restricted</strong>: Highly sensitive information with strict access controls (e.g., financial records, intellectual property, authentication credentials).</li>
+            </ul>
+            
+            <h4>Data Handling Guidelines by Classification</h4>
+            <p>Each classification level requires specific handling procedures:</p>
+            
+            <p><strong>Public Data</strong>:</p>
+            <ul>
+                <li>No restrictions on distribution</li>
+                <li>Can be posted publicly</li>
+                <li>No special protection required</li>
+            </ul>
+            
+            <p><strong>Internal Data</strong>:</p>
+            <ul>
+                <li>Share only within the organization</li>
+                <li>May be shared with authorized partners under NDA</li>
+                <li>Basic protection measures required</li>
+            </ul>
+            
+            <p><strong>Confidential Data</strong>:</p>
+            <ul>
+                <li>Share only with authorized individuals on a need-to-know basis</li>
+                <li>Encrypt during transmission and storage</li>
+                <li>Track access and distribution</li>
+            </ul>
+            
+            <p><strong>Restricted Data</strong>:</p>
+            <ul>
+                <li>Strictest access controls</li>
+                <li>Strong encryption required</li>
+                <li>Comprehensive audit trails</li>
+                <li>Special handling procedures</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>Real-World Example</h4>
+                <p>A healthcare provider implemented a data classification system to comply with HIPAA regulations. They classified patient medical records as "Restricted," requiring encryption, access controls, and audit logging. Administrative data was classified as "Confidential," while general health information was "Internal." This classification system helped employees understand how to handle different types of information and reduced the risk of inappropriate disclosure.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Secure Data Storage and Disposal</h3>
+            <p>Proper storage and disposal of data are critical aspects of data protection:</p>
+            
+            <h4>Secure Storage Practices</h4>
+            <ul>
+                <li><strong>Encryption</strong>: Encrypt sensitive data both in transit and at rest.</li>
+                <li><strong>Access Controls</strong>: Implement least privilege access—only give access to those who need it.</li>
+                <li><strong>Secure Backup</strong>: Regularly back up data and test restoration procedures.</li>
+                <li><strong>Physical Security</strong>: Secure physical storage media (servers, drives, etc.) in controlled environments.</li>
+                <li><strong>Cloud Security</strong>: When using cloud storage, understand shared responsibility models and implement appropriate controls.</li>
+            </ul>
+            
+            <h4>Data Disposal Methods</h4>
+            <p><strong>Digital Data</strong>:</p>
+            <ul>
+                <li>Secure deletion using specialized software</li>
+                <li>Degaussing (demagnetizing storage media)</li>
+                <li>Physical destruction of storage devices</li>
+            </ul>
+            
+            <p><strong>Physical Documents</strong>:</p>
+            <ul>
+                <li>Cross-cut shredding</li>
+                <li>Pulping or incineration for highly sensitive documents</li>
+                <li>Using secure disposal services</li>
+            </ul>
+            
+            <h4>Data Retention Considerations</h4>
+            <ul>
+                <li><strong>Retention Policies</strong>: Establish clear policies for how long different types of data should be kept.</li>
+                <li><strong>Legal Requirements</strong>: Some data must be retained for specific periods to comply with regulations.</li>
+                <li><strong>Automatic Deletion</strong>: Implement systems to automatically archive or delete data after retention periods expire.</li>
+                <li><strong>Documentation</strong>: Maintain records of disposed data for compliance purposes.</li>
+            </ul>
+            
+            <div class="tip-box">
+                <p>Remember that deleting a file doesn't necessarily remove it completely. Proper secure deletion methods should be used for sensitive information.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Privacy by Design Principles</h3>
+            <p>Privacy by Design is an approach that incorporates privacy into the design and operation of IT systems, business practices, and products from the start:</p>
+            
+            <h4>Seven Foundational Principles</h4>
+            <ul>
+                <li><strong>Proactive not Reactive</strong>: Anticipate and prevent privacy issues before they occur.</li>
+                <li><strong>Privacy as the Default Setting</strong>: No action should be required to protect privacy—it should be built in.</li>
+                <li><strong>Privacy Embedded into Design</strong>: Privacy should be an integral component, not an add-on.</li>
+                <li><strong>Full Functionality</strong>: Avoid false trade-offs like privacy vs. security—both are possible.</li>
+                <li><strong>End-to-End Security</strong>: Protect data throughout its lifecycle.</li>
+                <li><strong>Visibility and Transparency</strong>: Keep practices open and accountable.</li>
+                <li><strong>Respect for User Privacy</strong>: Keep user-centric by offering strong privacy defaults and appropriate notice.</li>
+            </ul>
+            
+            <h4>Implementing Privacy by Design</h4>
+            <ul>
+                <li><strong>Data Mapping</strong>: Understand how data flows through your organization.</li>
+                <li><strong>Privacy Impact Assessments</strong>: Evaluate privacy risks before implementing new systems or processes.</li>
+                <li><strong>Data Minimization</strong>: Collect only what's necessary for the specific purpose.</li>
+                <li><strong>Purpose Specification</strong>: Clearly define why data is being collected.</li>
+                <li><strong>Privacy-Enhancing Technologies</strong>: Use tools like anonymization, pseudonymization, and encryption.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Data Subject Rights and Company Obligations</h3>
+            <p>Data protection regulations grant individuals (data subjects) specific rights regarding their personal data:</p>
+            
+            <h4>Common Data Subject Rights</h4>
+            <ul>
+                <li><strong>Right to Access</strong>: Individuals can request copies of their personal data.</li>
+                <li><strong>Right to Rectification</strong>: Individuals can request correction of inaccurate data.</li>
+                <li><strong>Right to Erasure (Right to be Forgotten)</strong>: Individuals can request deletion of their data under certain circumstances.</li>
+                <li><strong>Right to Restrict Processing</strong>: Individuals can request limitations on how their data is used.</li>
+                <li><strong>Right to Data Portability</strong>: Individuals can request their data in a structured, commonly used format.</li>
+                <li><strong>Right to Object</strong>: Individuals can object to certain types of processing.</li>
+                <li><strong>Rights Related to Automated Decision Making</strong>: Protections regarding decisions made solely by automated systems.</li>
+            </ul>
+            
+            <h4>Company Obligations</h4>
+            <ul>
+                <li><strong>Responding to Requests</strong>: Organizations must respond to data subject requests within specified timeframes (typically 30 days under GDPR).</li>
+                <li><strong>Verification Procedures</strong>: Verify the identity of individuals making requests.</li>
+                <li><strong>Documentation</strong>: Maintain records of requests and responses.</li>
+                <li><strong>Staff Training</strong>: Ensure employees recognize and know how to handle data subject requests.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Data Breach Prevention and Response</h3>
+            <p>Despite best efforts, data breaches can still occur. Being prepared is essential:</p>
+            
+            <h4>Prevention Measures</h4>
+            <ul>
+                <li><strong>Security Controls</strong>: Implement technical safeguards like encryption, access controls, and monitoring.</li>
+                <li><strong>Regular Audits</strong>: Conduct security assessments to identify vulnerabilities.</li>
+                <li><strong>Employee Training</strong>: Ensure staff understand security policies and recognize threats.</li>
+                <li><strong>Vendor Management</strong>: Assess and monitor the security practices of third-party vendors.</li>
+                <li><strong>Patch Management</strong>: Keep systems updated with security patches.</li>
+            </ul>
+            
+            <h4>Data Breach Response Plan</h4>
+            <ul>
+                <li><strong>Detection and Reporting</strong>: Establish procedures for identifying and reporting potential breaches.</li>
+                <li><strong>Assessment</strong>: Determine the nature, scope, and impact of the breach.</li>
+                <li><strong>Containment</strong>: Take immediate steps to limit the breach's impact.</li>
+                <li><strong>Notification</strong>: Inform affected individuals, regulators, and other stakeholders as required by law.</li>
+                <li><strong>Investigation</strong>: Determine the cause and implement measures to prevent similar breaches.</li>
+                <li><strong>Documentation</strong>: Maintain detailed records of the breach and response actions.</li>
+            </ul>
+            
+            <h4>Breach Notification Requirements</h4>
+            <ul>
+                <li><strong>Timing</strong>: Many regulations require notification within specific timeframes (e.g., 72 hours under GDPR).</li>
+                <li><strong>Content</strong>: What information must be included in notifications.</li>
+                <li><strong>Recipients</strong>: Who must be notified (individuals, regulators, etc.).</li>
+                <li><strong>Method</strong>: How notifications must be delivered.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>The speed and effectiveness of your response to a data breach can significantly impact both the extent of damage and potential regulatory penalties.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Quick Tips</h3>
+            <div class="tip-box">
+                <ul>
+                    <li>✅ <strong>Know your organization's data classification system</strong> and handle information accordingly</li>
+                    <li>✅ <strong>Think twice before sharing</strong> personal or sensitive information, even internally</li>
+                    <li>✅ <strong>Use encryption</strong> when storing or transmitting sensitive data</li>
+                    <li>✅ <strong>Report potential data breaches immediately</strong> to your security team</li>
+                    <li>✅ <strong>Regularly delete unnecessary data</strong> in accordance with retention policies</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Summary</h3>
+            <p>In this module, we've explored data protection and privacy, including:</p>
+            <ul>
+                <li>Key data protection regulations and their common principles</li>
+                <li>Data classification systems and handling requirements</li>
+                <li>Secure data storage and disposal methods</li>
+                <li>Privacy by Design principles</li>
+                <li>Data subject rights and company obligations</li>
+                <li>Data breach prevention and response</li>
+            </ul>
+            <p>Understanding these concepts is essential for protecting both your organization and the individuals whose data you process. In the next module, we'll discuss document and file security.</p>
+        </div>
+    </div>
+</body>
+</html>

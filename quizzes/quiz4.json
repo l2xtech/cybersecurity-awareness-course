@@ -1,0 +1,60 @@
+{
+  "module_title": "Email Security",
+  "questions": [
+    {
+      "question": "What is the most common delivery method for malware?",
+      "options": [
+        "Direct installation by hackers",
+        "Email attachments and links",
+        "USB drives",
+        "Software updates"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Email is the most common delivery method for malware, typically through malicious attachments or links that lead to malware downloads."
+    },
+    {
+      "question": "Which of the following is a warning sign of a suspicious email?",
+      "options": [
+        "It comes from someone you regularly communicate with",
+        "It addresses you by your correct name",
+        "It contains unexpected attachments or links",
+        "It discusses a previously established topic"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Unexpected attachments or links are major warning signs of suspicious emails. Even if an email appears to come from someone you know, be cautious of unexpected attachments or links."
+    },
+    {
+      "question": "What should you do before clicking on a link in an email?",
+      "options": [
+        "Click it to see if it works",
+        "Forward the email to colleagues to get their opinion",
+        "Hover over the link to preview the actual URL destination",
+        "Immediately download any attachments to scan them"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Before clicking on a link, hover over it to preview the actual URL destination. This helps you identify if the link leads to a suspicious or unexpected website."
+    },
+    {
+      "question": "What is email spoofing?",
+      "options": [
+        "Sending emails from a fake account",
+        "Making an email appear to come from a trusted source when it doesn't",
+        "Encrypting email content",
+        "Sending too many emails at once"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Email spoofing is the creation of emails with a forged sender address, making it appear as if the email is coming from a trusted source when it's actually from an attacker."
+    },
+    {
+      "question": "What should you do if you've clicked on a suspicious link or attachment?",
+      "options": [
+        "Delete the email and pretend nothing happened",
+        "Wait to see if anything bad happens",
+        "Immediately disconnect from the network and report the incident to IT security",
+        "Forward the email to colleagues to warn them"
+      ],
+      "correctAnswer": 2,
+      "feedback": "If you've clicked on a suspicious link or attachment, immediately disconnect from the network to prevent potential malware spread and report the incident to your IT security team."
+    }
+  ]
+}

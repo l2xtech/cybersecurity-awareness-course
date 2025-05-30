@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6: Mobile Device and Remote Work Security</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>Module 6: Mobile Device and Remote Work Security</h2>
+        <p>Learn how to secure mobile devices and work safely from remote locations</p>
+    </div>
+
+    <div class="module-content">
+        <div class="module-section">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this module, you will be able to:</p>
+            <ul>
+                <li>Secure mobile devices used for work</li>
+                <li>Implement safe remote working practices</li>
+                <li>Protect data when working outside the office</li>
+                <li>Understand BYOD (Bring Your Own Device) policies</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Introduction</h3>
+            <p>The modern workplace extends far beyond the traditional office environment. With remote work becoming increasingly common and mobile devices being essential tools for business, understanding how to maintain security in these scenarios is crucial. This module will help you implement best practices for securing mobile devices and working safely from remote locations.</p>
+        </div>
+
+        <div class="module-section">
+            <h3>Mobile Device Security Basics</h3>
+            <p>Mobile devices present unique security challenges due to their portability, connectivity options, and the variety of apps they can run:</p>
+            
+            <p><strong>Device Passcodes and Biometrics</strong>: Always secure your device with a strong passcode, fingerprint, or facial recognition.</p>
+            
+            <p><strong>Screen Lock Timeout</strong>: Set your screen to lock automatically after a short period of inactivity (1-5 minutes).</p>
+            
+            <p><strong>Device Encryption</strong>: Ensure your device's storage is encrypted to protect data if the device is lost or stolen.</p>
+            
+            <p><strong>Remote Wipe Capability</strong>: Enable features that allow you to remotely erase your device if it's lost or stolen.</p>
+            
+            <p><strong>App Permissions</strong>: Regularly review and restrict app permissions to only what's necessary for functionality.</p>
+            
+            <p><strong>Operating System Updates</strong>: Keep your device's operating system and apps updated with the latest security patches.</p>
+            
+            <p><strong>Avoid Jailbreaking/Rooting</strong>: These practices bypass built-in security controls and expose devices to additional risks.</p>
+            
+            <h4>Mobile Threat Landscape</h4>
+            <p>Mobile devices face several specific threats:</p>
+            <ul>
+                <li><strong>Malicious Apps</strong>: Apps that appear legitimate but contain malware.</li>
+                <li><strong>Public Charging Stations</strong>: "Juice jacking" attacks can steal data through charging ports.</li>
+                <li><strong>Bluetooth Vulnerabilities</strong>: Unsecured Bluetooth connections can be exploited.</li>
+                <li><strong>SMS Phishing (Smishing)</strong>: Text messages designed to trick you into revealing information or installing malware.</li>
+                <li><strong>Unsecured Wi-Fi</strong>: Public networks that may expose your data to interception.</li>
+                <li><strong>Physical Theft</strong>: Loss of devices containing sensitive company information.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>Real-World Example</h4>
+                <p>A sales executive left their company tablet in a taxi while traveling for business. The tablet was not protected with a passcode and contained sensitive client information and access to company email. Before IT could remotely wipe the device, the finder had already accessed confidential sales proposals and client contact information. This incident could have been prevented with basic security measures like device encryption, strong passcode protection, and automatic screen locking.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Securing Home Networks</h3>
+            <p>When working remotely, your home network becomes an extension of your corporate network, making its security essential:</p>
+            
+            <h4>Router Security</h4>
+            <ul>
+                <li>Change default administrator credentials</li>
+                <li>Use WPA3 encryption when available (or at least WPA2)</li>
+                <li>Keep router firmware updated</li>
+                <li>Use strong, unique Wi-Fi passwords</li>
+                <li>Consider changing the default network name (SSID)</li>
+            </ul>
+            
+            <h4>Network Segmentation</h4>
+            <ul>
+                <li>Create a separate guest network for non-work devices</li>
+                <li>Consider a dedicated VLAN for work devices if possible</li>
+            </ul>
+            
+            <h4>Additional Security Measures</h4>
+            <ul>
+                <li>Enable firewall protection</li>
+                <li>Use DNS filtering services</li>
+                <li>Position routers centrally to limit signal outside your home</li>
+                <li>Disable remote management features unless necessary</li>
+            </ul>
+            
+            <div class="tip-box">
+                <p>Treat your home network as an extension of your corporate network when working remotely. The security of your home router directly impacts the security of your work data.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>VPN Usage and Importance</h3>
+            <p>A Virtual Private Network (VPN) creates a secure, encrypted connection between your device and your organization's network, protecting data in transit:</p>
+            
+            <h4>How VPNs Protect You</h4>
+            <ul>
+                <li><strong>Encryption</strong>: VPNs encrypt your internet traffic, making it unreadable to anyone who might intercept it.</li>
+                <li><strong>Privacy</strong>: VPNs mask your IP address and location, adding a layer of privacy.</li>
+                <li><strong>Secure Access</strong>: VPNs allow secure access to internal company resources from remote locations.</li>
+                <li><strong>Public Wi-Fi Protection</strong>: VPNs protect your data when using potentially insecure public networks.</li>
+            </ul>
+            
+            <h4>Best Practices for VPN Use</h4>
+            <ul>
+                <li><strong>Always Connect When Working Remotely</strong>: Use your company VPN whenever accessing work resources outside the office.</li>
+                <li><strong>Follow Connection Procedures</strong>: Adhere to your organization's specific VPN connection protocols.</li>
+                <li><strong>Report Connection Issues</strong>: If you experience problems with the VPN, report them to IT rather than working around them.</li>
+                <li><strong>Be Aware of Split Tunneling</strong>: Understand whether your organization uses split tunneling (routing only some traffic through the VPN) and the security implications.</li>
+                <li><strong>Verify Connection Status</strong>: Regularly confirm that your VPN connection is active when working remotely.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>BYOD Security Considerations</h3>
+            <p>Bring Your Own Device (BYOD) policies allow employees to use personal devices for work purposes, creating both convenience and security challenges:</p>
+            
+            <h4>BYOD Risks</h4>
+            <ul>
+                <li><strong>Mixing Personal and Work Data</strong>: Potential for data leakage between work and personal applications.</li>
+                <li><strong>Varied Security Postures</strong>: Different devices may have different levels of security.</li>
+                <li><strong>Limited Organizational Control</strong>: Companies have less control over personal devices.</li>
+                <li><strong>Data Removal Challenges</strong>: Difficulties in removing company data when employees leave.</li>
+                <li><strong>Shadow IT</strong>: Use of unauthorized applications on personal devices.</li>
+            </ul>
+            
+            <h4>BYOD Best Practices</h4>
+            <ul>
+                <li><strong>Understand Your Company's Policy</strong>: Familiarize yourself with your organization's specific BYOD requirements.</li>
+                <li><strong>Use Mobile Device Management (MDM)</strong>: Allow installation of MDM solutions that help secure company data on personal devices.</li>
+                <li><strong>Separate Work and Personal Data</strong>: Use work profiles or containers that isolate company data.</li>
+                <li><strong>Follow Application Policies</strong>: Only use approved applications for work tasks.</li>
+                <li><strong>Report Lost or Stolen Devices Immediately</strong>: Notify IT promptly if your device is lost or stolen.</li>
+                <li><strong>Prepare for Remote Wipe</strong>: Understand that in some cases, your organization may need to remotely wipe your device, potentially affecting personal data.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Physical Security for Remote Workers</h3>
+            <p>Physical security is often overlooked but remains crucial for remote workers:</p>
+            
+            <h4>Secure Work Area</h4>
+            <ul>
+                <li>Position screens to prevent "shoulder surfing"</li>
+                <li>Lock your computer when stepping away</li>
+                <li>Secure sensitive documents when not in use</li>
+                <li>Consider privacy screens for public locations</li>
+            </ul>
+            
+            <h4>Device Protection</h4>
+            <ul>
+                <li>Never leave devices unattended in public places</li>
+                <li>Use laptop locks when appropriate</li>
+                <li>Keep devices with you while traveling</li>
+                <li>Store devices securely when not in use</li>
+            </ul>
+            
+            <h4>Document Handling</h4>
+            <ul>
+                <li>Shred sensitive printed materials</li>
+                <li>Avoid printing confidential information when possible</li>
+                <li>Don't dispose of work documents in public trash bins</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>Physical security is just as important as digital security. A stolen laptop or a document left in a coffee shop can lead to a data breach just as easily as a cyberattack.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Secure Video Conferencing</h3>
+            <p>Video conferencing has become essential for remote work, but it comes with its own security considerations:</p>
+            
+            <h4>Meeting Access Controls</h4>
+            <ul>
+                <li>Use meeting passwords or waiting rooms</li>
+                <li>Generate unique meeting IDs for sensitive discussions</li>
+                <li>Control screen sharing permissions</li>
+            </ul>
+            
+            <h4>Privacy Considerations</h4>
+            <ul>
+                <li>Be aware of your surroundings and what's visible on camera</li>
+                <li>Use virtual backgrounds when appropriate</li>
+                <li>Mute microphones when not speaking</li>
+                <li>Consider what's being shared on your screen</li>
+            </ul>
+            
+            <h4>Platform Security</h4>
+            <ul>
+                <li>Use company-approved video conferencing tools</li>
+                <li>Keep applications updated with security patches</li>
+                <li>Log out after meetings on shared devices</li>
+                <li>Be cautious about recording meetings</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Remote Work Security Checklist</h3>
+            <p>Use this checklist to ensure you're following security best practices when working remotely:</p>
+            
+            <h4>Device Security</h4>
+            <ul>
+                <li>Device is password/biometric protected</li>
+                <li>Screen automatically locks after inactivity</li>
+                <li>Operating system and applications are updated</li>
+                <li>Antivirus/security software is installed and active</li>
+            </ul>
+            
+            <h4>Network Security</h4>
+            <ul>
+                <li>Home Wi-Fi uses strong encryption (WPA2/WPA3)</li>
+                <li>VPN is used for connecting to company resources</li>
+                <li>Public Wi-Fi is avoided or used with VPN only</li>
+            </ul>
+            
+            <h4>Data Protection</h4>
+            <ul>
+                <li>Sensitive files are stored on approved platforms</li>
+                <li>Regular backups are performed</li>
+                <li>Documents are securely disposed of</li>
+            </ul>
+            
+            <h4>Physical Security</h4>
+            <ul>
+                <li>Work area is secure from unauthorized viewing</li>
+                <li>Devices are never left unattended in public</li>
+                <li>Sensitive information is not visible to household members</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Quick Tips</h3>
+            <div class="tip-box">
+                <ul>
+                    <li>✅ <strong>Always use your company VPN</strong> when accessing work resources remotely</li>
+                    <li>✅ <strong>Keep mobile devices with you</strong> at all times when in public places</li>
+                    <li>✅ <strong>Update all devices regularly</strong> with security patches</li>
+                    <li>✅ <strong>Use strong authentication</strong> for all work-related accounts</li>
+                    <li>✅ <strong>Create a dedicated workspace</strong> that minimizes security and privacy risks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Summary</h3>
+            <p>In this module, we've explored mobile device and remote work security, including:</p>
+            <ul>
+                <li>Mobile device security fundamentals</li>
+                <li>How to secure home networks</li>
+                <li>The importance and proper use of VPNs</li>
+                <li>BYOD security considerations</li>
+                <li>Physical security for remote workers</li>
+                <li>Secure video conferencing practices</li>
+            </ul>
+            <p>By implementing these practices, you'll help protect company data regardless of where you're working. In the next module, we'll discuss data protection and privacy regulations.</p>
+        </div>
+    </div>
+</body>
+</html>

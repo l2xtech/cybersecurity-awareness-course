@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 10: Incident Reporting and Response</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>Module 10: Incident Reporting and Response</h2>
+        <p>Learn how to recognize, report, and respond to security incidents</p>
+    </div>
+
+    <div class="module-content">
+        <div class="module-section">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this module, you will be able to:</p>
+            <ul>
+                <li>Recognize security incidents</li>
+                <li>Know when and how to report incidents</li>
+                <li>Understand the incident response process</li>
+                <li>Learn from security incidents</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Introduction</h3>
+            <p>Security incidents are inevitable, even in organizations with strong security measures. The ability to quickly identify, report, and respond to these incidents can significantly reduce their impact. This module will help you understand how to recognize security incidents, when and how to report them, and what happens during the incident response process.</p>
+        </div>
+
+        <div class="module-section">
+            <h3>Identifying Security Incidents</h3>
+            <p>A security incident is any event that potentially compromises the confidentiality, integrity, or availability of information or systems. Recognizing these incidents is the first step in effective response:</p>
+            
+            <h4>Common Types of Security Incidents</h4>
+            <ul>
+                <li><strong>Malware Infections</strong>: Signs include unusual system behavior, unexpected pop-ups, or system slowdowns.</li>
+                <li><strong>Phishing Attempts</strong>: Suspicious emails requesting sensitive information or containing unusual links or attachments.</li>
+                <li><strong>Unauthorized Access</strong>: Evidence that someone has accessed systems or information without permission.</li>
+                <li><strong>Data Breaches</strong>: Indications that sensitive information has been accessed, stolen, or exposed.</li>
+                <li><strong>Lost or Stolen Devices</strong>: Missing laptops, smartphones, or other devices containing company information.</li>
+                <li><strong>Physical Security Breaches</strong>: Unauthorized individuals in secure areas or evidence of tampering with equipment.</li>
+                <li><strong>Denial of Service</strong>: Systems or services becoming unavailable or unusually slow.</li>
+            </ul>
+            
+            <h4>Warning Signs to Watch For</h4>
+            <ul>
+                <li><strong>Unusual System Behavior</strong>: Programs crashing, unexpected reboots, or strange error messages.</li>
+                <li><strong>Unexpected Changes</strong>: Files or settings that have changed without explanation.</li>
+                <li><strong>Suspicious Communications</strong>: Unusual emails, messages, or phone calls requesting information or action.</li>
+                <li><strong>Account Issues</strong>: Failed login attempts, account lockouts, or unexpected password changes.</li>
+                <li><strong>Unusual Network Activity</strong>: Excessive network traffic or connections to unfamiliar external servers.</li>
+                <li><strong>Missing or Altered Data</strong>: Information that has disappeared or been modified unexpectedly.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>Real-World Example</h4>
+                <p>An employee noticed that their computer was running unusually slowly and that the fan was constantly running at high speed. They also observed that the hard drive light was continuously active, even when they weren't using the computer. Rather than dismissing these signs as normal computer issues, they reported them to the IT security team. Investigation revealed that the computer was infected with cryptomining malware that was using system resources to mine cryptocurrency. The early reporting prevented the malware from spreading to other systems and potentially accessing sensitive data.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Reporting Procedures and Channels</h3>
+            <p>Knowing how and when to report security incidents is crucial for effective response:</p>
+            
+            <h4>When to Report</h4>
+            <ul>
+                <li><strong>Immediately</strong>: Report incidents as soon as you notice them, even if you're not certain it's a security issue.</li>
+                <li><strong>Better Safe Than Sorry</strong>: It's always better to report a false alarm than to ignore a real incident.</li>
+                <li><strong>No Blame Culture</strong>: Organizations should foster an environment where employees feel comfortable reporting incidents without fear of blame.</li>
+            </ul>
+            
+            <h4>How to Report</h4>
+            <p><strong>Designated Channels</strong>: Use your organization's established reporting channels, which may include:</p>
+            <ul>
+                <li>IT helpdesk or support</li>
+                <li>Security team email or hotline</li>
+                <li>Incident reporting system</li>
+                <li>Direct manager or security officer</li>
+            </ul>
+            
+            <p><strong>Information to Include</strong>:</p>
+            <ul>
+                <li>What you observed</li>
+                <li>When you noticed it</li>
+                <li>Systems or data potentially affected</li>
+                <li>Actions you've taken so far</li>
+                <li>Your contact information</li>
+            </ul>
+            
+            <p><strong>Follow-Up</strong>: Be available for additional questions as the investigation proceeds.</p>
+            
+            <h4>Reporting Template</h4>
+            <p>A good incident report should include:</p>
+            <ol>
+                <li><strong>Date and Time</strong>: When the incident was discovered</li>
+                <li><strong>Reporter Information</strong>: Your name and contact details</li>
+                <li><strong>Incident Description</strong>: What happened or what was observed</li>
+                <li><strong>Systems Affected</strong>: Which devices, applications, or data may be involved</li>
+                <li><strong>Potential Impact</strong>: Your assessment of possible consequences</li>
+                <li><strong>Actions Taken</strong>: Steps you've already taken in response</li>
+                <li><strong>Urgency Assessment</strong>: How time-sensitive you believe the situation is</li>
+            </ol>
+            
+            <div class="tip-box">
+                <p>When reporting an incident, focus on facts rather than assumptions. Describe exactly what you observed without speculating on causes or blame.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>The Incident Response Process</h3>
+            <p>Understanding the incident response process helps you know what to expect after reporting an incident:</p>
+            
+            <h4>Incident Response Lifecycle</h4>
+            <ul>
+                <li><strong>Preparation</strong>: Establishing procedures, tools, and training before incidents occur.</li>
+                <li><strong>Detection and Analysis</strong>: Identifying potential incidents and confirming their validity.</li>
+                <li><strong>Containment</strong>: Taking immediate action to limit the incident's impact.</li>
+                <li><strong>Eradication</strong>: Removing the cause of the incident.</li>
+                <li><strong>Recovery</strong>: Restoring affected systems to normal operation.</li>
+                <li><strong>Post-Incident Analysis</strong>: Learning from the incident to prevent similar occurrences.</li>
+            </ul>
+            
+            <h4>Roles and Responsibilities</h4>
+            <ul>
+                <li><strong>Employees</strong>: Report incidents promptly and follow security team instructions.</li>
+                <li><strong>First Responders</strong>: Initially assess and document the incident.</li>
+                <li><strong>Incident Response Team</strong>: Coordinate the overall response effort.</li>
+                <li><strong>Technical Specialists</strong>: Address specific technical aspects of the incident.</li>
+                <li><strong>Management</strong>: Make critical decisions and communicate with stakeholders.</li>
+                <li><strong>Legal and Compliance</strong>: Address legal and regulatory implications.</li>
+            </ul>
+            
+            <h4>Communication During Incidents</h4>
+            <ul>
+                <li><strong>Need-to-Know Basis</strong>: Information about incidents should only be shared with authorized individuals.</li>
+                <li><strong>Clear Channels</strong>: Established communication methods for incident updates.</li>
+                <li><strong>Regular Updates</strong>: Keeping stakeholders informed as the situation evolves.</li>
+                <li><strong>External Communications</strong>: Carefully managed messaging to customers, partners, and the public.</li>
+            </ul>
+        </div>
+
+        <div class="module-section">
+            <h3>Your Role During a Security Incident</h3>
+            <p>As an employee, you play a critical role during security incidents:</p>
+            
+            <h4>Immediate Actions</h4>
+            <ul>
+                <li><strong>Report Promptly</strong>: Notify the appropriate contacts as soon as possible.</li>
+                <li><strong>Preserve Evidence</strong>: Avoid actions that might destroy evidence, such as shutting down affected systems unless specifically instructed.</li>
+                <li><strong>Document Observations</strong>: Record what you've noticed, including timestamps.</li>
+                <li><strong>Follow Instructions</strong>: Comply with directions from the security team.</li>
+            </ul>
+            
+            <h4>Ongoing Support</h4>
+            <ul>
+                <li><strong>Be Available</strong>: Remain accessible to answer questions as the investigation proceeds.</li>
+                <li><strong>Maintain Confidentiality</strong>: Don't discuss the incident with unauthorized individuals.</li>
+                <li><strong>Patience</strong>: Understand that thorough investigation and resolution take time.</li>
+                <li><strong>Adaptability</strong>: Be prepared to adjust your work processes during the response.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>Your actions in the first few minutes after discovering a security incident can significantly impact the overall outcome. Knowing what to do—and what not to do—is essential.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Lessons Learned from Past Incidents</h3>
+            <p>Learning from security incidents helps prevent similar issues in the future:</p>
+            
+            <h4>Post-Incident Review Process</h4>
+            <ul>
+                <li><strong>Root Cause Analysis</strong>: Identifying the underlying causes of the incident.</li>
+                <li><strong>Impact Assessment</strong>: Evaluating the incident's effects on the organization.</li>
+                <li><strong>Response Evaluation</strong>: Reviewing the effectiveness of the response efforts.</li>
+                <li><strong>Improvement Identification</strong>: Determining how to prevent similar incidents.</li>
+                <li><strong>Action Planning</strong>: Developing specific steps to implement improvements.</li>
+            </ul>
+            
+            <h4>Common Lessons from Security Incidents</h4>
+            <ul>
+                <li><strong>Importance of Awareness</strong>: Many incidents are first detected by alert employees.</li>
+                <li><strong>Value of Prompt Reporting</strong>: Early detection significantly reduces impact.</li>
+                <li><strong>Need for Regular Training</strong>: Well-prepared employees respond more effectively.</li>
+                <li><strong>Benefits of Documentation</strong>: Clear procedures improve response consistency.</li>
+                <li><strong>Significance of Testing</strong>: Regular exercises help identify gaps in response capabilities.</li>
+            </ul>
+            
+            <h4>Case Studies</h4>
+            <div class="highlight-box">
+                <h5>Case Study 1: Ransomware Attack</h5>
+                <p>A manufacturing company experienced a ransomware attack that encrypted critical production systems. The incident was detected when an employee noticed unusual file names and reported them immediately. Thanks to this early detection, the IT team was able to isolate affected systems before the encryption spread throughout the network. While some systems were impacted, the company's regular backups allowed for recovery without paying the ransom. The incident led to improved network segmentation and more frequent backup testing.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h5>Case Study 2: Business Email Compromise</h5>
+                <p>A finance employee received an email appearing to be from the CEO requesting an urgent wire transfer. Despite the pressure for immediate action, the employee followed the company's verification procedure for financial requests, discovering it was fraudulent. This prevented a potentially significant financial loss and highlighted the importance of following security procedures even under pressure.</p>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Quick Tips</h3>
+            <div class="tip-box">
+                <ul>
+                    <li>✅ <strong>Report unusual activity immediately</strong>, even if you're not sure it's a security incident</li>
+                    <li>✅ <strong>Know your organization's reporting procedures</strong> before incidents occur</li>
+                    <li>✅ <strong>Document what you observe</strong> with specific details and timestamps</li>
+                    <li>✅ <strong>Follow security team instructions</strong> during incident response</li>
+                    <li>✅ <strong>Maintain confidentiality</strong> about security incidents</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module-section">
+            <h3>Summary</h3>
+            <p>In this module, we've explored incident reporting and response, including:</p>
+            <ul>
+                <li>How to identify potential security incidents</li>
+                <li>When and how to report incidents</li>
+                <li>The incident response process and lifecycle</li>
+                <li>Your role during security incidents</li>
+                <li>Learning from past incidents to improve future response</li>
+            </ul>
+            <p>Effective incident reporting and response are critical components of an organization's security program. By promptly reporting potential incidents and supporting the response process, you play a vital role in minimizing the impact of security events on your organization.</p>
+            
+            <p>Congratulations on completing the Cybersecurity Awareness course! You now have the knowledge to help protect your organization from various cyber threats.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "module_title": "Common Cyber Threats",
+  "questions": [
+    {
+      "question": "What is phishing?",
+      "options": [
+        "A legitimate email from your bank requesting information",
+        "A type of computer virus that encrypts files",
+        "A fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity",
+        "A hardware device used to protect networks"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Phishing is a fraudulent attempt to obtain sensitive information such as usernames, passwords, and credit card details by disguising as a trustworthy entity in electronic communications."
+    },
+    {
+      "question": "Which of the following is a common indicator of a phishing email?",
+      "options": [
+        "It comes from someone in your contact list",
+        "It has a sense of urgency or threatens negative consequences",
+        "It has the company's correct logo and branding",
+        "It addresses you by your full name"
+      ],
+      "correctAnswer": 1,
+      "feedback": "A sense of urgency or threatening negative consequences is a common tactic in phishing emails to pressure recipients into taking hasty actions without proper verification."
+    },
+    {
+      "question": "What is ransomware?",
+      "options": [
+        "Software that displays unwanted advertisements",
+        "Malicious software that blocks access to data until a ransom is paid",
+        "A tool used by IT departments to recover lost files",
+        "A type of firewall that blocks unauthorized access"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Ransomware is malicious software that encrypts the victim's files, blocking access to them until a ransom is paid to the attacker for the decryption key."
+    },
+    {
+      "question": "What is social engineering in the context of cybersecurity?",
+      "options": [
+        "Using social media for marketing purposes",
+        "Building social networks within an organization",
+        "Psychological manipulation to trick people into revealing confidential information",
+        "Engineering software for social media platforms"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Social engineering is the psychological manipulation of people into performing actions or divulging confidential information. It relies on human error rather than technical hacking techniques."
+    },
+    {
+      "question": "Which of the following is the best response to a suspected phishing attempt?",
+      "options": [
+        "Reply to the email asking for verification",
+        "Click the link to see if it's legitimate",
+        "Delete the email and report it to your IT security team",
+        "Forward it to all your colleagues to warn them"
+      ],
+      "correctAnswer": 2,
+      "feedback": "The best response to a suspected phishing attempt is to delete the email and report it to your IT security team. Never click links, download attachments, or reply to suspicious emails."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "module_title": "Document and File Security",
+  "questions": [
+    {
+      "question": "What is document classification?",
+      "options": [
+        "A system for organizing documents by date",
+        "A method for categorizing documents based on their sensitivity level",
+        "A technique for compressing document files",
+        "A way to track document versions"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Document classification is a method for categorizing documents based on their sensitivity level (e.g., Public, Internal, Confidential, Restricted), helping employees understand how to handle different types of information."
+    },
+    {
+      "question": "What is Digital Rights Management (DRM)?",
+      "options": [
+        "A type of document scanner",
+        "A technology that provides advanced control over document access and usage",
+        "A file compression technique",
+        "A method for digitizing paper documents"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Digital Rights Management (DRM) is a technology that provides advanced control over document access and usage, including who can open documents, what they can do with them (view, edit, print, copy), and the ability to set expiration dates or revoke access."
+    },
+    {
+      "question": "Which of the following is NOT a secure method for disposing of physical documents?",
+      "options": [
+        "Cross-cut shredding",
+        "Secure disposal services",
+        "Recycling bin without shredding",
+        "Pulping or incineration"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Placing documents in a recycling bin without shredding is not secure. Sensitive documents should be cross-cut shredded, pulped, incinerated, or handled by secure disposal services that certify destruction."
+    },
+    {
+      "question": "What is metadata in the context of document security?",
+      "options": [
+        "A type of encryption algorithm",
+        "Hidden information in documents that may contain sensitive data",
+        "A document classification level",
+        "A secure file storage location"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Metadata is hidden information embedded in documents that may contain sensitive data such as author names, organization details, edit history, comments, and other information not visible in the main content but potentially accessible to recipients."
+    },
+    {
+      "question": "What is the best practice for sharing sensitive documents externally?",
+      "options": [
+        "Email them as regular attachments",
+        "Use personal file sharing services",
+        "Use password protection, encryption, and company-approved platforms",
+        "Post them on public websites with obscure URLs"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Best practices for sharing sensitive documents externally include using password protection, encryption, and company-approved sharing platforms with features like access controls, expiring links, and tracking capabilities."
+    }
+  ]
+}
