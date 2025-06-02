@@ -1,193 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz - Module 1</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col text-gray-800">
-
-  <!-- Top Bar -->
-  <div class="w-full bg-gray-200 py-2 px-4">
-    <a href="../modules/module1.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
-      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
-      </svg>
-      Back to Module
-    </a>
-  </div>
-
-  <!-- Quiz Container -->
-  <div class="flex-1 flex flex-col items-center justify-center p-4">
-    <div class="w-full max-w-2xl bg-white p-6 rounded shadow-md min-h-[320px]">
-      <h2 class="text-xl font-bold mb-4" id="quiz-title">Quiz</h2>
-      <div id="quiz-box">
-        <!-- Question & options injected here -->
-      </div>
-      <div id="feedback" class="mt-4 text-sm font-medium hidden"></div>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div class="flex justify-between items-center mt-6 w-full max-w-2xl">
-      <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Previous</button>
-      <div id="progress" class="text-sm text-gray-600">Question 1 of 5</div>
-      <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">Next</button>
-    </div>
-  </div>
-
-  <script>
-    const quiz = {
-      module_title: "Introduction to Information Security",
-      questions: [
-        {
-          question: "What is the primary goal of information security?",
-          options: [
-            "To prevent all employees from accessing sensitive data",
-            "To protect confidentiality, integrity, and availability of information",
-            "To install antivirus software on all computers",
-            "To encrypt all company emails"
-          ],
-          correctAnswer: 1,
-          feedback: "✔️ The CIA triad: Confidentiality, Integrity, Availability."
-        },
-        {
-          question: "Which of the following is NOT one of the CIA triad?",
-          options: [
-            "Confidentiality",
-            "Integrity",
-            "Authentication",
-            "Availability"
-          ],
-          correctAnswer: 2,
-          feedback: "❌ Authentication is not part of the CIA triad."
-        },
-        {
-          question: "Why is information security important for organizations?",
-          options: [
-            "It's only important for government agencies",
-            "It's only required for financial institutions",
-            "It protects against financial loss, reputation damage, and regulatory penalties",
-            "It's only necessary for companies with over 1000 employees"
-          ],
-          correctAnswer: 2,
-          feedback: "✅ It protects financials, reputation, and compliance."
-        },
-        {
-          question: "Who is responsible for information security?",
-          options: [
-            "Only the IT department",
-            "Only the Chief Information Security Officer",
-            "Only senior management",
-            "Every employee in the organization"
-          ],
-          correctAnswer: 3,
-          feedback: "💡 Everyone plays a role in security."
-        },
-        {
-          question: "What is 'defense in depth'?",
-          options: [
-            "Using the strongest possible firewall",
-            "Implementing multiple layers of security controls",
-            "Focusing all security on critical assets",
-            "Training only the IT department"
-          ],
-          correctAnswer: 1,
-          feedback: "✅ Defense in depth means layered protection."
-        }
-      ]
-    };
-
-    let currentQuestion = 0;
-    const quizBox = document.getElementById("quiz-box");
-    const feedback = document.getElementById("feedback");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const progress = document.getElementById("progress");
-
-    const userAnswers = [];
-
-    function renderQuestion() {
-      const q = quiz.questions[currentQuestion];
-      document.getElementById("quiz-title").textContent = `Quiz: ${quiz.module_title}`;
-      feedback.classList.add("hidden");
-
-      quizBox.innerHTML = `
-        <h3 class="text-md font-semibold mb-2">${q.question}</h3>
-        <ul class="space-y-2">
-          ${q.options.map((opt, i) => `
-            <li>
-              <label class="flex items-center space-x-2">
-                <input type="radio" name="option" value="${i}" class="form-radio text-blue-600">
-                <span class="text-sm">${opt}</span>
-              </label>
-            </li>
-          `).join('')}
-        </ul>
-      `;
-
-      if (userAnswers[currentQuestion] !== undefined) {
-        const selected = userAnswers[currentQuestion];
-        document.querySelectorAll('input[name="option"]')[selected].checked = true;
+<script>
+  const quiz = {
+    module_title: "Introduction to Information Security",
+    questions: [
+      {
+        question: "What is the primary goal of information security?",
+        options: [
+          "To prevent all employees from accessing sensitive data",
+          "To protect confidentiality, integrity, and availability of information",
+          "To install antivirus software on all computers",
+          "To encrypt all company emails"
+        ],
+        correctAnswer: 1,
+        feedback: "✔️ Correct! InfoSec ensures confidentiality, integrity, and availability."
+      },
+      {
+        question: "Which of the following is NOT part of the CIA triad?",
+        options: [
+          "Confidentiality",
+          "Integrity",
+          "Authentication",
+          "Availability"
+        ],
+        correctAnswer: 2,
+        feedback: "🔒 Authentication is important but not part of the CIA triad."
+      },
+      {
+        question: "Why is InfoSec important for organizations?",
+        options: [
+          "Only needed by governments",
+          "Only financial institutions need it",
+          "It prevents loss, reputation harm, and penalties",
+          "Only companies with 1000+ employees"
+        ],
+        correctAnswer: 2,
+        feedback: "✅ Protecting against loss and penalties is key!"
+      },
+      {
+        question: "Who is responsible for information security?",
+        options: [
+          "Only IT",
+          "Only CISO",
+          "Only senior leadership",
+          "Every employee"
+        ],
+        correctAnswer: 3,
+        feedback: "🙌 Security is everyone’s responsibility."
+      },
+      {
+        question: "What is 'defense in depth'?",
+        options: [
+          "Strongest firewall possible",
+          "Multiple security layers",
+          "Focus all efforts on critical systems",
+          "Only IT training"
+        ],
+        correctAnswer: 1,
+        feedback: "🛡️ Defense in depth = layered protection."
       }
+    ]
+  };
 
-      progress.textContent = `Question ${currentQuestion + 1} of ${quiz.questions.length}`;
-      prevBtn.disabled = currentQuestion === 0;
-      nextBtn.textContent = currentQuestion === quiz.questions.length - 1 ? "Finish" : "Next";
-    }
+  let currentQuestion = 0;
+  const maxAttempts = 3;
+  const attempts = Array(quiz.questions.length).fill(0);
+  const userAnswers = Array(quiz.questions.length).fill(null);
+  const isAnswered = Array(quiz.questions.length).fill(false);
 
-    function showFeedback() {
-      const selected = document.querySelector('input[name="option"]:checked');
-      if (!selected) return;
+  const quizBox = document.getElementById("quiz-box");
+  const feedback = document.getElementById("feedback");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const progress = document.getElementById("progress");
 
-      const selectedIndex = parseInt(selected.value);
-      const correct = quiz.questions[currentQuestion].correctAnswer;
-      const isCorrect = selectedIndex === correct;
+  function renderQuestion() {
+    const q = quiz.questions[currentQuestion];
+    document.getElementById("quiz-title").textContent = `Quiz: ${quiz.module_title}`;
+    feedback.classList.add("hidden");
 
-      feedback.textContent = quiz.questions[currentQuestion].feedback;
-      feedback.classList.remove("hidden");
-      feedback.className = `mt-4 text-sm font-medium ${isCorrect ? 'text-green-600' : 'text-red-600'}`;
+    quizBox.innerHTML = `
+      <h3 class="text-md font-semibold mb-2">${q.question}</h3>
+      <ul class="space-y-2">
+        ${q.options.map((opt, i) => `
+          <li>
+            <label class="flex items-center space-x-2">
+              <input type="radio" name="option" value="${i}" class="form-radio text-blue-600">
+              <span class="text-sm">${opt}</span>
+            </label>
+          </li>
+        `).join('')}
+      </ul>
+    `;
 
+    progress.textContent = `Question ${currentQuestion + 1} of ${quiz.questions.length}`;
+    prevBtn.disabled = currentQuestion === 0;
+    nextBtn.disabled = !isAnswered[currentQuestion];
+
+    prevBtn.style.display = "inline-block";
+    nextBtn.style.display = "inline-block";
+    nextBtn.textContent = currentQuestion === quiz.questions.length - 1 ? "Finish" : "Next";
+  }
+
+  function showFeedback(selectedIndex) {
+    const q = quiz.questions[currentQuestion];
+    const isCorrect = selectedIndex === q.correctAnswer;
+    attempts[currentQuestion]++;
+
+    if (isCorrect) {
+      feedback.textContent = q.feedback;
+      feedback.className = `mt-4 text-sm font-medium text-green-600`;
       userAnswers[currentQuestion] = selectedIndex;
+      isAnswered[currentQuestion] = true;
+    } else if (attempts[currentQuestion] >= maxAttempts) {
+      feedback.textContent = `❌ Incorrect. ${q.feedback}`;
+      feedback.className = `mt-4 text-sm font-medium text-red-600`;
+      userAnswers[currentQuestion] = selectedIndex;
+      isAnswered[currentQuestion] = true;
+    } else {
+      const triesLeft = maxAttempts - attempts[currentQuestion];
+      feedback.textContent = `❌ Incorrect. Try again (${triesLeft} attempt${triesLeft > 1 ? 's' : ''} left).`;
+      feedback.className = `mt-4 text-sm font-medium text-red-600`;
     }
 
-    nextBtn.addEventListener("click", () => {
-      showFeedback();
+    feedback.classList.remove("hidden");
+    nextBtn.disabled = !isAnswered[currentQuestion];
+  }
 
-      const selected = document.querySelector('input[name="option"]:checked');
-      if (!selected) return;
+  quizBox.addEventListener("change", () => {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if (selected) {
+      showFeedback(parseInt(selected.value));
+    }
+  });
 
-      if (currentQuestion < quiz.questions.length - 1) {
-        currentQuestion++;
-        renderQuestion();
-      } else {
-        // Quiz completed
-        const score = userAnswers.filter((a, i) => a === quiz.questions[i].correctAnswer).length;
-        quizBox.innerHTML = `
-          <h3 class="text-lg font-bold mb-2">🎉 Quiz Completed!</h3>
-          <p class="text-sm mb-4">You got <strong>${score}</strong> out of <strong>${quiz.questions.length}</strong> correct.</p>
-          <a href="../novo-index.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">Back to Home</a>
-        `;
-        feedback.classList.add("hidden");
-        prevBtn.style.display = "none";
-        nextBtn.style.display = "none";
-        progress.textContent = '';
-      }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        renderQuestion();
-      }
-    });
-
-    quizBox.addEventListener("change", () => {
+  nextBtn.addEventListener("click", () => {
+    if (currentQuestion < quiz.questions.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else {
+      // Quiz completed
+      const score = userAnswers.filter((a, i) => a === quiz.questions[i].correctAnswer).length;
+      quizBox.innerHTML = `
+        <h3 class="text-lg font-bold mb-2">🎉 Quiz Completed!</h3>
+        <p class="text-sm mb-4">You got <strong>${score}</strong> out of <strong>${quiz.questions.length}</strong> correct.</p>
+        <a href="../novo-index.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">Back to Home</a>
+      `;
       feedback.classList.add("hidden");
-    });
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+      progress.textContent = '';
+    }
+  });
 
-    renderQuestion();
-  </script>
-</body>
-</html>
+  prevBtn.addEventListener("click", () => {
+    if (currentQuestion > 0) {
+      currentQuestion--;
+      renderQuestion();
+    }
+  });
+
+  renderQuestion();
+</script>
+
 
