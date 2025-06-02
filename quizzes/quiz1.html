@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz 1: Introduction to Information Security</title>
+  <title>Quiz 1 - Information Security</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
@@ -20,130 +20,166 @@
 
   <!-- Quiz Content -->
   <div class="flex-1 flex items-center justify-center p-6">
-    <div class="w-full max-w-2xl bg-white p-6 rounded shadow-md space-y-4">
-      <h2 id="quiz-title" class="text-lg font-semibold"></h2>
-      <div id="progress" class="text-sm text-gray-500"></div>
-      <div id="quiz-box" class="space-y-4"></div>
-      <div id="feedback" class="text-sm font-medium"></div>
-      <div class="flex justify-between pt-4">
-        <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Previous</button>
-        <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" disabled>Next</button>
-      </div>
+    <div id="quiz-box" class="w-full max-w-xl bg-white p-6 rounded shadow-md min-h-[300px]">
+      <!-- Content injected here -->
     </div>
   </div>
 
   <script>
-    let currentQuestion = 0;
-    let attemptsLeft = 3;
-    let score = 0;
-    let quizData = [];
-    let answered = false;
-
-    const quizTitleEl = document.getElementById("quiz-title");
-    const quizBox = document.getElementById("quiz-box");
-    const feedbackEl = document.getElementById("feedback");
-    const progressEl = document.getElementById("progress");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
-    fetch("quiz1.json")
-      .then(res => res.json())
-      .then(data => {
-        quizData = data.questions;
-        quizTitleEl.textContent = `Quiz: ${data.module_title}`;
-        renderQuestion();
-      });
-
-    function renderQuestion() {
-      const q = quizData[currentQuestion];
-      attemptsLeft = 3;
-      answered = false;
-      feedbackEl.textContent = "";
-      nextBtn.disabled = true;
-      quizBox.innerHTML = `
-        <p class="font-medium">${q.question}</p>
-        <ul class="space-y-2">
-          ${q.options.map((opt, i) => `
-            <li>
-              <button class="w-full text-left border rounded p-2 hover:bg-gray-100 option-btn" data-index="${i}">
-                ${opt}
-              </button>
-            </li>`).join("")}
-        </ul>
-      `;
-      updateProgress();
-      updateButtons();
-      document.querySelectorAll(".option-btn").forEach(btn =>
-        btn.addEventListener("click", handleAnswer));
-    }
-
-    function handleAnswer(e) {
-      if (answered) return;
-
-      const selected = parseInt(e.target.dataset.index);
-      const correct = quizData[currentQuestion].correctAnswer;
-
-      if (selected === correct) {
-        e.target.classList.add("bg-green-100", "border-green-400");
-        feedbackEl.textContent = "✅ Correct!";
-        score++;
-        answered = true;
-        nextBtn.disabled = false;
-        disableOptions();
-      } else {
-        attemptsLeft--;
-        e.target.classList.add("bg-red-100", "border-red-400");
-        feedbackEl.textContent = `❌ Wrong! ${attemptsLeft > 0 ? `Attempts left: ${attemptsLeft}` : quizData[currentQuestion].feedback}`;
-        if (attemptsLeft <= 0) {
-          disableOptions();
-          answered = true;
-          nextBtn.disabled = false;
+    const quizData = {
+      module_title: "Introduction to Information Security",
+      questions: [
+        {
+          question: "What is the primary goal of information security?",
+          options: [
+            "To prevent all employees from accessing sensitive data",
+            "To protect confidentiality, integrity, and availability of information",
+            "To install antivirus software on all computers",
+            "To encrypt all company emails"
+          ],
+          correctAnswer: 1,
+          feedback: "Information security aims to protect the confidentiality, integrity, and availability of information (the CIA triad)."
+        },
+        {
+          question: "Which of the following is NOT one of the three main components of the CIA triad?",
+          options: [
+            "Confidentiality",
+            "Integrity",
+            "Authentication",
+            "Availability"
+          ],
+          correctAnswer: 2,
+          feedback: "Authentication is not part of the CIA triad. The CIA triad consists of Confidentiality, Integrity, and Availability."
+        },
+        {
+          question: "Why is information security important for organizations?",
+          options: [
+            "It's only important for government agencies",
+            "It's only required for financial institutions",
+            "It protects against financial loss, reputation damage, and regulatory penalties",
+            "It's only necessary for companies with over 1000 employees"
+          ],
+          correctAnswer: 2,
+          feedback: "Information security is crucial for all organizations as it protects against financial losses, reputation damage, and regulatory penalties."
+        },
+        {
+          question: "Who is responsible for information security in an organization?",
+          options: [
+            "Only the IT department",
+            "Only the Chief Information Security Officer",
+            "Only senior management",
+            "Every employee in the organization"
+          ],
+          correctAnswer: 3,
+          feedback: "Information security is everyone's responsibility. While IT and security teams lead efforts, all employees play a crucial role."
+        },
+        {
+          question: "Which of the following best describes the concept of 'defense in depth'?",
+          options: [
+            "Using the strongest possible firewall",
+            "Implementing multiple layers of security controls",
+            "Focusing all security resources on the most critical assets",
+            "Training only the IT department on security practices"
+          ],
+          correctAnswer: 1,
+          feedback: "Defense in depth involves implementing multiple layers of security controls so that if one fails, others are still in place to protect the information."
         }
-      }
-    }
+      ]
+    };
 
-    function disableOptions() {
-      document.querySelectorAll(".option-btn").forEach(btn => {
-        btn.disabled = true;
+    let currentQuestion = 0;
+    let score = 0;
+    let attemptsLeft = 2;
+
+    const box = document.getElementById("quiz-box");
+
+    function renderQuestion(index) {
+      const q = quizData.questions[index];
+
+      box.innerHTML = `
+        <h2 class="text-lg font-bold mb-2">Quiz: ${quizData.module_title}</h2>
+        <p class="text-sm text-gray-600 mb-4">Question ${index + 1} of ${quizData.questions.length}</p>
+        <p class="mb-4 font-medium">${q.question}</p>
+        <div id="options" class="space-y-2 mb-4">
+          ${q.options.map((opt, i) => `
+            <button class="option-btn w-full border border-gray-300 rounded px-4 py-2 text-left hover:bg-gray-100 text-sm" data-index="${i}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div id="feedback" class="text-sm mt-2 mb-4 font-semibold"></div>
+        <div class="flex justify-between">
+          <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm" disabled>Next</button>
+        </div>
+      `;
+
+      attemptsLeft = 2;
+      const optionButtons = document.querySelectorAll(".option-btn");
+      const feedbackEl = document.getElementById("feedback");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
+      optionButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const selected = parseInt(e.target.dataset.index);
+          const correct = q.correctAnswer;
+
+          // Remove all prior error styles
+          optionButtons.forEach(b => b.classList.remove("bg-red-100", "border-red-400"));
+
+          if (selected === correct) {
+            e.target.classList.add("bg-green-100", "border-green-400");
+            feedbackEl.textContent = "✅ Correct!";
+            score++;
+            nextBtn.disabled = false;
+            optionButtons.forEach(b => b.disabled = true);
+          } else {
+            attemptsLeft--;
+            if (attemptsLeft > 0) {
+              feedbackEl.textContent = `❌ Incorrect. You have ${attemptsLeft} attempt${attemptsLeft > 1 ? 's' : ''} left.`;
+            } else {
+              feedbackEl.textContent = `❌ ${q.feedback}`;
+              e.target.classList.add("bg-red-100", "border-red-400");
+              nextBtn.disabled = false;
+              optionButtons.forEach(b => b.disabled = true);
+            }
+          }
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentQuestion++;
+        if (currentQuestion < quizData.questions.length) {
+          renderQuestion(currentQuestion);
+        } else {
+          renderSummary();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          renderQuestion(currentQuestion);
+        }
       });
     }
 
-    function updateProgress() {
-      progressEl.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+    function renderSummary() {
+      const percent = Math.round((score / quizData.questions.length) * 100);
+      box.innerHTML = `
+        <h2 class="text-xl font-bold mb-4">Quiz Completed</h2>
+        <p class="text-lg mb-2">✅ Your Score: <strong>${score} / ${quizData.questions.length}</strong></p>
+        <p class="text-lg mb-6">📊 Accuracy: <strong>${percent}%</strong></p>
+        <a href="../novo-index.html" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
+          Back to Home
+        </a>
+      `;
     }
 
-    function updateButtons() {
-      prevBtn.disabled = currentQuestion === 0;
-    }
-
-    prevBtn.addEventListener("click", () => {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        renderQuestion();
-      }
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if (currentQuestion < quizData.length - 1) {
-        currentQuestion++;
-        renderQuestion();
-      } else {
-        const percent = Math.round((score / quizData.length) * 100);
-        quizBox.innerHTML = `
-          <p class="text-lg font-semibold">✅ Quiz Completed!</p>
-          <p class="text-sm mb-2">You got ${score} out of ${quizData.length} correct.</p>
-          <p class="text-sm mb-4">Your score: <strong>${percent}%</strong></p>
-          <a href="../novo-index.html" class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition text-sm">
-            ⬅️ Back to Home
-          </a>
-        `;
-        feedbackEl.textContent = "";
-        progressEl.textContent = "";
-        prevBtn.style.display = "none";
-        nextBtn.style.display = "none";
-      }
-    });
+    renderQuestion(currentQuestion);
   </script>
 </body>
 </html>
+
 
