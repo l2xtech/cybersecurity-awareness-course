@@ -21,7 +21,7 @@
   <!-- Quiz Content -->
   <div class="flex-1 flex items-center justify-center p-6">
     <div id="quiz-box" class="w-full max-w-xl bg-white p-6 rounded shadow-md min-h-[300px]">
-      <!-- Content injected here -->
+      <!-- Quiz Content Injected -->
     </div>
   </div>
 
@@ -95,6 +95,7 @@
 
     function renderQuestion(index) {
       const q = quizData.questions[index];
+      attemptsLeft = 3;
 
       box.innerHTML = `
         <h2 class="text-lg font-bold mb-2">Quiz: ${quizData.module_title}</h2>
@@ -114,7 +115,6 @@
         </div>
       `;
 
-      attemptsLeft = 2;
       const optionButtons = document.querySelectorAll(".option-btn");
       const feedbackEl = document.getElementById("feedback");
       const nextBtn = document.getElementById("nextBtn");
@@ -125,8 +125,10 @@
           const selected = parseInt(e.target.dataset.index);
           const correct = q.correctAnswer;
 
-          // Remove all prior error styles
-          optionButtons.forEach(b => b.classList.remove("bg-red-100", "border-red-400"));
+          // Clear all styles first
+          optionButtons.forEach(b => {
+            b.classList.remove("bg-green-100", "border-green-400", "bg-red-100", "border-red-400");
+          });
 
           if (selected === correct) {
             e.target.classList.add("bg-green-100", "border-green-400");
@@ -139,8 +141,8 @@
             if (attemptsLeft > 0) {
               feedbackEl.textContent = `❌ Incorrect. You have ${attemptsLeft} attempt${attemptsLeft > 1 ? 's' : ''} left.`;
             } else {
-              feedbackEl.textContent = `❌ ${q.feedback}`;
               e.target.classList.add("bg-red-100", "border-red-400");
+              feedbackEl.textContent = `❌ ${q.feedback}`;
               nextBtn.disabled = false;
               optionButtons.forEach(b => b.disabled = true);
             }
@@ -181,5 +183,4 @@
   </script>
 </body>
 </html>
-
 
