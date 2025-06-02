@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz 3: Password Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center justify-center p-4">
+
+  <div class="w-full max-w-2xl bg-white p-6 rounded shadow-md" id="quiz-container">
+    <!-- Quiz content injetado por JavaScript -->
+  </div>
+
+  <script>
+    const quizData = {
+      module_title: "Password Security",
+      questions: [
+        {
+          question: "What makes a password strong?",
+          options: [
+            "Using your name and birthdate",
+            "Using the same password for all accounts",
+            "Length, complexity, uniqueness, and randomness",
+            "Changing one character every 90 days"
+          ],
+          correctAnswer: 2,
+          feedback: "Strong passwords are characterized by their length (at least 12 characters), complexity (mix of uppercase, lowercase, numbers, and symbols), uniqueness (different for each account), and randomness (not based on personal information or patterns)."
+        },
+        {
+          question: "What is multi-factor authentication (MFA)?",
+          options: [
+            "Using multiple passwords for the same account",
+            "Combining something you know with something you have or are",
+            "Sharing your password with multiple trusted colleagues",
+            "Changing your password multiple times per year"
+          ],
+          correctAnswer: 1,
+          feedback: "Multi-factor authentication combines at least two different factors: something you know (like a password), something you have (like a phone), or something you are (like a fingerprint)."
+        },
+        {
+          question: "Which of the following is the most secure way to manage multiple passwords?",
+          options: [
+            "Writing them down in a notebook kept at your desk",
+            "Using the same password with slight variations",
+            "Storing them in an unencrypted spreadsheet",
+            "Using a reputable password manager"
+          ],
+          correctAnswer: 3,
+          feedback: "A reputable password manager is the most secure way to manage multiple passwords. It generates, stores, and fills strong, unique passwords for each account while encrypting your password database."
+        },
+        {
+          question: "What should you do if you suspect your password has been compromised?",
+          options: [
+            "Wait and see if there's any suspicious activity",
+            "Change it only on the most important accounts",
+            "Immediately change the password and enable MFA if available",
+            "Just add one character to make it slightly different"
+          ],
+          correctAnswer: 2,
+          feedback: "If you suspect your password has been compromised, you should immediately change it and enable multi-factor authentication if available. Also consider checking if your accounts were involved in known data breaches."
+        },
+        {
+          question: "Why is password reuse dangerous?",
+          options: [
+            "It makes passwords easier to remember",
+            "If one account is compromised, all accounts using that password are at risk",
+            "It only affects non-critical accounts",
+            "It's only a problem for personal accounts, not work accounts"
+          ],
+          correctAnswer: 1,
+          feedback: "Password reuse is dangerous because if one account is compromised (through a data breach or other means), attackers can use that same password to access all your other accounts that share that password."
+        }
+      ]
+    };
+
+    let currentQuestion = 0;
+    let score = 0;
+    let attemptsLeft = 3;
+
+    const container = document.getElementById('quiz-container');
+
+    function renderQuestion() {
+      const q = quizData.questions[currentQuestion];
+      container.innerHTML = `
+        <h2 class="text-xl font-bold mb-2">${quizData.module_title} - Question ${currentQuestion + 1}</h2>
+        <p class="mb-4 text-sm">${q.question}</p>
+        <div class="space-y-2">
+          ${q.options.map((opt, idx) => `
+            <button onclick="submitAnswer(${idx})"
+              class="w-full text-left px-4 py-2 border rounded bg-gray-100 hover:bg-gray-200 transition text-sm"
+              id="option-${idx}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <p id="feedback" class="mt-4 text-sm text-gray-700"></p>
+      `;
+    }
+
+    function submitAnswer(selectedIdx) {
+      const q = quizData.questions[currentQuestion];
+      const feedback = document.getElementById('feedback');
+
+      if (selectedIdx === q.correctAnswer) {
+        score++;
+        feedback.textContent = `✅ Correct! ${q.feedback}`;
+        document.getElementById(`option-${selectedIdx}`).classList.add('bg-green-200');
+        setTimeout(() => {
+          currentQuestion++;
+          attemptsLeft = 3;
+          if (currentQuestion < quizData.questions.length) {
+            renderQuestion();
+          } else {
+            showResult();
+          }
+        }, 1000);
+      } else {
+        attemptsLeft--;
+        feedback.textContent = `❌ Incorrect. ${q.feedback} (${attemptsLeft} attempts left)`;
+        document.getElementById(`option-${selectedIdx}`).classList.add('bg-red-200');
+        if (attemptsLeft === 0) {
+          setTimeout(() => {
+            currentQuestion++;
+            attemptsLeft = 3;
+            if (currentQuestion < quizData.questions.length) {
+              renderQuestion();
+            } else {
+              showResult();
+            }
+          }, 1000);
+        }
+      }
+    }
+
+    function showResult() {
+      const percent = Math.round((score / quizData.questions.length) * 100);
+      container.innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">Quiz Completed</h2>
+        <p class="text-lg mb-2">✅ You scored <strong>${percent}%</strong> (${score} out of ${quizData.questions.length})</p>
+        <a href="../novo-index.html" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Back to Home</a>
+      `;
+    }
+
+    renderQuestion();
+  </script>
+</body>
+</html>
