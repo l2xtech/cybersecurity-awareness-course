@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-  <!-- Top Bar com botão de volta -->
+  <!-- Top Bar -->
   <div class="w-full bg-gray-200 py-2 px-4">
     <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
       <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
@@ -18,10 +18,10 @@
     </a>
   </div>
 
-  <!-- Container de Slides -->
+  <!-- Slide Container -->
   <div class="flex-1 flex items-center justify-center p-4">
-    <div id="slide-container" class="w-full max-w-2xl min-h-[360px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300">
-      <!-- Slides e botões serão injetados aqui -->
+    <div id="slide-container" class="w-full max-w-2xl h-[680px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300 overflow-y-auto">
+      <!-- Slides will be injected here -->
     </div>
   </div>
 
@@ -38,50 +38,55 @@
         </ul>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">Email Security Best Practices</h3>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li><strong>Verify Sender Identity:</strong> Check email addresses carefully.</li>
-          <li><strong>Be Cautious with Attachments:</strong> Open only those from trusted sources.</li>
-          <li><strong>Check Links Before Clicking:</strong> Hover to verify destination.</li>
-          <li><strong>Use Email Encryption:</strong> Encrypt emails with sensitive content.</li>
-          <li><strong>Keep Software Updated:</strong> Stay current on security patches.</li>
-          <li><strong>Use Spam Filters:</strong> Leverage organization tools.</li>
-          <li><strong>Be Careful with Auto-Forward:</strong> Avoid forwarding to external accounts.</li>
-        </ul>
-        <div class="mt-2 p-2 bg-yellow-100 text-sm rounded">💡 When in doubt, verify email legitimacy via another channel.</div>
+        <h3 class="text-md font-semibold mb-2">Introduction</h3>
+        <p class="text-sm mb-2">Email and other digital communication tools are essential for business operations, but they also present significant security risks. This module will help you identify suspicious communications, handle sensitive information appropriately, and use secure channels to protect company data.</p>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">Identifying Suspicious Messages</h3>
-        <p class="text-sm mb-2">Common red flags:</p>
+        <h3 class="text-md font-semibold mb-2">Email Security Best Practices</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Urgent or threatening language</li>
-          <li>Generic greetings</li>
-          <li>Poor grammar and spelling</li>
-          <li>Mismatched or suspicious URLs</li>
-          <li>Requests for sensitive information</li>
-          <li>Unexpected attachments</li>
-          <li>Unrealistic offers or prizes</li>
+          <li><strong>Verify Sender Identity</strong>: Check for subtle domain misspellings.</li>
+          <li><strong>Be Cautious with Attachments</strong>: Verify unexpected ones through other channels.</li>
+          <li><strong>Check Links Before Clicking</strong>: Hover to inspect URLs.</li>
+          <li><strong>Use Email Encryption</strong> for sensitive content.</li>
+          <li><strong>Keep Email Software Updated</strong> to fix vulnerabilities.</li>
+          <li><strong>Use Spam Filters</strong> and report suspicious messages.</li>
+          <li><strong>Avoid Auto-Forward</strong> especially to external addresses.</li>
         </ul>
-        <div class="mt-2 p-2 bg-blue-100 text-sm rounded">
-          <strong>Real-World Example:</strong> A finance employee avoided CEO fraud by confirming a suspicious transfer request.
+        <div class="bg-blue-50 border border-blue-200 rounded p-2 mt-2 text-sm">
+          📌 <strong>Tip:</strong> When in doubt, verify through another channel like a phone call.
         </div>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">Secure File Sharing</h3>
+        <h3 class="text-md font-semibold mb-2">Identifying Suspicious Messages</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Use company-approved cloud platforms</li>
-          <li>Encrypt files before sharing</li>
-          <li>Password-protect sensitive files</li>
-          <li>Use SFTP for large transfers</li>
-          <li>Set expiration dates on shared links</li>
-          <li>Use DRM for high-sensitivity documents</li>
+          <li>Urgent or threatening language</li>
+          <li>Generic greetings</li>
+          <li>Grammar or spelling mistakes</li>
+          <li>Mismatched or suspicious URLs</li>
+          <li>Requests for sensitive info</li>
+          <li>Unexpected attachments</li>
+          <li>Too good to be true offers</li>
         </ul>
-        <p class="mt-2 text-sm font-semibold">Avoid:</p>
+        <div class="bg-yellow-50 border border-yellow-200 rounded p-2 mt-2 text-sm">
+          💡 <strong>Real-world example:</strong> A finance employee verified an unusual CEO request and avoided fraud.
+        </div>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Secure File Sharing Methods</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Personal email accounts</li>
-          <li>Unapproved file services</li>
-          <li>Unencrypted USBs</li>
-          <li>Public Wi-Fi</li>
+          <li>Use company-approved cloud storage</li>
+          <li>Encrypt files during transfer</li>
+          <li>Password-protect sensitive docs</li>
+          <li>Use SFTP for large files</li>
+          <li>Set expiration on shared links</li>
+          <li>Use DRM for high sensitivity</li>
+        </ul>
+        <p class="text-sm mt-2 font-semibold">Avoid:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Personal email for work files</li>
+          <li>Unauthorized sharing platforms</li>
+          <li>Unencrypted USB drives</li>
+          <li>Public Wi-Fi for transfers</li>
         </ul>
       `,
       `
@@ -89,72 +94,79 @@
         <ul class="list-disc list-inside text-sm space-y-1">
           <li>Use approved platforms only</li>
           <li>Enable end-to-end encryption</li>
-          <li>Be mindful of screen sharing</li>
-          <li>Double-check recipient names</li>
-          <li>Don’t store sensitive data in chats</li>
+          <li>Be cautious with screen sharing</li>
+          <li>Check recipients in group chats</li>
+          <li>Don't store confidential data in chats</li>
           <li>Keep apps updated</li>
-          <li>Use 2FA where possible</li>
+          <li>Use 2FA for messaging apps</li>
         </ul>
-        <div class="mt-2 p-2 bg-yellow-100 text-sm rounded">💡 Even private chats can be captured via screenshots or forwards.</div>
+        <div class="bg-blue-50 border border-blue-200 rounded p-2 mt-2 text-sm">
+          🔒 Even in “private” chats, info can be screenshotted or forwarded.
+        </div>
       `,
       `
         <h3 class="text-md font-semibold mb-2">Handling Confidential Information</h3>
-        <p class="text-sm">Information types:</p>
+        <p class="text-sm font-medium mb-1">Information classification:</p>
         <ul class="list-disc list-inside text-sm space-y-1">
           <li>Public</li>
           <li>Internal</li>
           <li>Confidential</li>
           <li>Restricted</li>
         </ul>
-        <p class="text-sm mt-2 font-semibold">Guidelines:</p>
+        <p class="text-sm mt-2 font-medium">Guidelines:</p>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Know your company's classification policies</li>
-          <li>Label content appropriately</li>
-          <li>Share only on a need-to-know basis</li>
-          <li>Use secure disposal methods</li>
-          <li>Track highly sensitive documents</li>
+          <li>Know company policy</li>
+          <li>Label data properly</li>
+          <li>Share on a need-to-know basis</li>
+          <li>Secure disposal methods</li>
+          <li>Log access to sensitive files</li>
         </ul>
-        <p class="mt-2 text-sm">Use DLP tools to detect & prevent unauthorized data sharing.</p>
+        <p class="text-sm font-semibold mt-2">Data Loss Prevention (DLP):</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Monitor outgoing data</li>
+          <li>Block unauthorized sharing</li>
+          <li>Auto-encrypt sensitive info</li>
+          <li>Alert security team</li>
+        </ul>
       `,
       `
         <h3 class="text-md font-semibold mb-2">Social Media Communication Risks</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Oversharing company or project details</li>
-          <li>Revealing location or travel plans</li>
-          <li>Phishing via social media</li>
-          <li>Clicking on malicious links</li>
+          <li>Oversharing about company details</li>
+          <li>Location data exposure</li>
+          <li>Phishing via social channels</li>
+          <li>Clickbait and malicious links</li>
         </ul>
-        <p class="text-sm mt-2 font-semibold">Best Practices:</p>
+        <p class="text-sm mt-2 font-medium">Best practices:</p>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Review privacy settings often</li>
-          <li>Use separate accounts for personal and work</li>
-          <li>Think before posting</li>
-          <li>Follow your company’s social media policy</li>
+          <li>Review privacy settings</li>
+          <li>Separate personal/professional accounts</li>
+          <li>Think before you post</li>
+          <li>Follow your company's social media policy</li>
         </ul>
       `,
       `
         <h3 class="text-md font-semibold mb-2">Quick Tips</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li>✅ Verify unusual requests with a second channel</li>
-          <li>✅ Double-check email recipients</li>
-          <li>✅ Use encryption for sensitive messages</li>
-          <li>✅ Avoid unnecessary "Reply All"</li>
-          <li>✅ Report suspicious content immediately</li>
+          <li>✅ Verify unusual requests with another channel</li>
+          <li>✅ Double-check recipient list</li>
+          <li>✅ Use encrypted channels</li>
+          <li>✅ Be cautious with "Reply All"</li>
+          <li>✅ Report phishing to IT</li>
         </ul>
       `,
       `
         <h3 class="text-md font-semibold mb-2">Summary</h3>
-        <p class="text-sm mb-2">Topics Covered:</p>
         <ul class="list-disc list-inside text-sm space-y-1">
           <li>Email security best practices</li>
-          <li>How to identify suspicious emails</li>
-          <li>Secure file sharing options</li>
-          <li>Safe instant messaging</li>
+          <li>Recognizing suspicious messages</li>
+          <li>Secure file sharing</li>
+          <li>Secure instant messaging</li>
           <li>Handling confidential data</li>
           <li>Social media risks</li>
         </ul>
-        <p class="mt-2 text-sm">Next up: Safe internet browsing practices!</p>
-        <a href="../quizzes/quiz4.html" class="inline-block bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-700 transition">Start Quiz</a>
+        <p class="text-sm mt-4">Up next: Safe Internet Browsing!</p>
+        <a href="../quizzes/quiz4.html" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Start Quiz</a>
       `
     ];
 
@@ -189,3 +201,4 @@
   </script>
 </body>
 </html>
+
