@@ -2,173 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 1: Introduction to Information Security</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-3xl mx-auto py-12 px-4">
-    <h1 class="text-3xl font-bold text-center mb-6">Module 1: Introduction to Information Security</h1>
-    <div id="slides" class="relative space-y-4">
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
-      
-        <p>By the end of this module, you will be able to:</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
+  <!-- Back to Home Button -->
+  <div class="p-4">
+    <a href="/cybersecurity-awareness-course/novo-index.html" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
+      ⬅️ Back to Home
+    </a>
+  </div>
+
+  <div class="flex flex-col items-center justify-center min-h-screen px-4">
+    <div class="w-full max-w-3xl bg-white p-6 rounded shadow">
+      <h1 class="text-2xl font-bold mb-4 text-center">Module 1: Introduction to Information Security</h1>
+
+      <!-- Slide Container -->
+      <div id="slides" class="relative">
+        <!-- Slide 1 -->
+        <div class="slide block">
+          <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
+          <ul class="list-disc pl-5 space-y-1">
             <li>Define information security and explain its importance</li>
             <li>Identify the three main components of the CIA triad</li>
             <li>Recognize common information security threats</li>
             <li>Understand your role in maintaining information security</li>
             <li>Explain how information security relates to ISO 27001</li>
-        </ul>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">What is Information Security?</h2>
-      
-        <p>Information Security (InfoSec) includes practices, policies, and measures to protect information assets from unauthorized access, use, disclosure, disruption, modification, or destruction. It focuses on confidentiality, integrity, and availability of information.</p>
-        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-3 my-2">
-          <p>InfoSec is not just about tech—it involves people, processes, and technology.</p>
+          </ul>
         </div>
-        <p>Examples of sensitive information:</p>
-        <ul class="list-disc ml-6 mt-2">
+
+        <!-- Slide 2 -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">What is Information Security?</h2>
+          <p class="mb-4">Information Security (InfoSec) refers to the practices, policies, and measures designed to protect information assets from unauthorized access, use, disclosure, disruption, modification, or destruction.</p>
+          <p class="mb-2 font-semibold">Information can include:</p>
+          <ul class="list-disc pl-5 space-y-1">
             <li>Customer data</li>
             <li>Financial records</li>
             <li>Intellectual property</li>
             <li>Business strategies</li>
             <li>Employee information</li>
-        </ul>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">The CIA Triad</h2>
-      
-        <p>The CIA triad is the foundation of information security:</p>
-        <ul class="list-disc ml-6 mt-2">
-            <li><strong>Confidentiality:</strong> Authorized access only</li>
-            <li><strong>Integrity:</strong> Accuracy and completeness of data</li>
-            <li><strong>Availability:</strong> Access when needed</li>
-        </ul>
-        <div class="bg-blue-100 border-l-4 border-blue-500 p-3 my-2">
-          <p>🔐 Tip: Remember CIA — Confidentiality, Integrity, Availability.</p>
+            <li>Operational data</li>
+          </ul>
         </div>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Why Information Security Matters</h2>
-      
-        <p>It's essential to:</p>
-        <ul class="list-disc ml-6 mt-2">
-            <li>Protect against threats (cyberattacks, breaches, human error)</li>
-            <li>Ensure business continuity</li>
-            <li>Meet compliance and legal requirements</li>
-            <li>Safeguard organizational reputation</li>
-            <li>Prevent financial losses</li>
-        </ul>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Your Role in Information Security</h2>
-      
-        <p>Everyone in the organization has a part to play. You are responsible for:</p>
-        <ul class="list-disc ml-6 mt-2">
-            <li>Following security policies</li>
-            <li>Being alert to threats</li>
-            <li>Reporting suspicious activities</li>
-            <li>Protecting credentials and access</li>
-        </ul>
-        <div class="bg-green-100 border-l-4 border-green-500 p-3 my-2">
-          <p>One careless action can break even the strongest security system.</p>
+
+        <!-- Slide 3 -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">The CIA Triad</h2>
+          <p class="mb-2">The foundation of InfoSec is based on:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Confidentiality:</strong> Only authorized access. (e.g., encryption, access controls)</li>
+            <li><strong>Integrity:</strong> Accurate and complete data. (e.g., checksums, version control)</li>
+            <li><strong>Availability:</strong> Data/systems are accessible. (e.g., backups, disaster recovery)</li>
+          </ul>
         </div>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Information Security and ISO 27001</h2>
-      
-        <p>ISO 27001 is a global standard for ISMS (Information Security Management System). It covers:</p>
-        <ul class="list-disc ml-6 mt-2">
-            <li>Risk assessment and treatment</li>
-            <li>Human resource security</li>
-            <li>Access control</li>
-            <li>Asset management</li>
-            <li>Incident management</li>
-        </ul>
-        <p>Our training aligns with ISO 27001, especially Control 6.3: Awareness.</p>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Quick Tips for Information Security</h2>
-      
-        <ul class="list-disc ml-6 mt-2">
-            <li>Think before clicking links</li>
+
+        <!-- Slide 4 -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">Why Information Security Matters</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Cyberattacks & data breaches</li>
+            <li>Compliance with laws and regulations</li>
+            <li>Business continuity</li>
+            <li>Reputation protection</li>
+            <li>Financial impact</li>
+          </ul>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">Your Role in InfoSec</h2>
+          <p class="mb-2">You are part of the human firewall.</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Follow security policies</li>
+            <li>Report suspicious activity</li>
             <li>Use strong passwords</li>
-            <li>Lock your screen when away</li>
-            <li>Don’t overshare sensitive info</li>
-            <li>Keep systems updated</li>
-            <li>Report incidents immediately</li>
-        </ul>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Summary</h2>
-      
-        <ul class="list-disc ml-6 mt-2">
-            <li>Definition and importance of InfoSec</li>
-            <li>The CIA Triad</li>
-            <li>Why InfoSec matters to organizations</li>
-            <li>Your role in protecting information</li>
-            <li>ISO 27001 standards</li>
-        </ul>
-        
-    </div>
-    
-    <div class="slide bg-white rounded-xl p-6 shadow-md hidden">
-      <h2 class="text-xl font-semibold mb-2">Quiz</h2>
-      
-        <p class="mb-2">Ready to test your knowledge?</p>
-        <a href="../quizzes/quiz1.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Go to Quiz</a>
-        
-    </div>
-    
-    </div>
-    <div class="mt-6 flex justify-between">
-      <button id="prevBtn" class="bg-gray-500 text-white px-4 py-2 rounded disabled:opacity-50">Previous</button>
-      <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+            <li>Protect your devices</li>
+            <li>Handle sensitive info responsibly</li>
+          </ul>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">Information Security and ISO 27001</h2>
+          <p class="mb-4">ISO 27001 provides a framework for implementing and improving information security (ISMS).</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Risk assessments</li>
+            <li>Security policies and controls</li>
+            <li>Employee awareness (like this training!)</li>
+          </ul>
+        </div>
+
+        <!-- Slide 7 (Final) -->
+        <div class="slide hidden">
+          <h2 class="text-xl font-semibold mb-2">Quiz</h2>
+          <p class="mb-4">Ready to test your knowledge?</p>
+          <a href="/cybersecurity-awareness-course/quizzes/quiz1.html" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Go to Quiz</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex justify-between mt-6">
+        <button id="prevBtn" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition">Previous</button>
+        <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Next</button>
+      </div>
     </div>
   </div>
+
   <script>
     const slides = document.querySelectorAll('.slide');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    let currentSlide = 0;
-    function showSlide(index) {
+    let current = 0;
+
+    const showSlide = (index) => {
       slides.forEach((slide, i) => {
         slide.classList.toggle('hidden', i !== index);
       });
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index === slides.length - 1;
-    }
-    nextBtn.addEventListener('click', () => {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-      }
+    };
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (current < slides.length - 1) current++;
+      showSlide(current);
     });
-    prevBtn.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-      }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (current > 0) current--;
+      showSlide(current);
     });
-    showSlide(currentSlide);
+
+    showSlide(current);
   </script>
 </body>
 </html>
+
