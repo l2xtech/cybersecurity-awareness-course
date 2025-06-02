@@ -27,7 +27,7 @@
       <div id="feedback" class="text-sm font-medium"></div>
       <div class="flex justify-between pt-4">
         <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Previous</button>
-        <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Next</button>
+        <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" disabled>Next</button>
       </div>
     </div>
   </div>
@@ -37,6 +37,7 @@
     let attemptsLeft = 3;
     let score = 0;
     let quizData = [];
+    let answered = false;
 
     const quizTitleEl = document.getElementById("quiz-title");
     const quizBox = document.getElementById("quiz-box");
@@ -56,7 +57,9 @@
     function renderQuestion() {
       const q = quizData[currentQuestion];
       attemptsLeft = 3;
+      answered = false;
       feedbackEl.textContent = "";
+      nextBtn.disabled = true;
       quizBox.innerHTML = `
         <p class="font-medium">${q.question}</p>
         <ul class="space-y-2">
@@ -75,18 +78,27 @@
     }
 
     function handleAnswer(e) {
+      if (answered) return;
+
       const selected = parseInt(e.target.dataset.index);
       const correct = quizData[currentQuestion].correctAnswer;
+
       if (selected === correct) {
         e.target.classList.add("bg-green-100", "border-green-400");
         feedbackEl.textContent = "✅ Correct!";
         score++;
+        answered = true;
+        nextBtn.disabled = false;
         disableOptions();
       } else {
         attemptsLeft--;
         e.target.classList.add("bg-red-100", "border-red-400");
         feedbackEl.textContent = `❌ Wrong! ${attemptsLeft > 0 ? `Attempts left: ${attemptsLeft}` : quizData[currentQuestion].feedback}`;
-        if (attemptsLeft <= 0) disableOptions();
+        if (attemptsLeft <= 0) {
+          disableOptions();
+          answered = true;
+          nextBtn.disabled = false;
+        }
       }
     }
 
@@ -102,7 +114,6 @@
 
     function updateButtons() {
       prevBtn.disabled = currentQuestion === 0;
-      nextBtn.disabled = currentQuestion === quizData.length - 1;
     }
 
     prevBtn.addEventListener("click", () => {
@@ -117,8 +128,15 @@
         currentQuestion++;
         renderQuestion();
       } else {
-        quizBox.innerHTML = `<p class="text-lg font-semibold">✅ Quiz Completed!</p>
-        <p class="text-sm">You answered ${score} out of ${quizData.length} correctly.</p>`;
+        const percent = Math.round((score / quizData.length) * 100);
+        quizBox.innerHTML = `
+          <p class="text-lg font-semibold">✅ Quiz Completed!</p>
+          <p class="text-sm mb-2">You got ${score} out of ${quizData.length} correct.</p>
+          <p class="text-sm mb-4">Your score: <strong>${percent}%</strong></p>
+          <a href="../novo-index.html" class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition text-sm">
+            ⬅️ Back to Home
+          </a>
+        `;
         feedbackEl.textContent = "";
         progressEl.textContent = "";
         prevBtn.style.display = "none";
@@ -128,3 +146,4 @@
   </script>
 </body>
 </html>
+
