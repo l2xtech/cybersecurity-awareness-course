@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Module 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../modules/module1.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Module
+    </a>
+  </div>
+
+  <!-- Quiz Content -->
+  <div class="flex-1 flex items-center justify-center p-6">
+    <div id="quiz-box" class="w-full max-w-2xl bg-white p-6 rounded shadow-md min-h-[300px]">
+      <!-- Quiz content injected here -->
+    </div>
+  </div>
+
+  <script>
+    const quiz = {
+      module_title: "Introduction to Information Security",
+      questions: [
+        {
+          question: "What is the primary goal of information security?",
+          options: [
+            "To prevent all employees from accessing sensitive data",
+            "To protect confidentiality, integrity, and availability of information",
+            "To install antivirus software on all computers",
+            "To encrypt all company emails"
+          ],
+          correctAnswer: 1,
+          feedback: "Information security aims to protect the confidentiality, integrity, and availability of information (the CIA triad)."
+        },
+        {
+          question: "Which of the following is NOT one of the three main components of the CIA triad?",
+          options: [
+            "Confidentiality",
+            "Integrity",
+            "Authentication",
+            "Availability"
+          ],
+          correctAnswer: 2,
+          feedback: "Authentication is not part of the CIA triad. The CIA triad consists of Confidentiality, Integrity, and Availability."
+        },
+        {
+          question: "Why is information security important for organizations?",
+          options: [
+            "It's only important for government agencies",
+            "It's only required for financial institutions",
+            "It protects against financial loss, reputation damage, and regulatory penalties",
+            "It's only necessary for companies with over 1000 employees"
+          ],
+          correctAnswer: 2,
+          feedback: "Information security is crucial for all organizations as it protects against financial losses, reputation damage, and regulatory penalties."
+        },
+        {
+          question: "Who is responsible for information security in an organization?",
+          options: [
+            "Only the IT department",
+            "Only the Chief Information Security Officer",
+            "Only senior management",
+            "Every employee in the organization"
+          ],
+          correctAnswer: 3,
+          feedback: "Information security is everyone's responsibility. While IT and security teams lead efforts, all employees play a crucial role."
+        },
+        {
+          question: "Which of the following best describes the concept of 'defense in depth'?",
+          options: [
+            "Using the strongest possible firewall",
+            "Implementing multiple layers of security controls",
+            "Focusing all security resources on the most critical assets",
+            "Training only the IT department on security practices"
+          ],
+          correctAnswer: 1,
+          feedback: "Defense in depth involves implementing multiple layers of security controls so that if one fails, others are still in place to protect the information."
+        }
+      ]
+    };
+
+    let current = 0;
+    let score = 0;
+    const answers = [];
+    const quizBox = document.getElementById('quiz-box');
+
+    function renderQuestion(index) {
+      const q = quiz.questions[index];
+      const optionsHTML = q.options.map((opt, i) => `
+        <button class="w-full text-left px-4 py-2 mb-2 border rounded hover:bg-blue-50 option-btn text-sm" data-index="${i}">
+          ${opt}
+        </button>
+      `).join('');
+
+      quizBox.innerHTML = `
+        <h2 class="text-lg font-semibold mb-2">${quiz.module_title} - Question ${index + 1}</h2>
+        <p class="mb-4">${q.question}</p>
+        <div>${optionsHTML}</div>
+      `;
+
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selected = parseInt(btn.dataset.index);
+          const isCorrect = selected === q.correctAnswer;
+          answers[index] = selected;
+          if (isCorrect) score++;
+
+          showFeedback(index, isCorrect);
+        });
+      });
+    }
+
+    function showFeedback(index, isCorrect) {
+      const q = quiz.questions[index];
+      quizBox.innerHTML = `
+        <h2 class="text-lg font-semibold mb-2">${quiz.module_title} - Question ${index + 1}</h2>
+        <p class="mb-2 font-medium ${isCorrect ? 'text-green-600' : 'text-red-600'}">
+          ${isCorrect ? '✅ Correct!' : '❌ Incorrect'}
+        </p>
+        <p class="mb-4 text-sm">${q.feedback}</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm" id="nextBtn">
+          ${index < quiz.questions.length - 1 ? 'Next' : 'See Results'}
+        </button>
+      `;
+
+      document.getElementById('nextBtn').addEventListener('click', () => {
+        current++;
+        if (current < quiz.questions.length) {
+          renderQuestion(current);
+        } else {
+          showResults();
+        }
+      });
+    }
+
+    function showResults() {
+      const percent = Math.round((score / quiz.questions.length) * 100);
+      quizBox.innerHTML = `
+        <h2 class="text-xl font-bold mb-4">Quiz Completed</h2>
+        <p class="text-sm mb-2">You answered <strong>${score}</strong> out of <strong>${quiz.questions.length}</strong> correctly.</p>
+        <p class="text-sm mb-6">Score: <strong>${percent}%</strong></p>
+        <a href="../modules/module1.html" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
+          Back to Module
+        </a>
+      `;
+    }
+
+    // Init
+    renderQuestion(current);
+  </script>
+</body>
+</html>
