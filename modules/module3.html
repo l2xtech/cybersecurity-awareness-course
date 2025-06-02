@@ -1,253 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 3: Password Security and Authentication</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 3: Password Security and Authentication</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="module-header">
-        <h2>Module 3: Password Security and Authentication</h2>
-        <p>Learn best practices for creating and managing secure passwords</p>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar com botão de volta -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- Slide Container -->
+  <div class="flex-1 flex items-center justify-center p-4">
+    <div id="slide-container" class="w-full max-w-2xl min-h-[360px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300">
+      <!-- Slides injetados via JS -->
     </div>
+  </div>
 
-    <div class="module-content">
-        <div class="module-section">
-            <h3>Learning Objectives</h3>
-            <p>By the end of this module, you will be able to:</p>
-            <ul>
-                <li>Create and manage strong passwords</li>
-                <li>Understand multi-factor authentication (MFA)</li>
-                <li>Recognize the importance of different passwords for different accounts</li>
-                <li>Implement password management best practices</li>
-            </ul>
-        </div>
+  <script>
+    const slides = [
+      `
+        <h2 class="text-xl font-bold mb-4">Module 3: Password Security and Authentication</h2>
+        <h3 class="text-md font-semibold mb-2">Learning Objectives</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Create and manage strong passwords</li>
+          <li>Understand multi-factor authentication (MFA)</li>
+          <li>Recognize the importance of different passwords for different accounts</li>
+          <li>Implement password management best practices</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Creating Strong Passwords</h3>
+        <p class="text-sm mb-2">A strong password is your first line of defense. Best practices include:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li><strong>Length:</strong> At least 12–16 characters</li>
+          <li><strong>Complexity:</strong> Mix of uppercase, lowercase, numbers, special characters</li>
+          <li><strong>Unpredictability:</strong> Avoid common words or patterns</li>
+        </ul>
+        <p class="text-sm mt-2"><strong>Example strong passwords:</strong></p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Tr@vel-fr0g-sunset-76!</li>
+          <li>P!ck3d*AppL3s^F@ll2023</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Passphrases</h3>
+        <p class="text-sm mb-2">Use meaningful phrases that are long but easy to remember.</p>
+        <p class="text-sm">Example: <em>"My dog Max loves to chase squirrels in the park!"</em></p>
+        <p class="text-sm">Transformed: <strong>MdMl2cs1tp!</strong></p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Password Management Tools</h3>
+        <p class="text-sm mb-2">Password managers help you generate, store, and fill passwords securely:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Generate strong passwords</li>
+          <li>Encrypt and store credentials</li>
+          <li>Auto-fill login fields</li>
+          <li>Sync across devices</li>
+        </ul>
+        <p class="text-sm mt-2">Popular tools: LastPass, 1Password, Bitwarden, Dashlane, KeePass</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Multi-Factor Authentication (MFA)</h3>
+        <p class="text-sm mb-2">MFA adds an extra layer of protection:</p>
+        <ol class="list-decimal list-inside text-sm space-y-1">
+          <li>Something you know (password)</li>
+          <li>Something you have (device)</li>
+          <li>Something you are (biometrics)</li>
+        </ol>
+        <p class="text-sm mt-2"><strong>Common methods:</strong> SMS codes, authenticator apps, push notifications, hardware keys, biometrics</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Biometric Authentication</h3>
+        <p class="text-sm mb-2">Biometrics include:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Fingerprint</li>
+          <li>Facial recognition</li>
+          <li>Voice recognition</li>
+          <li>Iris scanning</li>
+        </ul>
+        <p class="text-sm mt-2">Benefits: hard to forget or share. Limitations: privacy, cannot change if compromised</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Password Policies and Compliance</h3>
+        <p class="text-sm mb-2">Organizations enforce policies like:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Minimum length</li>
+          <li>Complexity requirements</li>
+          <li>Expiration and reuse restrictions</li>
+          <li>Account lockout after failed attempts</li>
+        </ul>
+        <p class="text-sm mt-2"><strong>ISO 27001:</strong> Defines best practices for secure password management</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Quick Tips</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>✅ Use a password manager</li>
+          <li>✅ Enable MFA on all accounts</li>
+          <li>✅ Don’t reuse passwords</li>
+          <li>✅ Change passwords if compromised</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-4">Ready for the Quiz?</h3>
+        <a href="../quizzes/quiz3.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">Start Quiz</a>
+      `
+    ];
 
-        <div class="module-section">
-            <h3>Introduction</h3>
-            <p>Passwords are the keys to our digital lives. Despite advances in authentication technology, passwords remain the most common method for securing accounts and systems. In this module, we'll explore how to create strong passwords, manage them effectively, and enhance security through additional authentication methods.</p>
-        </div>
+    let currentSlide = 0;
+    const container = document.getElementById("slide-container");
 
-        <div class="module-section">
-            <h3>Creating Strong Passwords</h3>
-            <p>A strong password is your first line of defense against unauthorized access. Here's what makes a password strong:</p>
-            
-            <p><strong>Length</strong>: Longer passwords are generally more secure. Aim for at least 12-16 characters.</p>
-            
-            <p><strong>Complexity</strong>: Include a mix of:</p>
-            <ul>
-                <li>Uppercase letters (A-Z)</li>
-                <li>Lowercase letters (a-z)</li>
-                <li>Numbers (0-9)</li>
-                <li>Special characters (!@#$%^&*)</li>
-            </ul>
-            
-            <p><strong>Unpredictability</strong>: Avoid common words, phrases, or patterns that could be easily guessed.</p>
-            
-            <h4>Weak vs. Strong Passwords</h4>
-            
-            <p><strong>Weak Password Examples</strong>:</p>
-            <ul>
-                <li>password123</li>
-                <li>qwerty</li>
-                <li>123456</li>
-                <li>yourname</li>
-                <li>birthdates</li>
-                <li>company name</li>
-            </ul>
-            
-            <p><strong>Strong Password Examples</strong>:</p>
-            <ul>
-                <li>Tr@vel-fr0g-sunset-76!</li>
-                <li>P!ck3d*AppL3s^F@ll2023</li>
-                <li>Bl4ck&Wh1te$El3phant</li>
-            </ul>
-            
-            <h4>Passphrases: An Alternative Approach</h4>
-            
-            <p>Instead of complex, hard-to-remember passwords, consider using passphrases—longer phrases that are meaningful to you but difficult for others to guess:</p>
-            
-            <p><strong>Example</strong>: "My dog Max loves to chase squirrels in the park!"</p>
-            
-            <p>This can be transformed into a strong password: "MdMl2cs1tp!"</p>
-            
-            <div class="tip-box">
-                <p>Passphrases are often easier to remember than random characters while still providing strong security.</p>
-            </div>
+    function renderSlide(index) {
+      container.innerHTML = `
+        <div class="slide-content mb-6">${slides[index]}</div>
+        <div class="flex justify-between mt-4">
+          <button onclick="goPrevious()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button onclick="goNext()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" ${index === slides.length - 1 ? 'disabled' : ''}>Next</button>
         </div>
+      `;
+    }
 
-        <div class="module-section">
-            <h3>Password Management Tools</h3>
-            <p>With dozens of online accounts requiring passwords, it's impossible to create and remember unique, complex passwords for each one without help. This is where password managers come in.</p>
-            
-            <h4>What is a Password Manager?</h4>
-            
-            <p>A password manager is a secure application that stores and manages your passwords. It typically:</p>
-            <ul>
-                <li>Generates strong, random passwords</li>
-                <li>Stores passwords in an encrypted vault</li>
-                <li>Auto-fills credentials on websites and apps</li>
-                <li>Syncs across multiple devices</li>
-                <li>Requires one master password to access all others</li>
-            </ul>
-            
-            <h4>Benefits of Password Managers</h4>
-            
-            <p><strong>Security</strong>: Enables the use of strong, unique passwords for every account.</p>
-            
-            <p><strong>Convenience</strong>: No need to remember multiple complex passwords.</p>
-            
-            <p><strong>Organization</strong>: Keeps all your login information in one secure place.</p>
-            
-            <p><strong>Auto-fill</strong>: Saves time and reduces typing errors.</p>
-            
-            <p><strong>Security Alerts</strong>: Many password managers alert you to compromised or weak passwords.</p>
-            
-            <h4>Popular Password Managers</h4>
-            <ul>
-                <li>LastPass</li>
-                <li>1Password</li>
-                <li>Bitwarden</li>
-                <li>Dashlane</li>
-                <li>KeePass</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h4>Real-World Example</h4>
-                <p>In 2019, a major data breach at a popular social media platform exposed millions of user passwords. Users who had unique passwords for this platform limited their risk, as attackers couldn't use the same credentials to access their other accounts. Those using password managers were better protected, as they were more likely to have unique passwords for each service.</p>
-            </div>
-        </div>
+    function goNext() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Multi-Factor Authentication (MFA)</h3>
-            <p>Even the strongest password can be compromised. Multi-factor authentication adds an extra layer of security by requiring additional verification beyond just a password.</p>
-            
-            <h4>What is Multi-Factor Authentication?</h4>
-            
-            <p>MFA requires two or more verification factors from different categories:</p>
-            <ol>
-                <li><strong>Something you know</strong> (password, PIN)</li>
-                <li><strong>Something you have</strong> (smartphone, security key)</li>
-                <li><strong>Something you are</strong> (fingerprint, facial recognition)</li>
-            </ol>
-            
-            <h4>Common MFA Methods</h4>
-            
-            <p><strong>SMS Codes</strong>: One-time codes sent via text message.</p>
-            
-            <p><strong>Authenticator Apps</strong>: Mobile apps that generate time-based one-time passwords (e.g., Google Authenticator, Microsoft Authenticator).</p>
-            
-            <p><strong>Push Notifications</strong>: Approve login attempts directly from your mobile device.</p>
-            
-            <p><strong>Hardware Security Keys</strong>: Physical devices that connect to your computer or mobile device (e.g., YubiKey).</p>
-            
-            <p><strong>Biometrics</strong>: Fingerprints, facial recognition, or voice recognition.</p>
-            
-            <h4>MFA Effectiveness</h4>
-            
-            <div class="highlight-box">
-                <p>According to Microsoft, MFA can block over 99.9% of account compromise attacks. Even if an attacker has your password, they still need the second factor to gain access.</p>
-            </div>
-            
-            <h4>When to Use MFA</h4>
-            
-            <p>Enable MFA whenever possible, especially for:</p>
-            <ul>
-                <li>Email accounts</li>
-                <li>Financial services</li>
-                <li>Cloud storage</li>
-                <li>Social media</li>
-                <li>Work accounts</li>
-                <li>Any service containing sensitive information</li>
-            </ul>
-        </div>
+    function goPrevious() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Biometrics and Other Authentication Methods</h3>
-            <p>Biometric authentication uses unique physical characteristics to verify identity. While not a complete replacement for passwords, biometrics offer convenience and enhanced security when used as part of MFA.</p>
-            
-            <h4>Common Biometric Methods</h4>
-            
-            <p><strong>Fingerprint Recognition</strong>: Scans the unique patterns of your fingerprint.</p>
-            
-            <p><strong>Facial Recognition</strong>: Analyzes facial features and structure.</p>
-            
-            <p><strong>Voice Recognition</strong>: Identifies unique vocal patterns.</p>
-            
-            <p><strong>Iris/Retina Scanning</strong>: Examines the unique patterns in your eye.</p>
-            
-            <h4>Advantages of Biometrics</h4>
-            <ul>
-                <li>Cannot be forgotten</li>
-                <li>Difficult to duplicate or steal</li>
-                <li>Quick and convenient</li>
-                <li>Hard to share (intentionally or unintentionally)</li>
-            </ul>
-            
-            <h4>Limitations of Biometrics</h4>
-            <ul>
-                <li>Cannot be changed if compromised</li>
-                <li>May have accuracy issues</li>
-                <li>Requires specialized hardware</li>
-                <li>Privacy concerns about biometric data storage</li>
-            </ul>
-        </div>
-
-        <div class="module-section">
-            <h3>Password Policies and Compliance</h3>
-            <p>Organizations implement password policies to ensure consistent security practices across all users. These policies typically align with industry standards and regulatory requirements.</p>
-            
-            <h4>Common Password Policy Elements</h4>
-            
-            <p><strong>Minimum Length</strong>: Often 8-12 characters or more.</p>
-            
-            <p><strong>Complexity Requirements</strong>: Mix of character types.</p>
-            
-            <p><strong>Password Age</strong>: Maximum time before password change is required.</p>
-            
-            <p><strong>Password History</strong>: Preventing reuse of recent passwords.</p>
-            
-            <p><strong>Account Lockout</strong>: Temporarily locking accounts after multiple failed attempts.</p>
-            
-            <p><strong>Password Recovery</strong>: Secure methods for resetting forgotten passwords.</p>
-            
-            <h4>ISO 27001 Requirements</h4>
-            
-            <p>ISO 27001 includes several controls related to password management:</p>
-            <ul>
-                <li>A.9.4.3: Password management system</li>
-                <li>A.9.2.4: Management of secret authentication information</li>
-                <li>A.9.3.1: Use of secret authentication information</li>
-            </ul>
-            
-            <p>These controls require organizations to implement secure password practices and ensure users follow them.</p>
-        </div>
-
-        <div class="module-section">
-            <h3>Quick Tips</h3>
-            <div class="tip-box">
-                <ul>
-                    <li>✅ <strong>Use a password manager</strong> to generate and store strong, unique passwords</li>
-                    <li>✅ <strong>Enable multi-factor authentication</strong> on all accounts that support it</li>
-                    <li>✅ <strong>Never reuse passwords</strong> across different accounts</li>
-                    <li>✅ <strong>Don't share passwords</strong> with colleagues, even for temporary access</li>
-                    <li>✅ <strong>Change passwords immediately</strong> if you suspect they've been compromised</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="module-section">
-            <h3>Summary</h3>
-            <p>In this module, we've explored password security and authentication, including:</p>
-            <ul>
-                <li>How to create strong, memorable passwords</li>
-                <li>The benefits of using password managers</li>
-                <li>The importance of multi-factor authentication</li>
-                <li>Biometric and alternative authentication methods</li>
-                <li>Password policies and compliance requirements</li>
-            </ul>
-            <p>Implementing these practices will significantly enhance your personal security posture and contribute to your organization's overall security. In the next module, we'll discuss email and communication security.</p>
-        </div>
-    </div>
+    renderSlide(currentSlide);
+  </script>
 </body>
 </html>
