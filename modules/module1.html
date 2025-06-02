@@ -9,9 +9,9 @@
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
   <!-- Top Bar -->
-  <div class="w-full bg-gray-200 py-2 px-4 shadow-sm">
-    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm">
-      <svg class="h-4 w-4 mr-1 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
         <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
       </svg>
       Back to Home
@@ -19,92 +19,106 @@
   </div>
 
   <!-- Slide Container -->
-  <div class="flex-1 flex items-center justify-center px-4 py-8">
+  <div class="flex-1 flex items-center justify-center p-4">
     <div id="slide-container" class="w-full max-w-2xl bg-white p-6 rounded shadow-md transition-all duration-300">
-      <!-- Slide content injected here -->
+      <!-- JS will inject slides here -->
     </div>
   </div>
 
-  <!-- Navigation Buttons -->
-  <div class="flex justify-between items-center p-6 max-w-2xl mx-auto w-full">
-    <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
-      Previous
-    </button>
-    <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
-      Next
-    </button>
-  </div>
-
+  <!-- Slide Logic -->
   <script>
     const slides = [
       `
-        <h2 class="text-xl font-bold mb-2">Module 1: Introduction to Information Security</h2>
-        <h3 class="text-md font-semibold mb-1">Learning Objectives</h3>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Define information security and explain its importance</li>
-          <li>Identify the three main components of the CIA triad</li>
-          <li>Recognize common information security threats</li>
-          <li>Understand your role in maintaining information security</li>
-          <li>Explain how information security relates to ISO 27001</li>
-        </ul>
+        <div>
+          <h2 class="text-xl font-bold mb-2">Module 1: Introduction to Information Security</h2>
+          <h3 class="text-md font-semibold mb-1">Learning Objectives</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+            <li>Define information security and explain its importance</li>
+            <li>Identify the three main components of the CIA triad</li>
+            <li>Recognize common information security threats</li>
+            <li>Understand your role in maintaining information security</li>
+            <li>Explain how information security relates to ISO 27001</li>
+          </ul>
+        </div>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">What is Information Security?</h3>
-        <p class="mb-2 text-sm">Information Security (InfoSec) refers to policies and practices to protect information from unauthorized access, disclosure, modification, or destruction.</p>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Customer data</li>
-          <li>Financial records</li>
-          <li>Intellectual property</li>
-          <li>Business strategies</li>
-        </ul>
+        <div>
+          <h3 class="text-md font-semibold mb-2">What is Information Security?</h3>
+          <p class="mb-2 text-sm">Information Security (InfoSec) refers to policies and practices to protect information from unauthorized access, disclosure, modification, or destruction.</p>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+            <li>Customer data</li>
+            <li>Financial records</li>
+            <li>Intellectual property</li>
+            <li>Business strategies</li>
+            <li>Employee information</li>
+            <li>Operational data</li>
+          </ul>
+        </div>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">The CIA Triad</h3>
-        <p class="text-sm"><strong>Confidentiality:</strong> Ensuring information is only accessible to authorized individuals.</p>
-        <p class="text-sm"><strong>Integrity:</strong> Assuring the accuracy and completeness of data.</p>
-        <p class="text-sm"><strong>Availability:</strong> Ensuring systems are operational when needed.</p>
+        <div>
+          <h3 class="text-md font-semibold mb-2">The CIA Triad</h3>
+          <p class="text-sm"><strong>Confidentiality:</strong> Ensuring information is only accessible to authorized individuals.</p>
+          <p class="text-sm"><strong>Integrity:</strong> Assuring the accuracy and completeness of data.</p>
+          <p class="text-sm mb-4"><strong>Availability:</strong> Ensuring systems are operational when needed.</p>
+        </div>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">Your Role in Security</h3>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Follow security policies</li>
-          <li>Protect your credentials</li>
-          <li>Report suspicious activity</li>
-        </ul>
+        <div>
+          <h3 class="text-md font-semibold mb-2">Your Role in Security</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+            <li>Follow security policies and procedures</li>
+            <li>Be vigilant about potential threats</li>
+            <li>Report suspicious activities or incidents</li>
+            <li>Protect your credentials and access</li>
+            <li>Handle sensitive info appropriately</li>
+          </ul>
+        </div>
       `,
       `
-        <h3 class="text-md font-semibold mb-2">Quiz</h3>
-        <p class="text-sm mb-4">Ready to test your knowledge?</p>
-        <a href="../quizzes/quiz1.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
-          Go to Quiz
-        </a>
+        <div>
+          <h3 class="text-md font-semibold mb-2">Quiz</h3>
+          <p class="text-sm mb-4">Ready to test your knowledge?</p>
+          <a href="../quizzes/quiz1.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
+            Go to Quiz
+          </a>
+        </div>
       `
     ];
 
     let currentSlide = 0;
     const container = document.getElementById("slide-container");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
 
     function renderSlide(index) {
-      container.innerHTML = slides[index];
+      const content = slides[index];
+      const nav = `
+        <div class="flex justify-between items-center pt-6">
+          <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">Previous</button>
+          <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">Next</button>
+        </div>
+      `;
+      container.innerHTML = content + nav;
+
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
       prevBtn.disabled = index === 0;
       nextBtn.disabled = index === slides.length - 1;
+
+      nextBtn.addEventListener("click", () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          renderSlide(currentSlide);
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          renderSlide(currentSlide);
+        }
+      });
     }
-
-    nextBtn.addEventListener("click", () => {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        renderSlide(currentSlide);
-      }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        renderSlide(currentSlide);
-      }
-    });
 
     renderSlide(currentSlide);
   </script>
