@@ -1,210 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4: Email and Communication Security</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 4: Email and Communication Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="module-header">
-        <h2>Module 4: Email and Communication Security</h2>
-        <p>Learn how to identify suspicious emails and communicate securely</p>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar com botão de volta -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- Container de Slides -->
+  <div class="flex-1 flex items-center justify-center p-4">
+    <div id="slide-container" class="w-full max-w-2xl min-h-[360px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300">
+      <!-- Slides e botões serão injetados aqui -->
     </div>
+  </div>
 
-    <div class="module-content">
-        <div class="module-section">
-            <h3>Learning Objectives</h3>
-            <p>By the end of this module, you will be able to:</p>
-            <ul>
-                <li>Identify suspicious emails and communications</li>
-                <li>Handle sensitive information appropriately</li>
-                <li>Use secure communication channels</li>
-                <li>Prevent data leakage through communications</li>
-            </ul>
+  <script>
+    const slides = [
+      `
+        <h2 class="text-xl font-bold mb-4">Module 4: Email and Communication Security</h2>
+        <h3 class="text-md font-semibold mb-2">Learning Objectives</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Identify suspicious emails and communications</li>
+          <li>Handle sensitive information appropriately</li>
+          <li>Use secure communication channels</li>
+          <li>Prevent data leakage through communications</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Email Security Best Practices</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li><strong>Verify Sender Identity:</strong> Check email addresses carefully.</li>
+          <li><strong>Be Cautious with Attachments:</strong> Open only those from trusted sources.</li>
+          <li><strong>Check Links Before Clicking:</strong> Hover to verify destination.</li>
+          <li><strong>Use Email Encryption:</strong> Encrypt emails with sensitive content.</li>
+          <li><strong>Keep Software Updated:</strong> Stay current on security patches.</li>
+          <li><strong>Use Spam Filters:</strong> Leverage organization tools.</li>
+          <li><strong>Be Careful with Auto-Forward:</strong> Avoid forwarding to external accounts.</li>
+        </ul>
+        <div class="mt-2 p-2 bg-yellow-100 text-sm rounded">💡 When in doubt, verify email legitimacy via another channel.</div>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Identifying Suspicious Messages</h3>
+        <p class="text-sm mb-2">Common red flags:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Urgent or threatening language</li>
+          <li>Generic greetings</li>
+          <li>Poor grammar and spelling</li>
+          <li>Mismatched or suspicious URLs</li>
+          <li>Requests for sensitive information</li>
+          <li>Unexpected attachments</li>
+          <li>Unrealistic offers or prizes</li>
+        </ul>
+        <div class="mt-2 p-2 bg-blue-100 text-sm rounded">
+          <strong>Real-World Example:</strong> A finance employee avoided CEO fraud by confirming a suspicious transfer request.
         </div>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Secure File Sharing</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Use company-approved cloud platforms</li>
+          <li>Encrypt files before sharing</li>
+          <li>Password-protect sensitive files</li>
+          <li>Use SFTP for large transfers</li>
+          <li>Set expiration dates on shared links</li>
+          <li>Use DRM for high-sensitivity documents</li>
+        </ul>
+        <p class="mt-2 text-sm font-semibold">Avoid:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Personal email accounts</li>
+          <li>Unapproved file services</li>
+          <li>Unencrypted USBs</li>
+          <li>Public Wi-Fi</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Instant Messaging Security</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Use approved platforms only</li>
+          <li>Enable end-to-end encryption</li>
+          <li>Be mindful of screen sharing</li>
+          <li>Double-check recipient names</li>
+          <li>Don’t store sensitive data in chats</li>
+          <li>Keep apps updated</li>
+          <li>Use 2FA where possible</li>
+        </ul>
+        <div class="mt-2 p-2 bg-yellow-100 text-sm rounded">💡 Even private chats can be captured via screenshots or forwards.</div>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Handling Confidential Information</h3>
+        <p class="text-sm">Information types:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Public</li>
+          <li>Internal</li>
+          <li>Confidential</li>
+          <li>Restricted</li>
+        </ul>
+        <p class="text-sm mt-2 font-semibold">Guidelines:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Know your company's classification policies</li>
+          <li>Label content appropriately</li>
+          <li>Share only on a need-to-know basis</li>
+          <li>Use secure disposal methods</li>
+          <li>Track highly sensitive documents</li>
+        </ul>
+        <p class="mt-2 text-sm">Use DLP tools to detect & prevent unauthorized data sharing.</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Social Media Communication Risks</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Oversharing company or project details</li>
+          <li>Revealing location or travel plans</li>
+          <li>Phishing via social media</li>
+          <li>Clicking on malicious links</li>
+        </ul>
+        <p class="text-sm mt-2 font-semibold">Best Practices:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Review privacy settings often</li>
+          <li>Use separate accounts for personal and work</li>
+          <li>Think before posting</li>
+          <li>Follow your company’s social media policy</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Quick Tips</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>✅ Verify unusual requests with a second channel</li>
+          <li>✅ Double-check email recipients</li>
+          <li>✅ Use encryption for sensitive messages</li>
+          <li>✅ Avoid unnecessary "Reply All"</li>
+          <li>✅ Report suspicious content immediately</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Summary</h3>
+        <p class="text-sm mb-2">Topics Covered:</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Email security best practices</li>
+          <li>How to identify suspicious emails</li>
+          <li>Secure file sharing options</li>
+          <li>Safe instant messaging</li>
+          <li>Handling confidential data</li>
+          <li>Social media risks</li>
+        </ul>
+        <p class="mt-2 text-sm">Next up: Safe internet browsing practices!</p>
+        <a href="../quizzes/quiz4.html" class="inline-block bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-700 transition">Start Quiz</a>
+      `
+    ];
 
-        <div class="module-section">
-            <h3>Introduction</h3>
-            <p>Email and other digital communication tools are essential for business operations, but they also present significant security risks. This module will help you identify suspicious communications, handle sensitive information appropriately, and use secure channels to protect company data.</p>
-        </div>
+    let currentSlide = 0;
+    const container = document.getElementById("slide-container");
 
-        <div class="module-section">
-            <h3>Email Security Best Practices</h3>
-            <p>Email remains one of the primary vectors for cyber attacks. Following these best practices can significantly reduce risks:</p>
-            
-            <p><strong>Verify Sender Identity</strong>: Check the sender's email address carefully, not just the display name. Look for subtle misspellings or domain variations.</p>
-            
-            <p><strong>Be Cautious with Attachments</strong>: Only open attachments you're expecting from trusted sources. Verify unexpected attachments through another communication channel before opening.</p>
-            
-            <p><strong>Check Links Before Clicking</strong>: Hover over links (without clicking) to see the actual URL. If in doubt, navigate to the website directly rather than clicking the link.</p>
-            
-            <p><strong>Use Email Encryption</strong>: When sending sensitive information, use encrypted email services or encrypt the content itself.</p>
-            
-            <p><strong>Keep Email Software Updated</strong>: Ensure your email client has the latest security updates and patches.</p>
-            
-            <p><strong>Use Spam Filters</strong>: Take advantage of your organization's spam filtering tools, and report suspicious emails to improve their effectiveness.</p>
-            
-            <p><strong>Be Careful with Auto-Forward</strong>: Avoid setting up automatic email forwarding, especially to external addresses, as this can lead to data leakage.</p>
-            
-            <div class="tip-box">
-                <p>When in doubt about an email's legitimacy, contact the purported sender through a different channel (phone call, in-person visit) to verify.</p>
-            </div>
+    function renderSlide(index) {
+      container.innerHTML = `
+        <div class="slide-content mb-6">${slides[index]}</div>
+        <div class="flex justify-between mt-4">
+          <button onclick="goPrevious()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button onclick="goNext()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" ${index === slides.length - 1 ? 'disabled' : ''}>Next</button>
         </div>
+      `;
+    }
 
-        <div class="module-section">
-            <h3>Identifying Suspicious Messages</h3>
-            <p>Suspicious emails often contain telltale signs. Here's what to look for:</p>
-            
-            <h4>Red Flags in Email Communications</h4>
-            <ul>
-                <li><strong>Urgent or Threatening Language</strong>: Messages creating a sense of urgency or threatening negative consequences if immediate action isn't taken.</li>
-                <li><strong>Generic Greetings</strong>: "Dear Customer" or "Dear User" instead of your name.</li>
-                <li><strong>Poor Grammar and Spelling</strong>: Professional organizations typically proofread their communications.</li>
-                <li><strong>Mismatched or Suspicious URLs</strong>: Links that don't match the purported organization or use URL shorteners to hide the destination.</li>
-                <li><strong>Requests for Sensitive Information</strong>: Legitimate organizations rarely request passwords, account numbers, or personal information via email.</li>
-                <li><strong>Unexpected Attachments</strong>: Especially those with unusual file extensions (.exe, .zip, .scr).</li>
-                <li><strong>Too Good to Be True</strong>: Offers, prizes, or opportunities that seem unrealistically generous.</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h4>Real-World Example</h4>
-                <p>A finance employee received an email appearing to be from the CEO requesting an urgent wire transfer to a new vendor. The email address looked legitimate at first glance, but closer inspection revealed a slight variation from the CEO's actual address. The employee followed protocol by verifying the request through a phone call to the CEO, discovering it was fraudulent. This type of attack, known as CEO fraud or Business Email Compromise (BEC), has cost organizations billions of dollars worldwide.</p>
-            </div>
-        </div>
+    function goNext() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Secure File Sharing Methods</h3>
-            <p>Sharing files securely is essential for protecting sensitive information. Here are recommended methods:</p>
-            
-            <p><strong>Company-Approved Cloud Storage</strong>: Use organization-sanctioned platforms like SharePoint, Google Workspace, or OneDrive for Business.</p>
-            
-            <p><strong>Encrypted File Sharing</strong>: Use tools that encrypt files during transfer and storage.</p>
-            
-            <p><strong>Password-Protected Files</strong>: For sensitive documents, use password protection and share the password through a different communication channel.</p>
-            
-            <p><strong>Secure File Transfer Protocol (SFTP)</strong>: For large or numerous files, SFTP provides encrypted file transfer capabilities.</p>
-            
-            <p><strong>Expiring Access Links</strong>: Use services that allow you to set expiration dates for shared links.</p>
-            
-            <p><strong>Digital Rights Management (DRM)</strong>: For highly sensitive documents, consider DRM solutions that control who can view, edit, or share files.</p>
-            
-            <h4>Insecure Methods to Avoid</h4>
-            <ul>
-                <li><strong>Personal Email Accounts</strong>: These often lack enterprise-grade security features.</li>
-                <li><strong>Consumer File Sharing Services</strong>: Unless approved by IT, avoid using personal accounts on services like Dropbox or WeTransfer.</li>
-                <li><strong>Unencrypted USB Drives</strong>: Physical devices can be lost or stolen, compromising data.</li>
-                <li><strong>Public Wi-Fi</strong>: Avoid transferring sensitive files when connected to public networks.</li>
-            </ul>
-        </div>
+    function goPrevious() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Instant Messaging Security</h3>
-            <p>Instant messaging tools have become essential for workplace communication, but they require specific security considerations:</p>
-            
-            <p><strong>Use Approved Platforms</strong>: Only use messaging applications approved by your organization.</p>
-            
-            <p><strong>Enable Encryption</strong>: Ensure end-to-end encryption is activated when available.</p>
-            
-            <p><strong>Be Mindful of Screen Sharing</strong>: During video calls or screen sharing, be careful not to expose sensitive information.</p>
-            
-            <p><strong>Verify Recipients</strong>: Double-check group chat participants before sharing sensitive information.</p>
-            
-            <p><strong>Don't Store Sensitive Information</strong>: Avoid keeping confidential data in chat histories.</p>
-            
-            <p><strong>Update Regularly</strong>: Keep messaging applications updated with the latest security patches.</p>
-            
-            <p><strong>Use Strong Authentication</strong>: Enable two-factor authentication for messaging accounts.</p>
-            
-            <div class="tip-box">
-                <p>Remember that even in "private" chats, information can be captured through screenshots or forwarded to others.</p>
-            </div>
-        </div>
-
-        <div class="module-section">
-            <h3>Handling Confidential Information</h3>
-            <p>Proper handling of confidential information is crucial for maintaining security and compliance:</p>
-            
-            <h4>Classification of Information</h4>
-            <p>Most organizations classify information into categories such as:</p>
-            
-            <p><strong>Public</strong>: Information that can be freely shared.</p>
-            
-            <p><strong>Internal</strong>: Information for employees only, but not particularly sensitive.</p>
-            
-            <p><strong>Confidential</strong>: Sensitive information that should only be shared with authorized individuals.</p>
-            
-            <p><strong>Restricted</strong>: Highly sensitive information with strict access controls.</p>
-            
-            <h4>Guidelines for Handling Different Classifications</h4>
-            
-            <p><strong>Know Your Organization's Policy</strong>: Familiarize yourself with your company's specific classification system and handling requirements.</p>
-            
-            <p><strong>Label Appropriately</strong>: Ensure documents and emails are clearly labeled with their classification level.</p>
-            
-            <p><strong>Need-to-Know Basis</strong>: Share confidential information only with those who require it for their work.</p>
-            
-            <p><strong>Secure Disposal</strong>: Properly dispose of confidential information when no longer needed (shredding physical documents, secure deletion of digital files).</p>
-            
-            <p><strong>Document Tracking</strong>: For highly sensitive documents, maintain logs of who has accessed them.</p>
-            
-            <h4>Data Loss Prevention (DLP)</h4>
-            <p>Many organizations implement DLP solutions that:</p>
-            <ul>
-                <li>Monitor outgoing communications for sensitive information</li>
-                <li>Block unauthorized sharing of confidential data</li>
-                <li>Alert security teams to potential data leakage</li>
-                <li>Encrypt sensitive information automatically</li>
-            </ul>
-        </div>
-
-        <div class="module-section">
-            <h3>Social Media Communication Risks</h3>
-            <p>Social media presents unique security challenges in the workplace:</p>
-            
-            <p><strong>Oversharing</strong>: Revealing too much information about your work, projects, or organization.</p>
-            
-            <p><strong>Location Data</strong>: Inadvertently disclosing your location or travel plans.</p>
-            
-            <p><strong>Phishing Through Social Channels</strong>: Attackers may use social media for targeted phishing attempts.</p>
-            
-            <p><strong>Malicious Links</strong>: Social media platforms are common vectors for spreading malware.</p>
-            
-            <h4>Best Practices for Social Media</h4>
-            <ul>
-                <li><strong>Review Privacy Settings</strong>: Regularly check and update privacy settings on all platforms.</li>
-                <li><strong>Be Cautious About Work Details</strong>: Avoid sharing specific information about projects, clients, or internal operations.</li>
-                <li><strong>Think Before Posting</strong>: Consider how information could be used by malicious actors.</li>
-                <li><strong>Separate Personal and Professional</strong>: Consider using separate accounts for personal and professional use.</li>
-                <li><strong>Follow Company Policy</strong>: Adhere to your organization's social media guidelines.</li>
-            </ul>
-        </div>
-
-        <div class="module-section">
-            <h3>Quick Tips</h3>
-            <div class="tip-box">
-                <ul>
-                    <li>✅ <strong>Verify unusual requests</strong> from colleagues or management through a different communication channel</li>
-                    <li>✅ <strong>Double-check recipient lists</strong> before sending sensitive information</li>
-                    <li>✅ <strong>Use encrypted channels</strong> when discussing confidential matters</li>
-                    <li>✅ <strong>Be cautious with "Reply All"</strong> to avoid unnecessarily widening the audience</li>
-                    <li>✅ <strong>Report suspicious emails</strong> to your IT security team immediately</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="module-section">
-            <h3>Summary</h3>
-            <p>In this module, we've explored email and communication security, including:</p>
-            <ul>
-                <li>Email security best practices</li>
-                <li>How to identify suspicious messages</li>
-                <li>Secure file sharing methods</li>
-                <li>Instant messaging security considerations</li>
-                <li>Proper handling of confidential information</li>
-                <li>Social media communication risks</li>
-            </ul>
-            <p>By implementing these practices, you'll significantly reduce the risk of data breaches and security incidents related to communications. In the next module, we'll discuss safe internet browsing practices.</p>
-        </div>
-    </div>
+    renderSlide(currentSlide);
+  </script>
 </body>
 </html>
