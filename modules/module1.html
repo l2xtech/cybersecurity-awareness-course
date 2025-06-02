@@ -8,27 +8,31 @@
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-  <!-- Top Bar com botão de volta -->
-  <div class="w-full bg-gray-200 py-2 px-4">
-    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
-      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+  <!-- Top Bar -->
+  <div class="w-full bg-gray-200 py-2 px-4 shadow-sm">
+    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium text-sm">
+      <svg class="h-4 w-4 mr-1 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
         <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
       </svg>
       Back to Home
     </a>
   </div>
 
-  <!-- Container de Slides -->
-  <div class="flex-1 flex items-center justify-center p-4">
+  <!-- Slide Container -->
+  <div class="flex-1 flex items-center justify-center px-4 py-8">
     <div id="slide-container" class="w-full max-w-2xl bg-white p-6 rounded shadow-md transition-all duration-300">
-      <!-- Slides serão injetados aqui pelo JS -->
+      <!-- Slide content injected here -->
     </div>
   </div>
 
-  <!-- Navegação -->
-  <div class="flex justify-between items-center p-6 max-w-2xl mx-auto">
-    <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Previous</button>
-    <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Next</button>
+  <!-- Navigation Buttons -->
+  <div class="flex justify-between items-center p-6 max-w-2xl mx-auto w-full">
+    <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
+      Previous
+    </button>
+    <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
+      Next
+    </button>
   </div>
 
   <script>
@@ -36,7 +40,7 @@
       `
         <h2 class="text-xl font-bold mb-2">Module 1: Introduction to Information Security</h2>
         <h3 class="text-md font-semibold mb-1">Learning Objectives</h3>
-        <ul class="list-disc list-inside text-sm">
+        <ul class="list-disc list-inside text-sm space-y-1">
           <li>Define information security and explain its importance</li>
           <li>Identify the three main components of the CIA triad</li>
           <li>Recognize common information security threats</li>
@@ -47,7 +51,7 @@
       `
         <h3 class="text-md font-semibold mb-2">What is Information Security?</h3>
         <p class="mb-2 text-sm">Information Security (InfoSec) refers to policies and practices to protect information from unauthorized access, disclosure, modification, or destruction.</p>
-        <ul class="list-disc list-inside text-sm">
+        <ul class="list-disc list-inside text-sm space-y-1">
           <li>Customer data</li>
           <li>Financial records</li>
           <li>Intellectual property</li>
@@ -62,7 +66,7 @@
       `,
       `
         <h3 class="text-md font-semibold mb-2">Your Role in Security</h3>
-        <ul class="list-disc list-inside text-sm">
+        <ul class="list-disc list-inside text-sm space-y-1">
           <li>Follow security policies</li>
           <li>Protect your credentials</li>
           <li>Report suspicious activity</li>
@@ -71,12 +75,13 @@
       `
         <h3 class="text-md font-semibold mb-2">Quiz</h3>
         <p class="text-sm mb-4">Ready to test your knowledge?</p>
-        <a href="../quizzes/quiz1.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Quiz</a>
+        <a href="../quizzes/quiz1.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
+          Go to Quiz
+        </a>
       `
     ];
 
     let currentSlide = 0;
-
     const container = document.getElementById("slide-container");
     const nextBtn = document.getElementById("nextBtn");
     const prevBtn = document.getElementById("prevBtn");
