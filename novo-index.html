@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cybersecurity Awareness - Novo Layout</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-white shadow-md p-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+      <h1 class="text-2xl font-bold">Cybersecurity Awareness</h1>
+    </div>
+    <div>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" onclick="alert('Login ainda será implementado')">
+        Login
+      </button>
+    </div>
+  </header>
+
+  <main class="p-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Módulos do Treinamento</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+<!-- Module 1 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">1. Introduction to Information Security</h3>
+  <p class="mb-4 text-gray-600">Understand the fundamentals of information security.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 2 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">2. Common Cyber Threats and Attacks</h3>
+  <p class="mb-4 text-gray-600">Identify and defend against common cyber threats.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 3 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">3. Password Security and Authentication</h3>
+  <p class="mb-4 text-gray-600">Best practices for strong passwords and multi-factor authentication.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 4 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">4. Email and Communication Security</h3>
+  <p class="mb-4 text-gray-600">Learn how to detect phishing and secure communication channels.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 5 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">5. Safe Internet Browsing</h3>
+  <p class="mb-4 text-gray-600">Browse safely and avoid malicious websites.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 6 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">6. Mobile Device and Remote Work Security</h3>
+  <p class="mb-4 text-gray-600">Secure your mobile devices and remote connections.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 7 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">7. Data Protection and Privacy</h3>
+  <p class="mb-4 text-gray-600">Understand how to handle and protect personal and sensitive data.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 8 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">8. Document and File Security</h3>
+  <p class="mb-4 text-gray-600">Keep your documents and files safe from unauthorized access.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 9 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">9. Company Security Policies</h3>
+  <p class="mb-4 text-gray-600">Learn about your organization’s security policies and why they matter.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+
+<!-- Module 10 -->
+<div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition">
+  <h3 class="text-xl font-bold mb-2">10. Incident Reporting and Response</h3>
+  <p class="mb-4 text-gray-600">Know how to report incidents and respond effectively.</p>
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Access Module</button>
+</div>
+    </div> <!-- fim da grid de módulos -->
+  </main>
+
+  <footer class="text-center text-gray-500 py-6">
+    &copy; 2025 Cybersecurity Awareness Training
+  </footer>
+
+  <script>
+    // Placeholder: ação dos botões dos módulos
+    document.querySelectorAll('button').forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        alert("Opening Module " + (index + 1));
+      });
+    });
+  </script>
+</body>
+</html>
