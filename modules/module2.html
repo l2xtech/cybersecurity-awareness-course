@@ -20,12 +20,12 @@
 
   <!-- Slide Container -->
   <div class="flex-1 flex items-center justify-center p-4">
-    <div id="slide-container" class="w-full max-w-2xl min-h-[320px] bg-white p-6 rounded shadow-md transition-all duration-300">
-      <!-- Slides serão injetados aqui -->
+    <div id="slide-container" class="w-full max-w-2xl bg-white p-6 rounded shadow-md transition-all duration-300 flex flex-col justify-between min-h-[320px]">
+      <!-- JS will inject slide content -->
     </div>
   </div>
 
-  <!-- JavaScript Logic -->
+  <!-- JS Slides -->
   <script>
     const slides = [
       `
@@ -44,46 +44,45 @@
       `
         <div>
           <h3 class="text-md font-semibold mb-2">Types of Cyber Threats</h3>
-          <p class="text-sm mb-2">Cyber threats include malware, phishing, ransomware, insider threats, and more.</p>
-          <ul class="list-disc list-inside text-sm mb-4">
-            <li>📦 Malware</li>
-            <li>✉️ Phishing</li>
-            <li>👤 Social Engineering</li>
-            <li>🔐 Ransomware</li>
-            <li>📡 Man-in-the-Middle</li>
-            <li>🌐 Denial-of-Service (DoS)</li>
-            <li>🏠 Insider Threats</li>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+            <li><strong>Malware:</strong> Malicious software like viruses and trojans</li>
+            <li><strong>Phishing:</strong> Deceptive emails or messages</li>
+            <li><strong>Social Engineering:</strong> Psychological manipulation</li>
+            <li><strong>Ransomware:</strong> Data held hostage</li>
+            <li><strong>MitM Attacks:</strong> Data interception</li>
+            <li><strong>DoS Attacks:</strong> Disrupting services</li>
+            <li><strong>Insider Threats:</strong> Internal misuse of access</li>
           </ul>
         </div>
       `,
       `
         <div>
-          <h3 class="text-md font-semibold mb-2">Phishing Attacks</h3>
-          <p class="text-sm mb-2">Attackers impersonate trusted sources to steal data.</p>
-          <ul class="list-disc list-inside text-sm mb-2">
-            <li>Email, Spear, Whaling</li>
-            <li>Smishing, Vishing</li>
-            <li>Urgent language, suspicious links</li>
+          <h3 class="text-md font-semibold mb-2">Phishing & How to Spot It</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-2">
+            <li>Urgency or threats in message</li>
+            <li>Suspicious sender addresses</li>
+            <li>Unexpected attachments or links</li>
+            <li>Requests for personal info</li>
           </ul>
         </div>
       `,
       `
         <div>
           <h3 class="text-md font-semibold mb-2">Social Engineering</h3>
-          <p class="text-sm mb-2">Manipulation tactics like pretexting, baiting, and scareware.</p>
-          <ul class="list-disc list-inside text-sm mb-2">
-            <li>Be skeptical, verify identity</li>
-            <li>Follow protocols</li>
-            <li>Report suspicious behavior</li>
+          <p class="text-sm mb-2">Manipulating people to give up information or access</p>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-2">
+            <li>Pretexting, Baiting, Quid Pro Quo</li>
+            <li>Tailgating, Scareware</li>
+            <li>Defenses: verify, question, report</li>
           </ul>
         </div>
       `,
       `
         <div>
-          <h3 class="text-md font-semibold mb-2">Malware and Ransomware</h3>
-          <ul class="list-disc list-inside text-sm mb-2">
+          <h3 class="text-md font-semibold mb-2">Malware & Ransomware</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-2">
             <li>Viruses, worms, trojans</li>
-            <li>Spyware, adware, keyloggers</li>
+            <li>Keyloggers, spyware, adware</li>
             <li>Ransomware: encrypts data for payment</li>
           </ul>
         </div>
@@ -91,13 +90,13 @@
       `
         <div>
           <h3 class="text-md font-semibold mb-2">Prevention Measures</h3>
-          <ul class="list-disc list-inside text-sm mb-4">
-            <li>✅ Keep software updated</li>
-            <li>✅ Use antivirus/anti-malware</li>
-            <li>✅ Back up data regularly</li>
-            <li>✅ Be cautious with links & attachments</li>
+          <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+            <li>Update software & systems</li>
+            <li>Use antivirus & backups</li>
+            <li>Verify identities & links</li>
+            <li>Apply least privilege & network segmentation</li>
           </ul>
-          <a href="../quizzes/quiz2.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm transition">
+          <a href="../quizzes/quiz2.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">
             Go to Quiz
           </a>
         </div>
@@ -108,13 +107,19 @@
     const container = document.getElementById("slide-container");
 
     function renderSlide(index) {
+      const content = slides[index];
       const nav = `
         <div class="flex justify-between items-center pt-6">
           <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm" ${index === 0 ? 'disabled' : ''}>Previous</button>
           <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm" ${index === slides.length - 1 ? 'disabled' : ''}>Next</button>
         </div>
       `;
-      container.innerHTML = slides[index] + nav;
+      container.innerHTML = `
+        <div class="flex flex-col justify-between h-full">
+          <div>${content}</div>
+          ${nav}
+        </div>
+      `;
 
       document.getElementById("prevBtn").addEventListener("click", () => {
         if (currentSlide > 0) {
@@ -135,3 +140,4 @@
   </script>
 </body>
 </html>
+
