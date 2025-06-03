@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Cybersecurity Awareness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <div class="w-full bg-gray-200 py-4 px-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="img/L2X_logo_branco.png" alt="Layer2 Logo" class="bg-gray-800 p-1 rounded h-10 w-10">
+      <span class="text-xl font-bold text-gray-800">Cybersecurity Awareness</span>
+    </div>
+    <a href="login-index.html" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Logout</a>
+  </div>
+
+  <!-- Main Cards Section -->
+  <main class="flex-1 flex items-center justify-center p-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+
+      <!-- Training Module Card -->
+      <a href="novo-index.html" class="bg-white rounded shadow hover:shadow-lg transition p-6 text-center border border-gray-200">
+        <div class="text-4xl mb-3">🎓</div>
+        <h3 class="text-xl font-semibold mb-2">Training Modules</h3>
+        <p class="text-gray-600 text-sm">Access all cybersecurity learning modules</p>
+      </a>
+
+      <!-- ISO 27001 Card -->
+      <a href="iso.html" class="bg-white rounded shadow hover:shadow-lg transition p-6 text-center border border-gray-200">
+        <div class="text-4xl mb-3">📘</div>
+        <h3 class="text-xl font-semibold mb-2">ISO 27001</h3>
+        <p class="text-gray-600 text-sm">Understand ISO standards for information security</p>
+      </a>
+
+      <!-- Certificate Card -->
+      <a href="certificate.html" class="bg-white rounded shadow hover:shadow-lg transition p-6 text-center border border-gray-200">
+        <div class="text-4xl mb-3">📄</div>
+        <h3 class="text-xl font-semibold mb-2">Certificate</h3>
+        <p class="text-gray-600 text-sm">View your certificate upon course completion</p>
+      </a>
+
+    </div>
+  </main>
+</body>
+</html>
