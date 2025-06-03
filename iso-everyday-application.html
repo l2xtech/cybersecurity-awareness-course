@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Application - ISO 27001 - Cybersecurity Awareness</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+    </style>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="min-h-screen">
+    <header class="bg-gray-100 shadow-sm py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center" style="width: 50px; height: 50px;">
+                <img src="img/L2X_logo_branco.png" alt="L2X Logo" class="max-h-full max-w-full object-contain" />
+            </div>
+            <div class="flex items-center gap-2">
+                <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Cybersecurity Awareness</h1>
+                <i class="fas fa-shield-alt text-gray-700 text-xl"></i>
+            </div>
+        </div>
+
+        <a href="login-index.html" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-xl transition">
+            Logout
+        </a>
+    </header>
+
+    <nav class="bg-white shadow-sm py-3">
+        <div class="container mx-auto">
+            <div class="flex items-center space-x-1">
+                <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-home mr-1"></i> Dashboard
+                </a>
+                <span class="text-gray-400">/</span>
+                <a href="iso.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                    ISO 27001
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Everyday Application</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Everyday Application of ISO 27001</h2>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+                <p class="text-gray-600 mb-6">
+                    ISO 27001 might sound technical, but its principles can be applied in your everyday work activities. 
+                    Here are practical ways to incorporate information security best practices into your daily routine:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- At Your Desk -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-desktop text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">At Your Desk</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Lock your screen when stepping away (Win+L or Ctrl+Cmd+Q)</li>
+                            <li>Keep your desk clear of sensitive documents</li>
+                            <li>Use secure storage for physical documents</li>
+                            <li>Be mindful of what's visible during video calls</li>
+                            <li>Don't leave passwords written down or visible</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Digital Communication -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Digital Communication</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Verify email recipients before sending sensitive information</li>
+                            <li>Use secure file sharing methods for confidential documents</li>
+                            <li>Be cautious with links and attachments in emails</li>
+                            <li>Consider if information is appropriate for chat vs. email</li>
+                            <li>Use approved communication channels for work discussions</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Remote Work -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-home text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Remote Work</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Use a secure VPN when connecting to company resources</li>
+                            <li>Keep work and personal activities separate</li>
+                            <li>Be mindful of who might overhear work conversations</li>
+                            <li>Secure your home network with strong passwords</li>
+                            <li>Store company equipment safely when not in use</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Data Handling -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-database text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Data Handling</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Know what data is considered sensitive in your role</li>
+                            <li>Follow proper procedures for data sharing</li>
+                            <li>Delete unnecessary files regularly</li>
+                            <li>Use secure deletion methods for sensitive information</li>
+                            <li>Back up important work regularly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Remember</h3>
+                    <p class="text-gray-600">
+                        Information security is everyone's responsibility. By incorporating these practices into your daily routine, 
+                        you're actively contributing to our organization's ISO 27001 compliance and helping protect our valuable information assets.
+                        If you're ever unsure about the security implications of an action, it's always better to ask for guidance.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex justify-between">
+                <a href="iso-training-alignment.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition">
+                    <i class="fas fa-arrow-left mr-2"></i> Previous: Training Alignment
+                </a>
+                <a href="iso.html" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl transition">
+                    Back to ISO Overview <i class="fas fa-home ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-400 py-6">
+        &copy; 2025 Cybersecurity Awareness Training
+    </footer>
+</body>
+</html>
