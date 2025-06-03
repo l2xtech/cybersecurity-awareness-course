@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz 9 - Company Security Policies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../modules/module9.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Module
+    </a>
+  </div>
+
+  <!-- Quiz Content -->
+  <div class="flex-1 flex items-center justify-center p-6">
+    <div id="quiz-box" class="w-full max-w-xl bg-white p-6 rounded shadow-md min-h-[300px]">
+      <!-- Quiz Content Injected -->
+    </div>
+  </div>
+
+  <script>
+    const quizData = {
+      module_title: "Company Security Policies",
+      questions: [
+        {
+          question: "What is the primary purpose of security policies?",
+          options: [
+            "To make work more difficult for employees",
+            "To provide a framework for protecting an organization's information assets",
+            "To satisfy auditors only during compliance checks",
+            "To give IT departments more control over employees"
+          ],
+          correctAnswer: 1,
+          feedback: "Security policies provide a framework for protecting an organization's information assets by establishing expectations, requirements, and guidelines for how employees should protect company information and systems."
+        },
+        {
+          question: "What is an Acceptable Use Policy (AUP)?",
+          options: [
+            "A policy that defines how employees may use company systems and resources",
+            "A policy that only applies to the IT department",
+            "A policy that allows unlimited personal use of company resources",
+            "A policy that only applies to executives"
+          ],
+          correctAnswer: 0,
+          feedback: "An Acceptable Use Policy (AUP) defines how employees may use company systems and resources, including authorized uses, prohibited activities, personal use guidelines, and monitoring notices."
+        },
+        {
+          question: "What is the principle of 'least privilege' in access control?",
+          options: [
+            "Giving all employees the same level of access",
+            "Providing access based on seniority",
+            "Users should have only the minimum access needed to perform their job functions",
+            "Restricting access to only IT personnel"
+          ],
+          correctAnswer: 2,
+          feedback: "The principle of 'least privilege' means users should have only the minimum access needed to perform their job functions, reducing the risk of unauthorized access to sensitive information."
+        },
+        {
+          question: "What should you do if you observe a policy violation?",
+          options: [
+            "Ignore it if it seems minor",
+            "Confront the person directly",
+            "Report it through appropriate channels",
+            "Handle it yourself without reporting"
+          ],
+          correctAnswer: 2,
+          feedback: "You should report policy violations through appropriate channels, even if they seem minor. This helps maintain security standards and allows proper handling of the situation by authorized personnel."
+        },
+        {
+          question: "What is a Clean Desk Policy?",
+          options: [
+            "A policy requiring employees to clean their own workspaces",
+            "A policy requiring desks to be free of sensitive documents when not in use",
+            "A policy prohibiting food at desks",
+            "A policy about desk ergonomics"
+          ],
+          correctAnswer: 1,
+          feedback: "A Clean Desk Policy requires workspaces to be free of sensitive documents when not in use, with materials stored in locked drawers or cabinets, screens locked when stepping away, and proper document disposal procedures followed."
+        }
+      ]
+    };
+
+    let currentQuestion = 0;
+    let score = 0;
+    let attemptsLeft = 3;
+
+    const box = document.getElementById("quiz-box");
+
+    function renderQuestion(index) {
+      const q = quizData.questions[index];
+      attemptsLeft = 3;
+
+      box.innerHTML = `
+        <h2 class="text-lg font-bold mb-2">Quiz: ${quizData.module_title}</h2>
+        <p class="text-sm text-gray-600 mb-4">Question ${index + 1} of ${quizData.questions.length}</p>
+        <p class="mb-4 font-medium">${q.question}</p>
+        <div id="options" class="space-y-2 mb-4">
+          ${q.options.map((opt, i) => `
+            <button class="option-btn w-full border border-gray-300 rounded px-4 py-2 text-left hover:bg-gray-100 text-sm" data-index="${i}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div id="feedback" class="text-sm mt-2 mb-4 font-semibold"></div>
+        <div class="flex justify-between">
+          <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm" disabled>Next</button>
+        </div>
+      `;
+
+      const optionButtons = document.querySelectorAll(".option-btn");
+      const feedbackEl = document.getElementById("feedback");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
+      optionButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const selected = parseInt(e.target.dataset.index);
+          const correct = q.correctAnswer;
+
+          optionButtons.forEach(b => {
+            b.classList.remove("bg-green-100", "border-green-400", "bg-red-100", "border-red-400");
+          });
+
+          if (selected === correct) {
+            e.target.classList.add("bg-green-100", "border-green-400");
+            feedbackEl.textContent = "✅ Correct!";
+            score++;
+            nextBtn.disabled = false;
+            optionButtons.forEach(b => b.disabled = true);
+          } else {
+            attemptsLeft--;
+            if (attemptsLeft > 0) {
+              feedbackEl.textContent = `❌ Incorrect. You have ${attemptsLeft} attempt${attemptsLeft > 1 ? 's' : ''} left.`;
+            } else {
+              e.target.classList.add("bg-red-100", "border-red-400");
+              feedbackEl.textContent = `❌ ${q.feedback}`;
+              nextBtn.disabled = false;
+              optionButtons.forEach(b => b.disabled = true);
+            }
+          }
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentQuestion++;
+        if (currentQuestion < quizData.questions.length) {
+          renderQuestion(currentQuestion);
+        } else {
+          renderSummary();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          renderQuestion(currentQuestion);
+        }
+      });
+    }
+
+    function renderSummary() {
+      const percent = Math.round((score / quizData.questions.length) * 100);
+      box.innerHTML = `
+        <h2 class="text-xl font-bold mb-4">Quiz Completed</h2>
+        <p class="text-lg mb-2">✅ Your Score: <strong>${score} / ${quizData.questions.length}</strong></p>
+        <p class="text-lg mb-6">📊 Accuracy: <strong>${percent}%</strong></p>
+        <a href="../novo-index.html" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
+          Back to Home
+        </a>
+      `;
+    }
+
+    renderQuestion(currentQuestion);
+  </script>
+</body>
+</html>
