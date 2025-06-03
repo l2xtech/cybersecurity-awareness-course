@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz 6 - Mobile Device and Remote Work Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../modules/module6.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Module
+    </a>
+  </div>
+
+  <!-- Quiz Content -->
+  <div class="flex-1 flex items-center justify-center p-6">
+    <div id="quiz-box" class="w-full max-w-xl bg-white p-6 rounded shadow-md min-h-[300px]">
+      <!-- Questions will render here -->
+    </div>
+  </div>
+
+  <script>
+    const quizData = {
+      module_title: "Mobile Device and Remote Work Security",
+      questions: [
+        {
+          question: "What is the most basic security measure for mobile devices?",
+          options: [
+            "Installing antivirus software",
+            "Using a strong passcode or biometric authentication",
+            "Keeping Bluetooth turned off",
+            "Installing a VPN"
+          ],
+          correctAnswer: 1,
+          feedback: "Using a strong passcode, PIN, or biometric authentication (fingerprint/facial recognition) is the most basic and essential security measure for mobile devices, as it prevents unauthorized access if your device is lost or stolen."
+        },
+        {
+          question: "What is a VPN and why is it important for remote work?",
+          options: [
+            "Virtual Private Network - it creates a secure, encrypted connection for transmitting data",
+            "Virtual Protection Node - it blocks all incoming connections to your device",
+            "Virtual Password Network - it generates secure passwords for all your accounts",
+            "Virtual Personal Network - it creates a personal profile for each website you visit"
+          ],
+          correctAnswer: 0,
+          feedback: "A VPN (Virtual Private Network) creates a secure, encrypted connection between your device and the internet or your company's network, protecting your data from interception when using potentially insecure networks like public Wi-Fi."
+        },
+        {
+          question: "What is a key security risk of using public Wi-Fi?",
+          options: [
+            "It's always too slow to be useful",
+            "It costs too much money",
+            "Your data can be intercepted by attackers on the same network",
+            "It uses too much battery power"
+          ],
+          correctAnswer: 2,
+          feedback: "A key security risk of using public Wi-Fi is that your data can be intercepted by attackers on the same network through techniques like 'man-in-the-middle' attacks, potentially exposing sensitive information."
+        },
+        {
+          question: "What does BYOD stand for and what security challenges does it present?",
+          options: [
+            "Bring Your Own Data - challenges with data ownership",
+            "Build Your Own Device - challenges with hardware compatibility",
+            "Bring Your Own Device - challenges with mixing personal and work data",
+            "Backup Your Own Data - challenges with data recovery"
+          ],
+          correctAnswer: 2,
+          feedback: "BYOD stands for Bring Your Own Device. It presents security challenges related to mixing personal and work data, varying security levels across different devices, limited organizational control, and difficulties removing company data when employees leave."
+        },
+        {
+          question: "What is a best practice for securing your home network for remote work?",
+          options: [
+            "Share your Wi-Fi password with neighbors so they can help monitor your network",
+            "Use the default administrator credentials that came with your router",
+            "Change default passwords, use WPA3/WPA2 encryption, and keep firmware updated",
+            "Disable all passwords to make it easier to connect devices"
+          ],
+          correctAnswer: 2,
+          feedback: "Best practices for securing your home network include changing default administrator credentials, using strong encryption (WPA3 or WPA2), keeping router firmware updated, using strong Wi-Fi passwords, and considering changing the default network name (SSID)."
+        }
+      ]
+    };
+
+    let currentQuestion = 0;
+    let score = 0;
+    let attemptsLeft = 3;
+
+    const box = document.getElementById("quiz-box");
+
+    function renderQuestion(index) {
+      const q = quizData.questions[index];
+
+      box.innerHTML = `
+        <h2 class="text-lg font-bold mb-2">Quiz: ${quizData.module_title}</h2>
+        <p class="text-sm text-gray-600 mb-4">Question ${index + 1} of ${quizData.questions.length}</p>
+        <p class="mb-4 font-medium">${q.question}</p>
+        <div id="options" class="space-y-2 mb-4">
+          ${q.options.map((opt, i) => `
+            <button class="option-btn w-full border border-gray-300 rounded px-4 py-2 text-left hover:bg-gray-100 text-sm" data-index="${i}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div id="feedback" class="text-sm mt-2 mb-4 font-semibold"></div>
+        <div class="flex justify-between">
+          <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm" disabled>Next</button>
+        </div>
+      `;
+
+      attemptsLeft = 3;
+      const optionButtons = document.querySelectorAll(".option-btn");
+      const feedbackEl = document.getElementById("feedback");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
+      optionButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const selected = parseInt(e.target.dataset.index);
+          const correct = q.correctAnswer;
+
+          optionButtons.forEach(b => b.classList.remove("bg-red-100", "border-red-400", "bg-green-100", "border-green-400"));
+
+          if (selected === correct) {
+            e.target.classList.add("bg-green-100", "border-green-400");
+            feedbackEl.textContent = "✅ Correct!";
+            score++;
+            nextBtn.disabled = false;
+            optionButtons.forEach(b => b.disabled = true);
+          } else {
+            attemptsLeft--;
+            if (attemptsLeft > 0) {
+              feedbackEl.textContent = `❌ Incorrect. You have ${attemptsLeft} attempt${attemptsLeft > 1 ? 's' : ''} left.`;
+            } else {
+              e.target.classList.add("bg-red-100", "border-red-400");
+              feedbackEl.textContent = `❌ ${q.feedback}`;
+              nextBtn.disabled = false;
+              optionButtons.forEach(b => b.disabled = true);
+            }
+          }
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentQuestion++;
+        if (currentQuestion < quizData.questions.length) {
+          renderQuestion(currentQuestion);
+        } else {
+          renderSummary();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          renderQuestion(currentQuestion);
+        }
+      });
+    }
+
+    function renderSummary() {
+      const percent = Math.round((score / quizData.questions.length) * 100);
+      box.innerHTML = `
+        <h2 class="text-xl font-bold mb-4">Quiz Completed</h2>
+        <p class="text-lg mb-2">✅ Your Score: <strong>${score} / ${quizData.questions.length}</strong></p>
+        <p class="text-lg mb-6">📊 Accuracy: <strong>${percent}%</strong></p>
+        <a href="../novo-index.html" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
+          Back to Home
+        </a>
+      `;
+    }
+
+    renderQuestion(currentQuestion);
+  </script>
+</body>
+</html>
