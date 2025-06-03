@@ -1,104 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 1: Introduction to Information Security</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction to Information Security - Cybersecurity Awareness</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .slide {
+            display: none;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background-color: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #4F46E5;
+            transition: width 0.3s ease;
+        }
+    </style>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-
-  <!-- Top Bar com botão de volta -->
-  <div class="w-full bg-gray-200 py-2 px-4">
-    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
-      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
-      </svg>
-      Back to Home
-    </a>
-  </div>
-
-  <!-- Container de Slides com botões internos -->
-  <div class="flex-1 flex items-center justify-center p-4">
-    <div id="slide-container" class="w-full max-w-2xl min-h-[360px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300">
-      <!-- Slides e botões serão injetados aqui -->
-    </div>
-  </div>
-
-  <script>
-    const slides = [
-      `
-        <h2 class="text-xl font-bold mb-4">Module 1: Introduction to Information Security</h2>
-        <h3 class="text-md font-semibold mb-2">Learning Objectives</h3>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Define information security and explain its importance</li>
-          <li>Identify the three main components of the CIA triad</li>
-          <li>Recognize common information security threats</li>
-          <li>Understand your role in maintaining information security</li>
-          <li>Explain how information security relates to ISO 27001</li>
-        </ul>
-      `,
-      `
-        <h3 class="text-md font-semibold mb-2">What is Information Security?</h3>
-        <p class="mb-2 text-sm">Information Security (InfoSec) refers to policies and practices to protect information from unauthorized access, disclosure, modification, or destruction.</p>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Customer data</li>
-          <li>Financial records</li>
-          <li>Intellectual property</li>
-          <li>Business strategies</li>
-        </ul>
-      `,
-      `
-        <h3 class="text-md font-semibold mb-2">The CIA Triad</h3>
-        <p class="text-sm mb-1"><strong>Confidentiality:</strong> Ensuring information is only accessible to authorized individuals.</p>
-        <p class="text-sm mb-1"><strong>Integrity:</strong> Assuring the accuracy and completeness of data.</p>
-        <p class="text-sm"><strong>Availability:</strong> Ensuring systems are operational when needed.</p>
-      `,
-      `
-        <h3 class="text-md font-semibold mb-2">Your Role in Security</h3>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li>Follow security policies</li>
-          <li>Protect your credentials</li>
-          <li>Report suspicious activity</li>
-          <li>Handle sensitive information responsibly</li>
-        </ul>
-      `,
-      `
-        <h3 class="text-md font-semibold mb-4">Ready for the Quiz?</h3>
-        <a href="../quizzes/quiz1.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Start Quiz</a>
-      `
-    ];
-
-    let currentSlide = 0;
-    const container = document.getElementById("slide-container");
-
-    function renderSlide(index) {
-      container.innerHTML = `
-        <div class="slide-content mb-6">${slides[index]}</div>
-        <div class="flex justify-between mt-4">
-          <button onclick="goPrevious()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition" ${index === 0 ? 'disabled' : ''}>Previous</button>
-          <button onclick="goNext()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" ${index === slides.length - 1 ? 'disabled' : ''}>Next</button>
+<body class="min-h-screen">
+    <header class="bg-gray-100 shadow-sm py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center" style="width: 50px; height: 50px;">
+                <img src="../img/L2X_logo_branco.png" alt="L2X Logo" class="max-h-full max-w-full object-contain" />
+            </div>
+            <div class="flex items-center gap-2">
+                <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Cybersecurity Awareness</h1>
+                <i class="fas fa-shield-alt text-gray-700 text-xl"></i>
+            </div>
         </div>
-      `;
-    }
 
-    function goNext() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        renderSlide(currentSlide);
-      }
-    }
+        <a href="../login-index.html" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-xl transition">
+            Logout
+        </a>
+    </header>
 
-    function goPrevious() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        renderSlide(currentSlide);
-      }
-    }
+    <nav class="bg-white shadow-sm py-3">
+        <div class="container mx-auto">
+            <div class="flex items-center space-x-1">
+                <a href="../dashboard.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-home mr-1"></i> Dashboard
+                </a>
+                <span class="text-gray-400">/</span>
+                <a href="../novo-index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                    Training Modules
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Module 1</span>
+            </div>
+        </div>
+    </nav>
 
-    renderSlide(currentSlide);
-  </script>
+    <main class="container mx-auto py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Progress Bar -->
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-blue-600"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Module 1: Introduction to Information Security</h2>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full" id="slide-counter">
+                        Slide 1 of 5
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+            </div>
+            
+            <!-- Slide Container -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+                <!-- Slide 1 - Title and Objectives -->
+                <div class="slide active" id="slide-1">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Introduction to Information Security</h3>
+                        <p class="text-gray-600">Understanding the fundamentals of protecting information assets</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-xl p-6 mb-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Learning Objectives</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Define information security and explain its importance</li>
+                            <li>Identify the three main components of the CIA triad</li>
+                            <li>Recognize common information security threats</li>
+                            <li>Understand your role in maintaining information security</li>
+                            <li>Explain how information security relates to ISO 27001</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 - What is Information Security -->
+                <div class="slide" id="slide-2">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-question text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">What is Information Security?</h3>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+                            <p class="text-gray-600 mb-4">
+                                Information security is the practice of protecting information by mitigating information risks.
+                                It includes protecting information from unauthorized access, use, disclosure, disruption, 
+                                modification, or destruction.
+                            </p>
+                            <p class="text-gray-600">
+                                In today's digital world, information is one of an organization's most valuable assets.
+                                Protecting this information is crucial for maintaining business operations, complying with
+                                regulations, and preserving customer trust.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 rounded-xl p-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Why It Matters</h4>
+                                    <p class="text-gray-600">
+                                        Information security is not just an IT concern—it's a business necessity. 
+                                        Security breaches can lead to financial losses, damage to reputation, 
+                                        legal consequences, and loss of customer trust.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 - CIA Triad -->
+                <div class="slide" id="slide-3">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-key text-indigo-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">The CIA Triad</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">
+                            The CIA triad is a model designed to guide policies for information security within an organization.
+                            It consists of three key components:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <!-- Confidentiality -->
+                            <div class="bg-blue-50 rounded-xl p-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-user-secret text-blue-600 text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-2">Confidentiality</h4>
+                                <p class="text-gray-600">
+                                    Ensuring that information is accessible only to those authorized to have access.
+                                </p>
+                            </div>
+                            
+                            <!-- Integrity -->
+                            <div class="bg-green-50 rounded-xl p-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-check-double text-green-600 text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-2">Integrity</h4>
+                                <p class="text-gray-600">
+                                    Ensuring information is accurate, complete, and hasn't been improperly modified.
+                                </p>
+                            </div>
+                            
+                            <!-- Availability -->
+                            <div class="bg-yellow-50 rounded-xl p-6">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-2">Availability</h4>
+                                <p class="text-gray-600">
+                                    Ensuring information is accessible when needed by authorized users.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 - Common Threats -->
+                <div class="slide" id="slide-4">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Common Information Security Threats</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-virus text-red-500 mr-2"></i>
+                                    <h4 class="font-semibold text-gray-700">Malware</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Software designed to harm or exploit systems, including viruses, ransomware, and spyware.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-fish text-red-500 mr-2"></i>
+                                    <h4 class="font-semibold text-gray-700">Phishing</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Deceptive attempts to steal sensitive information by posing as trustworthy entities.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-user-ninja text-red-500 mr-2"></i>
+                                    <h4 class="font-semibold text-gray-700">Social Engineering</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Manipulating people into divulging confidential information or performing actions.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-key text-red-500 mr-2"></i>
+                                    <h4 class="font-semibold text-gray-700">Weak Passwords</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Easy-to-guess passwords that can be exploited through brute force or dictionary attacks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 - Your Role -->
+                <div class="slide" id="slide-5">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user-shield text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Your Role in Information Security</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">
+                            Every employee plays a crucial role in maintaining information security. Your daily actions 
+                            and decisions can either strengthen or weaken the organization's security posture.
+                        </p>
+                        
+                        <div class="bg-indigo-50 rounded-xl p-6 mb-6">
+                            <h4 class="text-lg font-semibold text-gray-700 mb-3">Key Responsibilities:</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Follow security policies and procedures</li>
+                                <li>Use strong, unique passwords and enable multi-factor authentication</li>
+                                <li>Be vigilant about phishing attempts and suspicious communications</li>
+                                <li>Keep software and systems updated</li>
+                                <li>Report security incidents promptly</li>
+                                <li>Protect sensitive information both online and offline</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-xl p-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-link text-green-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Connection to ISO 27001</h4>
+                                    <p class="text-gray-600">
+                                        The principles and practices covered in this module align with ISO 27001 requirements, 
+                                        helping our organization maintain compliance while protecting our valuable information assets.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between">
+                <a href="../novo-index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition">
+                    <i class="fas fa-home mr-2"></i> Back to Modules
+                </a>
+                <div class="flex space-x-4">
+                    <button id="prev-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-arrow-left mr-2"></i> Previous
+                    </button>
+                    <button id="next-btn" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl transition">
+                        Next <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-400 py-6">
+        &copy; 2025 Cybersecurity Awareness Training
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            const progressFill = document.querySelector('.progress-fill');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            // Initialize
+            updateNavButtons();
+            updateProgressBar();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', showPreviousSlide);
+            nextBtn.addEventListener('click', showNextSlide);
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Show the selected slide
+                slides[index].classList.add('active');
+                
+                // Update counter
+                slideCounter.textContent = `Slide ${index + 1} of ${totalSlides}`;
+                
+                // Update current slide index
+                currentSlide = index;
+                
+                // Update navigation buttons and progress
+                updateNavButtons();
+                updateProgressBar();
+            }
+            
+            function showNextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    showSlide(currentSlide + 1);
+                } else {
+                    // If last slide, redirect to quiz
+                    window.location.href = '../quizzes/quiz1.html';
+                }
+            }
+            
+            function showPreviousSlide() {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            }
+            
+            function updateNavButtons() {
+                // Disable previous button on first slide
+                if (currentSlide === 0) {
+                    prevBtn.disabled = true;
+                    prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    prevBtn.disabled = false;
+                    prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+                
+                // Change next button text on last slide
+                if (currentSlide === totalSlides - 1) {
+                    nextBtn.innerHTML = 'Take Quiz <i class="fas fa-check-circle ml-2"></i>';
+                } else {
+                    nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right ml-2"></i>';
+                }
+            }
+            
+            function updateProgressBar() {
+                const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
+                progressFill.style.width = `${progressPercentage}%`;
+            }
+        });
+    </script>
 </body>
 </html>
-
 
