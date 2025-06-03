@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISO 27001 - Cybersecurity Awareness</title>
-
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Fonte Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -16,115 +16,607 @@
             background-color: #f9fafb;
         }
     </style>
-
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-gray-100 shadow-sm py-4 px-6 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center" style="width: 50px; height: 50px;">
-        <img src="img/L2X_logo_branco.png" alt="L2X Logo" class="max-h-full max-w-full object-contain" />
-      </div>
-      <div class="flex items-center gap-2">
-        <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Cybersecurity Awareness</h1>
-        <i class="fas fa-shield-alt text-gray-700 text-xl"></i>
-      </div>
-    </div>
-    <a href="login-index.html" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-xl transition">
-      Logout
-    </a>
-  </header>
-
-  <!-- Breadcrumb -->
-  <nav class="bg-white shadow-sm py-3 px-6">
-    <div class="flex items-center space-x-1 text-sm">
-      <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 flex items-center gap-1">
-        <i class="fas fa-home"></i> Dashboard
-      </a>
-      <span class="text-gray-400">/</span>
-      <span class="text-blue-600 font-medium">ISO 27001</span>
-    </div>
-  </nav>
-
-  <!-- Main -->
-  <main class="max-w-7xl mx-auto px-6 py-12">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Understanding ISO 27001</h2>
-    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-      Learn about ISO 27001, its principles, and how it applies to your daily work activities.
-      This knowledge will help you contribute to our organization's information security.
-    </p>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-      <!-- Example card -->
-      <a href="#what-is-iso" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+<body class="min-h-screen">
+    <header class="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center mr-3" style="width: 50px; height: 50px;">
+                    <img src="img/L2X_logo_branco.png" alt="L2X Logo" class="max-h-full max-w-full object-contain" />
+                </div>
+                <h1 class="text-2xl font-bold">Cybersecurity Awareness</h1>
+            </div>
+            <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-xl transition">
+                Logout
+            </a>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">What is ISO 27001?</h3>
-        <p class="text-gray-600">A framework to manage information security and protect company data.</p>
-      </a>
+    </header>
 
-      <a href="#core-principles" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-key text-green-600 text-xl"></i>
+    <nav class="bg-white shadow-sm py-3">
+        <div class="container mx-auto">
+            <div class="flex items-center space-x-1">
+                <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-home mr-1"></i> Dashboard
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">ISO 27001</span>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Core Principles</h3>
-        <p class="text-gray-600">Confidentiality, Integrity, and Availability of information.</p>
-      </a>
+    </nav>
 
-      <a href="#training-alignment" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-graduation-cap text-purple-600 text-xl"></i>
+    <main class="container mx-auto py-8 px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Understanding ISO 27001</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-12 text-center">
+            Learn about ISO 27001, its principles, and how it applies to your daily work activities.
+            This knowledge will help you contribute to our organization's information security.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Card 1: What is ISO 27001 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">What is ISO 27001?</h3>
+                    <p class="text-gray-600">An international standard that provides a framework for managing information security in any organization.</p>
+                </div>
+                <a href="#what-is-iso" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Card 2: Core Principles -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-key text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Core Principles</h3>
+                    <p class="text-gray-600">Understand the fundamental principles of Confidentiality, Integrity, and Availability that form the basis of information security.</p>
+                </div>
+                <a href="#core-principles" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Card 3: Training Alignment -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Training Alignment</h3>
+                    <p class="text-gray-600">See how our cybersecurity training modules align with ISO 27001 requirements and best practices.</p>
+                </div>
+                <a href="#training-alignment" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Card 4: Everyday Application -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Everyday Application</h3>
+                    <p class="text-gray-600">Practical tips and guidance on how to apply ISO 27001 principles in your daily work activities.</p>
+                </div>
+                <a href="#everyday-application" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Card 5: FAQ -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-question text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Frequently Asked Questions</h3>
+                    <p class="text-gray-600">Find answers to common questions about ISO 27001 and your role in maintaining information security.</p>
+                </div>
+                <a href="#faq" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Card 6: Quick Quiz -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out flex flex-col justify-between h-[260px]">
+                <div>
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-check-circle text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Test Your Knowledge</h3>
+                    <p class="text-gray-600">Take a quick quiz to test your understanding of ISO 27001 principles and their application.</p>
+                </div>
+                <a href="#quiz" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl w-full text-center block mt-4">
+                    Start Quiz
+                </a>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Training Alignment</h3>
-        <p class="text-gray-600">How our training matches ISO standards.</p>
-      </a>
 
-      <a href="#everyday-application" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+        <!-- Detailed Content Sections -->
+        <section id="what-is-iso" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">What is ISO 27001?</h3>
+            
+            <div class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Simple Explanation</h4>
+                <p class="text-gray-600 mb-4">
+                    ISO 27001 is an international standard that provides a framework for managing information security. 
+                    Think of it as a comprehensive guidebook that helps organizations protect their valuable information 
+                    in a systematic and structured way.
+                </p>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Why It's Important</h4>
+                <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                    <li>Protects valuable company information from threats</li>
+                    <li>Establishes a security-conscious culture throughout the organization</li>
+                    <li>Creates consistent processes for handling information</li>
+                    <li>Demonstrates commitment to protecting customer and partner data</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Benefits for You and the Company</h4>
+                <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                    <li>A more secure work environment</li>
+                    <li>Clear guidance on handling sensitive information</li>
+                    <li>Reduced security incidents</li>
+                    <li>Increased trust from clients and partners</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="core-principles" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Core Principles of ISO 27001</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Confidentiality -->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-secret text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Confidentiality</h4>
+                    <p class="text-gray-600 mb-3">
+                        Ensuring that information is accessible only to those authorized to have access.
+                    </p>
+                    <h5 class="font-medium text-gray-700 mb-1">Daily Examples:</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm">
+                        <li>Not sharing passwords</li>
+                        <li>Locking your screen when away</li>
+                        <li>Being careful when discussing sensitive information in public spaces</li>
+                    </ul>
+                </div>
+                
+                <!-- Integrity -->
+                <div class="bg-green-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-check-double text-green-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Integrity</h4>
+                    <p class="text-gray-600 mb-3">
+                        Ensuring information is accurate, complete, and hasn't been improperly modified.
+                    </p>
+                    <h5 class="font-medium text-gray-700 mb-1">Daily Examples:</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm">
+                        <li>Verifying data sources before use</li>
+                        <li>Following procedures for changing information</li>
+                        <li>Reporting any inconsistencies found</li>
+                    </ul>
+                </div>
+                
+                <!-- Availability -->
+                <div class="bg-yellow-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Availability</h4>
+                    <p class="text-gray-600 mb-3">
+                        Ensuring information is accessible when needed by authorized users.
+                    </p>
+                    <h5 class="font-medium text-gray-700 mb-1">Daily Examples:</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm">
+                        <li>Regularly backing up your work</li>
+                        <li>Following recovery procedures</li>
+                        <li>Promptly reporting access issues</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-6">
+                <p class="text-gray-600">
+                    These three principles—Confidentiality, Integrity, and Availability (often referred to as the "CIA triad")—form 
+                    the foundation of information security. Every security measure and practice in our organization is designed 
+                    to protect one or more of these aspects.
+                </p>
+            </div>
+        </section>
+
+        <section id="training-alignment" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">How Our Cybersecurity Training Aligns with ISO 27001</h3>
+            
+            <p class="text-gray-600 mb-6">
+                The cybersecurity training modules you've completed are designed to align with ISO 27001 principles and requirements. 
+                Here's how each module connects to the standard:
+            </p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="py-3 px-4 text-left text-gray-700 font-semibold">Training Module</th>
+                            <th class="py-3 px-4 text-left text-gray-700 font-semibold">ISO 27001 Alignment</th>
+                            <th class="py-3 px-4 text-left text-gray-700 font-semibold">Practical Application</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 1: Introduction to Information Security</td>
+                            <td class="py-3 px-4 text-gray-600">Foundation for understanding information security importance</td>
+                            <td class="py-3 px-4 text-gray-600">Recognizing the value of information and the need to protect it</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 2: Common Cyber Threats</td>
+                            <td class="py-3 px-4 text-gray-600">Risk identification and threat awareness</td>
+                            <td class="py-3 px-4 text-gray-600">Recognizing and responding appropriately to potential threats</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 3: Password Security</td>
+                            <td class="py-3 px-4 text-gray-600">Access controls and authentication</td>
+                            <td class="py-3 px-4 text-gray-600">Creating and managing strong passwords</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 4: Email Security</td>
+                            <td class="py-3 px-4 text-gray-600">Communications security</td>
+                            <td class="py-3 px-4 text-gray-600">Identifying and avoiding phishing and other email threats</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 5: Safe Internet Browsing</td>
+                            <td class="py-3 px-4 text-gray-600">Information transfer security</td>
+                            <td class="py-3 px-4 text-gray-600">Browsing safely and identifying malicious websites</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 6: Mobile Devices and Remote Work</td>
+                            <td class="py-3 px-4 text-gray-600">Mobile device and teleworking security</td>
+                            <td class="py-3 px-4 text-gray-600">Protecting information when working outside the office</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 7: Data Protection</td>
+                            <td class="py-3 px-4 text-gray-600">Information classification and handling</td>
+                            <td class="py-3 px-4 text-gray-600">Properly handling different types of data</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 8: Document Security</td>
+                            <td class="py-3 px-4 text-gray-600">Information asset management</td>
+                            <td class="py-3 px-4 text-gray-600">Securely storing and disposing of documents</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 9: Security Policies</td>
+                            <td class="py-3 px-4 text-gray-600">Information security policies</td>
+                            <td class="py-3 px-4 text-gray-600">Understanding and following company policies</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-gray-700">Module 10: Incident Reporting</td>
+                            <td class="py-3 px-4 text-gray-600">Information security incident management</td>
+                            <td class="py-3 px-4 text-gray-600">Knowing how and when to report incidents</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="everyday-application" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Applying ISO 27001 in Your Daily Work</h3>
+            
+            <div class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Practical Tips for Everyone</h4>
+                <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                    <li>Keep your physical and digital workspace clean and organized</li>
+                    <li>Question unusual requests for information</li>
+                    <li>Verify people's identity before sharing data</li>
+                    <li>Report suspicious behaviors or situations</li>
+                    <li>Actively participate in security training</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Common Situations and How to Act</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <!-- Situation 1 -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h5 class="font-medium text-gray-700 mb-2">When receiving a suspicious email</h5>
+                        <ul class="list-disc pl-5 text-gray-600 text-sm">
+                            <li>Don't click on suspicious links or attachments</li>
+                            <li>Check the sender's email address carefully</li>
+                            <li>Report to IT security if you suspect phishing</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Situation 2 -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h5 class="font-medium text-gray-700 mb-2">When working in a public place</h5>
+                        <ul class="list-disc pl-5 text-gray-600 text-sm">
+                            <li>Use a privacy screen on your laptop</li>
+                            <li>Be aware of who might be listening or watching</li>
+                            <li>Avoid accessing highly sensitive information</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Situation 3 -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h5 class="font-medium text-gray-700 mb-2">When handling confidential information</h5>
+                        <ul class="list-disc pl-5 text-gray-600 text-sm">
+                            <li>Follow classification guidelines</li>
+                            <li>Store securely when not in use</li>
+                            <li>Share only with authorized individuals</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Situation 4 -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h5 class="font-medium text-gray-700 mb-2">When using personal devices for work</h5>
+                        <ul class="list-disc pl-5 text-gray-600 text-sm">
+                            <li>Follow the company's BYOD policy</li>
+                            <li>Keep your device updated and secure</li>
+                            <li>Separate work and personal data when possible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions about ISO 27001</h3>
+            
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">What does ISO 27001 mean for me as an employee?</h4>
+                    <p class="text-gray-600">
+                        As an employee, ISO 27001 provides guidelines for how to handle information securely in your daily work. 
+                        It means following established security practices, being vigilant about potential threats, and taking 
+                        responsibility for protecting company information.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Do I need to know all the technical details of ISO 27001?</h4>
+                    <p class="text-gray-600">
+                        No, you don't need to know all the technical details. What's important is understanding the basic principles 
+                        and how they apply to your specific role and responsibilities. The cybersecurity training modules provide 
+                        the practical knowledge you need.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">How do I know if I'm following ISO 27001 principles correctly?</h4>
+                    <p class="text-gray-600">
+                        If you're following the security policies and procedures established by the company, completing required 
+                        training, and applying the security practices you've learned, you're on the right track. When in doubt, 
+                        ask your manager or the information security team.
+                    </p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">What are my specific responsibilities related to ISO 27001?</h4>
+                    <p class="text-gray-600">
+                        Your responsibilities include: following security policies and procedures, completing required security training, 
+                        protecting information assets you work with, reporting security incidents or concerns, and continuously applying 
+                        security best practices in your daily work.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">How does ISO 27001 relate to other regulations (GDPR, LGPD, etc.)?</h4>
+                    <p class="text-gray-600">
+                        ISO 27001 provides a framework for information security that can help organizations comply with various 
+                        data protection regulations. While ISO 27001 focuses on information security broadly, regulations like 
+                        GDPR and LGPD focus specifically on personal data protection. Following ISO 27001 practices helps support 
+                        compliance with these regulations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Test Your Knowledge</h3>
+            
+            <p class="text-gray-600 mb-6">
+                Take this quick quiz to test your understanding of ISO 27001 principles and their application in your daily work.
+            </p>
+            
+            <div class="space-y-6" id="quiz-container">
+                <!-- Question 1 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-3">1. Which of the following best describes ISO 27001?</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" id="q1a" class="mr-2">
+                            <label for="q1a" class="text-gray-600">A software application for detecting viruses</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" id="q1b" class="mr-2">
+                            <label for="q1b" class="text-gray-600">An international standard for information security management</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" id="q1c" class="mr-2">
+                            <label for="q1c" class="text-gray-600">A government regulation for data protection</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q1" id="q1d" class="mr-2">
+                            <label for="q1d" class="text-gray-600">A type of encryption technology</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-3">2. What are the three core principles of information security according to ISO 27001?</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" id="q2a" class="mr-2">
+                            <label for="q2a" class="text-gray-600">Security, Privacy, and Protection</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" id="q2b" class="mr-2">
+                            <label for="q2b" class="text-gray-600">Confidentiality, Integrity, and Availability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" id="q2c" class="mr-2">
+                            <label for="q2c" class="text-gray-600">Authentication, Authorization, and Accounting</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q2" id="q2d" class="mr-2">
+                            <label for="q2d" class="text-gray-600">Prevention, Detection, and Response</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-3">3. Which of the following is NOT a good practice for maintaining confidentiality?</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" name="q3" id="q3a" class="mr-2">
+                            <label for="q3a" class="text-gray-600">Locking your computer screen when you step away</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q3" id="q3b" class="mr-2">
+                            <label for="q3b" class="text-gray-600">Using strong, unique passwords</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q3" id="q3c" class="mr-2">
+                            <label for="q3c" class="text-gray-600">Sharing your login credentials with trusted colleagues</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q3" id="q3d" class="mr-2">
+                            <label for="q3d" class="text-gray-600">Being careful about what you discuss in public places</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-3">4. How does the Email Security training module align with ISO 27001?</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" name="q4" id="q4a" class="mr-2">
+                            <label for="q4a" class="text-gray-600">It doesn't align with ISO 27001</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q4" id="q4b" class="mr-2">
+                            <label for="q4b" class="text-gray-600">It addresses communications security requirements</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q4" id="q4c" class="mr-2">
+                            <label for="q4c" class="text-gray-600">It only focuses on technical controls, not ISO principles</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q4" id="q4d" class="mr-2">
+                            <label for="q4d" class="text-gray-600">It's only relevant for IT staff, not general employees</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-3">5. What should you do if you suspect a security incident?</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" name="q5" id="q5a" class="mr-2">
+                            <label for="q5a" class="text-gray-600">Try to fix it yourself before reporting it</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q5" id="q5b" class="mr-2">
+                            <label for="q5b" class="text-gray-600">Ignore it if it seems minor</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q5" id="q5c" class="mr-2">
+                            <label for="q5c" class="text-gray-600">Report it immediately following company procedures</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="q5" id="q5d" class="mr-2">
+                            <label for="q5d" class="text-gray-600">Discuss it with colleagues to get their opinion first</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="submit-quiz" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl w-full md:w-auto">
+                    Submit Answers
+                </button>
+                
+                <div id="quiz-results" class="hidden bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-700 mb-2">Your Results</h4>
+                    <p class="text-gray-600 mb-4">You scored <span id="score">0</span> out of 5 correct!</p>
+                    <div id="feedback" class="text-gray-600"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 L2X. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="dashboard.html" class="text-gray-300 hover:text-white">Dashboard</a>
+                    <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white">Terms of Use</a>
+                </div>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Everyday Application</h3>
-        <p class="text-gray-600">Tips on applying principles in your workday.</p>
-      </a>
+    </footer>
 
-      <a href="#faq" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-question text-red-600 text-xl"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQs</h3>
-        <p class="text-gray-600">Common questions employees ask about ISO 27001.</p>
-      </a>
-
-      <a href="#quiz" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-200 ease-in-out">
-        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-          <i class="fas fa-check-circle text-indigo-600 text-xl"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Test Your Knowledge</h3>
-        <p class="text-gray-600">Take a short quiz to assess what you've learned.</p>
-      </a>
-    </div>
-
-    <!-- 🔻 Seções específicas (já escritas por você) -->
-    <!-- Aqui viria o conteúdo que você já tem para cada ID: #what-is-iso, #core-principles, etc. -->
-    <!-- Eles podem ser mantidos como estão, pois a estética geral já foi padronizada no CSS/Tailwind -->
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <p class="mb-4 md:mb-0">&copy; 2025 L2X. All rights reserved.</p>
-      <div class="flex space-x-4">
-        <a href="dashboard.html" class="text-gray-300 hover:text-white">Dashboard</a>
-        <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
-        <a href="#" class="text-gray-300 hover:text-white">Terms of Use</a>
-      </div>
-    </div>
-  </footer>
+    <script>
+        // Simple quiz functionality
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'q1b',
+                q2: 'q2b',
+                q3: 'q3c',
+                q4: 'q4b',
+                q5: 'q5c'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // Check each question
+            for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
+                
+                if (selectedAnswer && selectedAnswer.id === correctAnswer) {
+                    score++;
+                }
+            }
+            
+            // Display results
+            document.getElementById('score').textContent = score;
+            
+            if (score === 5) {
+                feedback = 'Excellent! You have a strong understanding of ISO 27001 principles.';
+            } else if (score >= 3) {
+                feedback = 'Good job! You understand the basics of ISO 27001, but might benefit from reviewing some concepts.';
+            } else {
+                feedback = 'You might want to review the ISO 27001 principles again to strengthen your understanding.';
+            }
+            
+            document.getElementById('feedback').textContent = feedback;
+            document.getElementById('quiz-results').classList.remove('hidden');
+            
+            // Scroll to results
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
+
