@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cybersecurity Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center text-gray-800">
+
+  <div class="w-full max-w-md bg-white rounded shadow-md p-8 text-center">
+    
+    <!-- LOGO -->
+    <img src="img/L2X_logo_branco.png" alt="Layer2 Logo" class="mx-auto mb-6 h-20">
+
+    <!-- TITULO -->
+    <h2 class="text-xl font-semibold mb-6">Cybersecurity Awareness</h2>
+
+    <!-- FORM -->
+    <form id="loginForm" class="space-y-4">
+      <input 
+        type="email" 
+        placeholder="Email" 
+        required 
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+      <input 
+        type="password" 
+        placeholder="Password" 
+        required 
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white rounded py-2 text-sm hover:bg-blue-700 transition">
+        Sign In
+      </button>
+    </form>
+
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      // Simula login e redireciona
+      window.location.href = "novo-index.html";
+    });
+  </script>
+
+</body>
+</html>
