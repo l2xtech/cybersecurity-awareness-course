@@ -1,251 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 9: Company Security Policies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 9: Company Security Policies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="module-header">
-        <h2>Module 9: Company Security Policies</h2>
-        <p>Understanding security policies and their importance in protecting company assets</p>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Top Bar com botão de volta -->
+  <div class="w-full bg-gray-200 py-2 px-4">
+    <a href="../novo-index.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
+      <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+      </svg>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- Container de Slides com botões internos -->
+  <div class="flex-1 flex items-center justify-center p-4">
+    <div id="slide-container" class="w-full max-w-2xl min-h-[360px] bg-white p-6 rounded shadow-md flex flex-col justify-between transition-all duration-300">
+      <!-- Slides serão injetados aqui -->
     </div>
+  </div>
 
-    <div class="module-content">
-        <div class="module-section">
-            <h3>Learning Objectives</h3>
-            <p>By the end of this module, you will be able to:</p>
-            <ul>
-                <li>Understand company-specific security policies</li>
-                <li>Know the consequences of policy violations</li>
-                <li>Locate and reference security documentation</li>
-                <li>Align daily activities with security policies</li>
-            </ul>
-        </div>
+  <script>
+    const slides = [
+      `
+        <h2 class="text-xl font-bold mb-4">Module 9: Company Security Policies</h2>
+        <h3 class="text-md font-semibold mb-2">Learning Objectives</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Understand company-specific security policies</li>
+          <li>Know the consequences of policy violations</li>
+          <li>Locate and reference security documentation</li>
+          <li>Align daily activities with security policies</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Introduction</h3>
+        <p class="text-sm mb-2">Security policies are the foundation of an organization's security program. They define expectations, requirements, and guidelines for protecting company information and systems.</p>
+        <p class="text-sm">You'll explore their importance, types, and how to align with them.</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Purpose of Security Policies</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li><strong>Risk Management</strong>: Identify and address risks.</li>
+          <li><strong>Compliance</strong>: Meet legal and regulatory needs.</li>
+          <li><strong>Consistency</strong>: Apply security practices uniformly.</li>
+          <li><strong>Accountability</strong>: Set responsibilities clearly.</li>
+          <li><strong>Incident Response</strong>: Guide how to react to threats.</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Types of Security Policies</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Information Security Policy</li>
+          <li>Acceptable Use Policy</li>
+          <li>Access Control Policy</li>
+          <li>Data Classification Policy</li>
+          <li>Password Policy</li>
+          <li>Mobile Device Policy</li>
+          <li>Remote Work Policy</li>
+          <li>Incident Response Policy</li>
+          <li>Clean Desk Policy</li>
+          <li>Third-Party Risk Management Policy</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Acceptable Use Policy (AUP)</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Authorized Use & Prohibited Activities</li>
+          <li>Personal Use Guidelines</li>
+          <li>Monitoring Notice</li>
+          <li>Email and Internet Usage</li>
+          <li>Software Licensing</li>
+        </ul>
+        <p class="text-sm mt-2">Violations can lead to warnings, training, access suspension, termination, or legal action.</p>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Clean Desk Policy</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Clear desks when not in use</li>
+          <li>Lock sensitive documents</li>
+          <li>Lock screens when away</li>
+          <li>Properly dispose of papers</li>
+          <li>Clean up after meetings</li>
+          <li>Follow end-of-day security steps</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Access Control</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Least Privilege</li>
+          <li>Need to Know</li>
+          <li>Separation of Duties</li>
+          <li>Regular Access Reviews</li>
+          <li>Lifecycle: Provisioning → Modification → Deprovisioning → Certification</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Incident Response Procedures</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Types: Malware, Phishing, Breaches, Lost Devices</li>
+          <li>Reporting: When, How, What to Include</li>
+          <li>Employee Duties: Promptness, Evidence, Cooperation</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Security Compliance</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Policy Awareness & Application</li>
+          <li>Clarifying unusual requests</li>
+          <li>Keep learning & lead by example</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Quick Tips</h3>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>✅ Know where to find policies</li>
+          <li>✅ Report violations immediately</li>
+          <li>✅ Lock your screen and documents</li>
+          <li>✅ Review access regularly</li>
+          <li>✅ Ask when unsure</li>
+        </ul>
+      `,
+      `
+        <h3 class="text-md font-semibold mb-2">Ready for the Quiz?</h3>
+        <a href="../quizzes/quiz9.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Start Quiz</a>
+      `
+    ];
 
-        <div class="module-section">
-            <h3>Introduction</h3>
-            <p>Security policies are the foundation of an organization's security program. They establish expectations, requirements, and guidelines for how employees should protect company information and systems. This module will help you understand common security policies, their importance, and how to ensure your daily activities align with your organization's security requirements.</p>
-        </div>
+    let currentSlide = 0;
+    const container = document.getElementById("slide-container");
 
-        <div class="module-section">
-            <h3>Overview of Company Security Policies</h3>
-            <p>Security policies provide a framework for protecting an organization's information assets:</p>
-            
-            <h4>Purpose of Security Policies</h4>
-            <ul>
-                <li><strong>Risk Management</strong>: Identify and address security risks systematically.</li>
-                <li><strong>Compliance</strong>: Meet legal, regulatory, and contractual requirements.</li>
-                <li><strong>Consistency</strong>: Ensure consistent security practices across the organization.</li>
-                <li><strong>Accountability</strong>: Define responsibilities and expectations for all employees.</li>
-                <li><strong>Incident Response</strong>: Establish procedures for handling security incidents.</li>
-            </ul>
-            
-            <h4>Types of Security Policies</h4>
-            <ul>
-                <li><strong>Information Security Policy</strong>: The overarching policy that defines the organization's approach to information security.</li>
-                <li><strong>Acceptable Use Policy</strong>: Guidelines for appropriate use of company systems and resources.</li>
-                <li><strong>Access Control Policy</strong>: Rules for granting and revoking access to systems and information.</li>
-                <li><strong>Data Classification Policy</strong>: Framework for categorizing and protecting different types of information.</li>
-                <li><strong>Password Policy</strong>: Requirements for creating and managing passwords.</li>
-                <li><strong>Mobile Device Policy</strong>: Rules for using mobile devices for work purposes.</li>
-                <li><strong>Remote Work Policy</strong>: Guidelines for working outside the office securely.</li>
-                <li><strong>Incident Response Policy</strong>: Procedures for reporting and handling security incidents.</li>
-                <li><strong>Clean Desk Policy</strong>: Requirements for securing physical workspaces.</li>
-                <li><strong>Third-Party Risk Management Policy</strong>: Guidelines for managing security risks from vendors and partners.</li>
-            </ul>
-            
-            <h4>ISO 27001 and Security Policies</h4>
-            <p>ISO 27001 requires organizations to develop and implement a comprehensive set of security policies. These policies should:</p>
-            <ul>
-                <li>Be approved by management</li>
-                <li>Be communicated to all employees and relevant external parties</li>
-                <li>Be reviewed at planned intervals or when significant changes occur</li>
-                <li>Include specific controls and responsibilities</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <p>Security policies are not just documents to be filed away—they are living guidelines that should inform your daily work activities and decisions.</p>
-            </div>
+    function renderSlide(index) {
+      container.innerHTML = `
+        <div class="slide-content mb-6">${slides[index]}</div>
+        <div class="flex justify-between mt-4">
+          <button onclick="goPrevious()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition" ${index === 0 ? 'disabled' : ''}>Previous</button>
+          <button onclick="goNext()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" ${index === slides.length - 1 ? 'disabled' : ''}>Next</button>
         </div>
+      `;
+    }
 
-        <div class="module-section">
-            <h3>Acceptable Use Policies</h3>
-            <p>Acceptable Use Policies (AUPs) define how employees may use company systems and resources:</p>
-            
-            <h4>Common AUP Elements</h4>
-            <ul>
-                <li><strong>Authorized Use</strong>: Who may use company systems and for what purposes.</li>
-                <li><strong>Prohibited Activities</strong>: Actions that are explicitly forbidden, such as:
-                    <ul>
-                        <li>Installing unauthorized software</li>
-                        <li>Sharing credentials</li>
-                        <li>Using company resources for illegal activities</li>
-                        <li>Accessing inappropriate content</li>
-                        <li>Circumventing security controls</li>
-                    </ul>
-                </li>
-                <li><strong>Personal Use Guidelines</strong>: Rules regarding personal use of company systems.</li>
-                <li><strong>Monitoring Notice</strong>: Information about how the company monitors system usage.</li>
-                <li><strong>Email and Internet Usage</strong>: Specific rules for email and web browsing.</li>
-                <li><strong>Software Licensing</strong>: Requirements for ensuring proper software licensing.</li>
-            </ul>
-            
-            <h4>Consequences of AUP Violations</h4>
-            <p>Violations of acceptable use policies can lead to various consequences:</p>
-            <ul>
-                <li>Verbal or written warnings</li>
-                <li>Mandatory additional training</li>
-                <li>Suspension of system access</li>
-                <li>Disciplinary action up to termination</li>
-                <li>Legal action in severe cases</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h4>Real-World Example</h4>
-                <p>An employee at a financial services company used their work computer to download and install unauthorized software for personal use. The software contained malware that infected the company network, leading to a data breach affecting customer information. The employee was terminated for violating the acceptable use policy, and the company faced regulatory fines and reputational damage. This incident highlights the importance of following acceptable use policies to protect both the organization and its customers.</p>
-            </div>
-        </div>
+    function goNext() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Clean Desk Policy</h3>
-            <p>A Clean Desk Policy helps protect physical documents and information displayed on screens:</p>
-            
-            <h4>Key Requirements</h4>
-            <ul>
-                <li><strong>Clear Desks</strong>: Keep desks free of sensitive documents when not in use.</li>
-                <li><strong>Secure Storage</strong>: Store sensitive materials in locked drawers or cabinets.</li>
-                <li><strong>Screen Locking</strong>: Lock computer screens when stepping away.</li>
-                <li><strong>Document Disposal</strong>: Properly dispose of sensitive documents using shredders or secure bins.</li>
-                <li><strong>Meeting Room Cleanup</strong>: Remove all documents and erase whiteboards after meetings.</li>
-                <li><strong>End of Day Procedures</strong>: Specific actions to take before leaving work.</li>
-            </ul>
-            
-            <h4>Benefits of a Clean Desk Policy</h4>
-            <ul>
-                <li><strong>Physical Security</strong>: Reduces the risk of unauthorized access to sensitive information.</li>
-                <li><strong>Data Protection</strong>: Helps prevent data breaches from visual exposure.</li>
-                <li><strong>Professional Image</strong>: Creates a more organized and professional workplace.</li>
-                <li><strong>Compliance</strong>: Supports compliance with regulations like GDPR, HIPAA, and ISO 27001.</li>
-            </ul>
-            
-            <div class="tip-box">
-                <p>A simple way to remember clean desk practices: If you're not actively using it, lock it up. If you're stepping away, even briefly, lock your screen.</p>
-            </div>
-        </div>
+    function goPrevious() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide(currentSlide);
+      }
+    }
 
-        <div class="module-section">
-            <h3>Access Control Policies</h3>
-            <p>Access control policies govern how access to systems and information is managed:</p>
-            
-            <h4>Principles of Access Control</h4>
-            <ul>
-                <li><strong>Least Privilege</strong>: Users should have only the minimum access needed to perform their job functions.</li>
-                <li><strong>Need to Know</strong>: Access should be granted only to those who require information for legitimate business purposes.</li>
-                <li><strong>Separation of Duties</strong>: Critical tasks should be divided among multiple people to prevent fraud or errors.</li>
-                <li><strong>Regular Review</strong>: Access rights should be periodically reviewed and updated.</li>
-            </ul>
-            
-            <h4>Access Management Lifecycle</h4>
-            <ul>
-                <li><strong>Provisioning</strong>: Granting initial access when employees join or change roles.</li>
-                <li><strong>Modification</strong>: Adjusting access as job responsibilities change.</li>
-                <li><strong>Deprovisioning</strong>: Removing access when employees leave or change roles.</li>
-                <li><strong>Certification</strong>: Periodically reviewing and confirming access rights.</li>
-            </ul>
-            
-            <h4>Authentication Methods</h4>
-            <ul>
-                <li><strong>Passwords</strong>: Traditional knowledge-based authentication.</li>
-                <li><strong>Multi-Factor Authentication</strong>: Combining multiple verification methods.</li>
-                <li><strong>Biometrics</strong>: Using physical characteristics for identification.</li>
-                <li><strong>Single Sign-On (SSO)</strong>: Allowing access to multiple systems with one login.</li>
-            </ul>
-        </div>
-
-        <div class="module-section">
-            <h3>Incident Response Procedures</h3>
-            <p>Incident response procedures define how security incidents should be handled:</p>
-            
-            <h4>Incident Types</h4>
-            <ul>
-                <li><strong>Malware Infections</strong>: Viruses, ransomware, or other malicious software.</li>
-                <li><strong>Phishing Attempts</strong>: Suspicious emails or messages.</li>
-                <li><strong>Data Breaches</strong>: Unauthorized access to sensitive information.</li>
-                <li><strong>Lost or Stolen Devices</strong>: Missing laptops, phones, or other equipment.</li>
-                <li><strong>Unauthorized Access</strong>: Someone using systems without proper authorization.</li>
-                <li><strong>Suspicious Activity</strong>: Unusual behavior on networks or systems.</li>
-            </ul>
-            
-            <h4>Reporting Procedures</h4>
-            <ul>
-                <li><strong>When to Report</strong>: Immediately upon discovery of a potential incident.</li>
-                <li><strong>How to Report</strong>: Specific channels for reporting (e.g., IT helpdesk, security team, dedicated email).</li>
-                <li><strong>What to Report</strong>: Information to include in incident reports.</li>
-                <li><strong>Escalation Path</strong>: How incidents are escalated based on severity.</li>
-            </ul>
-            
-            <h4>Employee Responsibilities</h4>
-            <ul>
-                <li><strong>Prompt Reporting</strong>: Report incidents as soon as they're discovered.</li>
-                <li><strong>Preservation of Evidence</strong>: Avoid actions that might compromise investigation.</li>
-                <li><strong>Cooperation</strong>: Work with security teams during investigation and resolution.</li>
-                <li><strong>Confidentiality</strong>: Maintain discretion about incidents unless authorized to discuss them.</li>
-            </ul>
-        </div>
-
-        <div class="module-section">
-            <h3>Your Role in Security Compliance</h3>
-            <p>Every employee plays a crucial role in maintaining security compliance:</p>
-            
-            <h4>Day-to-Day Responsibilities</h4>
-            <ul>
-                <li><strong>Policy Awareness</strong>: Stay informed about current security policies.</li>
-                <li><strong>Consistent Application</strong>: Apply security practices consistently, not just during audits.</li>
-                <li><strong>Questioning Unusual Requests</strong>: Verify requests that seem to violate policies.</li>
-                <li><strong>Continuous Learning</strong>: Stay updated on security threats and best practices.</li>
-                <li><strong>Leading by Example</strong>: Demonstrate good security behavior to colleagues.</li>
-            </ul>
-            
-            <h4>How to Stay Informed</h4>
-            <ul>
-                <li><strong>Policy Repository</strong>: Know where to find current security policies.</li>
-                <li><strong>Security Updates</strong>: Pay attention to security bulletins and updates.</li>
-                <li><strong>Training and Awareness</strong>: Participate in security awareness activities.</li>
-                <li><strong>Ask Questions</strong>: Seek clarification when policies are unclear.</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <p>Security is everyone's responsibility. Your actions and decisions directly impact the overall security posture of your organization.</p>
-            </div>
-        </div>
-
-        <div class="module-section">
-            <h3>Quick Tips</h3>
-            <div class="tip-box">
-                <ul>
-                    <li>✅ <strong>Know where to find security policies</strong> and reference them when uncertain</li>
-                    <li>✅ <strong>Report policy violations</strong> you observe, even if they seem minor</li>
-                    <li>✅ <strong>Lock your computer and secure documents</strong> when stepping away from your desk</li>
-                    <li>✅ <strong>Request access reviews</strong> if you have access you no longer need</li>
-                    <li>✅ <strong>Ask for clarification</strong> if you're unsure about how policies apply to your role</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="module-section">
-            <h3>Summary</h3>
-            <p>In this module, we've explored company security policies, including:</p>
-            <ul>
-                <li>The purpose and types of security policies</li>
-                <li>Acceptable use policies and consequences of violations</li>
-                <li>Clean desk policies and their benefits</li>
-                <li>Access control principles and management</li>
-                <li>Incident response procedures</li>
-                <li>Your role in security compliance</li>
-            </ul>
-            <p>Understanding and following your organization's security policies is essential for maintaining a strong security posture and meeting compliance requirements. In the next module, we'll discuss incident reporting and response in more detail.</p>
-        </div>
-    </div>
+    renderSlide(currentSlide);
+  </script>
 </body>
 </html>
+
