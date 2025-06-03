@@ -9,44 +9,40 @@
 <body class="bg-gray-50 min-h-screen flex items-center justify-center text-gray-800">
 
   <div class="w-full max-w-md bg-white rounded shadow-md p-8 text-center">
-    
-    <!-- LOGO -->
-    <img src="img/L2X_logo_branco.png" alt="Layer2 Logo" class="mx-auto mb-6 h-20">
+
+    <!-- LOGO COM FUNDO -->
+    <div class="flex justify-center mb-6">
+      <div class="bg-gray-800 p-3 rounded-full">
+        <img src="img/L2X_logo_branco.png" alt="Layer2 Logo" class="h-16 w-16 object-contain" />
+      </div>
+    </div>
 
     <!-- TITULO -->
     <h2 class="text-xl font-semibold mb-6">Cybersecurity Awareness</h2>
 
     <!-- FORM -->
-    <form id="loginForm" class="space-y-4">
-      <input 
-        type="email" 
-        placeholder="Email" 
-        required 
-        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+    <form id="loginForm" class="space-y-4" onsubmit="event.preventDefault(); window.location.href='novo-index.html';">
+      <input
+        type="email"
+        placeholder="Email"
+        required
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-600"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        required
+        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-600"
+      />
+      <button
+        type="submit"
+        class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm font-medium"
       >
-      <input 
-        type="password" 
-        placeholder="Password" 
-        required 
-        class="w-full border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-
-      <button 
-        type="submit" 
-        class="w-full bg-blue-600 text-white rounded py-2 text-sm hover:bg-blue-700 transition">
         Sign In
       </button>
     </form>
 
   </div>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      // Simula login e redireciona
-      window.location.href = "novo-index.html";
-    });
-  </script>
 
 </body>
 </html>
