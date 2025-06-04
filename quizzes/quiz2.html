@@ -4,24 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz 2 - Common Cyber Threats</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-  <!-- Top Bar -->
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+    }
+
+    .quiz-option {
+      transition: all 0.2s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .quiz-option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .quiz-option.correct {
+      border: 2px solid #10b981;
+      background-color: #d1fae5;
+    }
+
+    .quiz-option.incorrect {
+      border: 2px solid #ef4444;
+      background-color: #fee2e2;
+    }
+
+    .btn-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-gray-100 shadow-sm py-4 px-6 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center" style="width: 50px; height: 50px;">
+        <img src="../img/L2X_logo_branco.png" alt="L2X Logo" class="max-h-full max-w-full object-contain" />
+      </div>
+      <div class="flex items-center gap-2">
+        <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Cybersecurity Awareness</h1>
+        <i class="fas fa-shield-alt text-gray-700 text-xl"></i>
+      </div>
+    </div>
+    <a href="../login-index.html" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-xl transition">
+      Logout
+    </a>
+  </header>
+
+  <nav class="bg-white shadow-sm py-3">
+    <div class="container mx-auto">
+      <div class="flex items-center space-x-1">
+        <a href="../dashboard.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+          <i class="fas fa-home mr-1"></i> Dashboard
+        </a>
+        <span class="text-gray-400">/</span>
+        <a href="../novo-index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+          Training Modules
+        </a>
+        <span class="text-gray-400">/</span>
+        <a href="../modules/module2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+          Module 2
+        </a>
+        <span class="text-gray-400">/</span>
+        <span class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Quiz</span>
+      </div>
+    </div>
+  </nav>
+
   <div class="w-full bg-gray-200 py-2 px-4">
     <a href="../modules/module2.html" class="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium">
       <svg class="h-4 w-4 mr-2 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-6-6a1 1 0 010-1.4l6-6a1 1 0 011.4 1.4L5.42 10l5.3 5.3A1 1 0 0110 18z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.7-.3l-7-7a1 1 0 010-1.4l7-7a1 1 0 111.4 1.4L4.4 10l6.3 6.3a1 1 0 01-.7 1.7z" clip-rule="evenodd" />
       </svg>
       Back to Module
     </a>
   </div>
 
-  <!-- Quiz Content -->
   <div class="flex-1 flex items-center justify-center p-6">
     <div id="quiz-box" class="w-full max-w-xl bg-white p-6 rounded shadow-md min-h-[300px]">
-      <!-- Questions go here -->
+      <!-- Quiz Content Injected -->
     </div>
   </div>
 
@@ -89,94 +160,189 @@
 
     let currentQuestion = 0;
     let score = 0;
-    let attemptsLeft = 3;
+    let attempts = [];
+    let maxAttempts = 3;
+    let questionAnswered = [];
 
-    const box = document.getElementById("quiz-box");
+    function renderQuestion() {
+      const question = quizData.questions[currentQuestion];
+      const quizBox = document.getElementById('quiz-box');
 
-    function renderQuestion(index) {
-      const q = quizData.questions[index];
+      if (!attempts[currentQuestion]) attempts[currentQuestion] = 0;
+      if (questionAnswered[currentQuestion] === undefined) questionAnswered[currentQuestion] = false;
 
-      box.innerHTML = `
-        <h2 class="text-lg font-bold mb-2">Quiz: ${quizData.module_title}</h2>
-        <p class="text-sm text-gray-600 mb-4">Question ${index + 1} of ${quizData.questions.length}</p>
-        <p class="mb-4 font-medium">${q.question}</p>
-        <div id="options" class="space-y-2 mb-4">
-          ${q.options.map((opt, i) => `
-            <button class="option-btn w-full border border-gray-300 rounded px-4 py-2 text-left hover:bg-gray-100 text-sm" data-index="${i}">
-              ${opt}
-            </button>
-          `).join('')}
+      let optionsHTML = '';
+      question.options.forEach((option, index) => {
+        optionsHTML += `
+          <button onclick="selectAnswer(${index})" class="quiz-option w-full text-left rounded-xl p-4 mb-3">
+            ${option}
+          </button>
+        `;
+      });
+
+      let feedbackHTML = '';
+      let attemptsText = '';
+
+      if (attempts[currentQuestion] > 0 && !questionAnswered[currentQuestion]) {
+        attemptsText = `<span class="text-red-500 text-sm font-medium">Incorrect. You have ${maxAttempts - attempts[currentQuestion]} attempts left.</span>`;
+      } else if (questionAnswered[currentQuestion]) {
+        feedbackHTML = `
+          <div class="mb-6 p-4 rounded-xl bg-green-50">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-green-700 font-medium">Correct!</p>
+                <p class="text-gray-600">${question.feedback}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (attempts[currentQuestion] >= maxAttempts) {
+        feedbackHTML = `
+          <div class="mb-6 p-4 rounded-xl bg-red-50">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <i class="fas fa-times-circle text-red-500 text-xl"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-red-700 font-medium">Incorrect</p>
+                <p class="text-gray-600">${question.feedback}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      quizBox.innerHTML = `
+        <div class="mb-6">
+          <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold text-gray-800">Quiz: ${quizData.module_title}</h1>
+            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">
+              Question ${currentQuestion + 1} of ${quizData.questions.length}
+            </span>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 mb-6">
+            <p class="text-gray-800 text-lg font-medium">${question.question}</p>
+            ${attemptsText}
+          </div>
+
+          ${feedbackHTML}
+
+          <div class="space-y-3">${optionsHTML}</div>
         </div>
-        <div id="feedback" class="text-sm mt-2 mb-4 font-semibold"></div>
-        <div class="flex justify-between">
-          <button id="prevBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm" ${index === 0 ? 'disabled' : ''}>Previous</button>
-          <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm" disabled>Next</button>
+
+        <div class="flex justify-between mt-8">
+          <button onclick="previousQuestion()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition ${currentQuestion === 0 ? 'btn-disabled' : ''}">
+            <i class="fas fa-arrow-left mr-2"></i> Previous
+          </button>
+          <button id="nextButton" onclick="nextQuestion()" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl transition ${!canProceed() ? 'btn-disabled' : ''}">
+            Next <i class="fas fa-arrow-right ml-2"></i>
+          </button>
         </div>
       `;
 
-      attemptsLeft = 3;
-      const optionButtons = document.querySelectorAll(".option-btn");
-      const feedbackEl = document.getElementById("feedback");
-      const nextBtn = document.getElementById("nextBtn");
-      const prevBtn = document.getElementById("prevBtn");
+      updateOptionsDisplay();
+    }
 
-      optionButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          const selected = parseInt(e.target.dataset.index);
-          const correct = q.correctAnswer;
+    function canProceed() {
+      return questionAnswered[currentQuestion] || attempts[currentQuestion] >= maxAttempts;
+    }
 
-          optionButtons.forEach(b => b.classList.remove("bg-red-100", "border-red-400", "bg-green-100", "border-green-400"));
+    function updateOptionsDisplay() {
+      const question = quizData.questions[currentQuestion];
+      const options = document.querySelectorAll('.quiz-option');
 
-          if (selected === correct) {
-            e.target.classList.add("bg-green-100", "border-green-400");
-            feedbackEl.textContent = "✅ Correct!";
-            score++;
-            nextBtn.disabled = false;
-            optionButtons.forEach(b => b.disabled = true);
-          } else {
-            attemptsLeft--;
-            if (attemptsLeft > 0) {
-              feedbackEl.textContent = `❌ Incorrect. You have ${attemptsLeft} attempt${attemptsLeft > 1 ? 's' : ''} left.`;
-            } else {
-              e.target.classList.add("bg-red-100", "border-red-400");
-              feedbackEl.textContent = `❌ ${q.feedback}`;
-              nextBtn.disabled = false;
-              optionButtons.forEach(b => b.disabled = true);
-            }
+      if (questionAnswered[currentQuestion] || attempts[currentQuestion] >= maxAttempts) {
+        options.forEach((option, index) => {
+          if (index === question.correctAnswer) {
+            option.classList.add('correct');
           }
         });
-      });
-
-      nextBtn.addEventListener("click", () => {
-        currentQuestion++;
-        if (currentQuestion < quizData.questions.length) {
-          renderQuestion(currentQuestion);
-        } else {
-          renderSummary();
-        }
-      });
-
-      prevBtn.addEventListener("click", () => {
-        if (currentQuestion > 0) {
-          currentQuestion--;
-          renderQuestion(currentQuestion);
-        }
-      });
+      }
     }
 
-    function renderSummary() {
-      const percent = Math.round((score / quizData.questions.length) * 100);
-      box.innerHTML = `
-        <h2 class="text-xl font-bold mb-4">Quiz Completed</h2>
-        <p class="text-lg mb-2">✅ Your Score: <strong>${score} / ${quizData.questions.length}</strong></p>
-        <p class="text-lg mb-6">📊 Accuracy: <strong>${percent}%</strong></p>
-        <a href="../novo-index.html" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition text-sm">
-          Back to Home
-        </a>
+    function selectAnswer(index) {
+      if (questionAnswered[currentQuestion] || attempts[currentQuestion] >= maxAttempts) return;
+
+      const question = quizData.questions[currentQuestion];
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(option => option.classList.remove('correct', 'incorrect'));
+
+      attempts[currentQuestion]++;
+
+      if (index === question.correctAnswer) {
+        options[index].classList.add('correct');
+        questionAnswered[currentQuestion] = true;
+        score++;
+      } else {
+        options[index].classList.add('incorrect');
+        if (attempts[currentQuestion] >= maxAttempts) {
+          options[question.correctAnswer].classList.add('correct');
+        }
+      }
+
+      const nextButton = document.getElementById('nextButton');
+      if (canProceed()) nextButton.classList.remove('btn-disabled');
+
+      renderQuestion();
+    }
+
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        renderQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (!canProceed()) return;
+
+      if (currentQuestion < quizData.questions.length - 1) {
+        currentQuestion++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      const quizBox = document.getElementById('quiz-box');
+      const percentage = Math.round((score / quizData.questions.length) * 100);
+      let resultMessage = '';
+
+      if (percentage >= 80) {
+        resultMessage = 'Excellent! You are well aware of common cyber threats.';
+      } else if (percentage >= 60) {
+        resultMessage = 'Good job! You have a solid grasp of the topic.';
+      } else {
+        resultMessage = 'Review the module to strengthen your knowledge.';
+      }
+
+      quizBox.innerHTML = `
+        <div class="text-center">
+          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-trophy text-green-600 text-3xl"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">Quiz Completed!</h2>
+          <p class="text-gray-600 mb-4">You scored ${score} out of ${quizData.questions.length} (${percentage}%)</p>
+          <p class="text-gray-600 mb-6">${resultMessage}</p>
+          <div class="flex justify-center">
+            <a href="../modules/module2.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition mr-4">
+              <i class="fas fa-arrow-left mr-2"></i> Back to Module
+            </a>
+            <a href="../novo-index.html" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-xl transition">
+              Continue Learning <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+          </div>
+        </div>
       `;
     }
 
-    renderQuestion(currentQuestion);
+    renderQuestion();
   </script>
 </body>
 </html>
+
