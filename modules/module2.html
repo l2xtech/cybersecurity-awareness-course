@@ -33,6 +33,7 @@
             background-color: #e5e7eb;
             border-radius: 2px;
             overflow: hidden;
+            margin-bottom: 1.5rem;
         }
         
         .progress-fill {
@@ -42,7 +43,7 @@
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen">
     <header class="bg-gray-100 shadow-sm py-4 px-6 flex items-center justify-between">
         <div class="flex items-center gap-4">
             <div class="bg-gray-800 rounded-lg p-2 flex items-center justify-center" style="width: 50px; height: 50px;">
@@ -87,7 +88,7 @@
                 </span>
             </div>
             
-            <div class="progress-bar mb-6">
+            <div class="progress-bar">
                 <div id="progress-fill" class="progress-fill" style="width: 16.67%;"></div>
             </div>
 
@@ -122,7 +123,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="bg-gray-50 rounded-xl p-6">
                     <h4 class="text-xl font-semibold text-gray-800 mb-4">Introduction</h4>
                     <p class="text-gray-700">
@@ -138,87 +139,60 @@
                         <i class="fas fa-exclamation-triangle text-red-600 text-4xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Types of Cyber Threats</h3>
-                    <p class="text-gray-600 text-center">Understanding the various threats that organizations face today</p>
+                    <p class="text-gray-600 text-center">Understanding the landscape of cyber threats</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                    <p class="text-gray-700 mb-4">
-                        Cyber threats come in many forms, each with different methods and objectives. Here are the main categories you should be aware of:
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-red-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">External Threats</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span><strong>Hackers:</strong> Individuals or groups seeking unauthorized access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span><strong>Cybercriminals:</strong> Motivated by financial gain</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span><strong>Nation-state actors:</strong> Government-sponsored attacks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span><strong>Hacktivists:</strong> Politically or socially motivated</span>
+                            </li>
+                        </ul>
+                    </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-virus text-red-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Malware</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Malicious software designed to damage, disrupt, or gain unauthorized access to computer systems.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-fish text-yellow-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Phishing</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Deceptive attempts to steal sensitive information by disguising as a trustworthy entity.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-users text-purple-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Social Engineering</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Psychological manipulation to trick people into making security mistakes or giving away sensitive information.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-lock text-green-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Ransomware</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Malware that encrypts files and demands payment for the decryption key.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-user-secret text-blue-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Man-in-the-Middle (MitM)</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Intercepting communications between two parties to steal data or impersonate one party.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-2">
-                                    <i class="fas fa-ban text-orange-600"></i>
-                                </div>
-                                <h5 class="font-semibold text-gray-800">Denial-of-Service (DoS)</h5>
-                            </div>
-                            <p class="text-gray-600 text-sm">Overwhelming systems, servers, or networks with traffic to disrupt services.</p>
-                        </div>
+                    <div class="bg-orange-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Internal Threats</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-orange-600 mt-1 mr-2"></i>
+                                <span><strong>Malicious insiders:</strong> Employees with harmful intent</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-orange-600 mt-1 mr-2"></i>
+                                <span><strong>Negligent employees:</strong> Unintentional security breaches</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-orange-600 mt-1 mr-2"></i>
+                                <span><strong>Compromised accounts:</strong> Legitimate accounts used maliciously</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-orange-600 mt-1 mr-2"></i>
+                                <span><strong>Third-party vendors:</strong> External partners with access</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="bg-yellow-50 rounded-xl p-6">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-lightbulb text-yellow-500 text-xl mt-1"></i>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="text-lg font-semibold text-gray-800">Key Insight</h4>
-                            <p class="text-gray-700">Understanding these threats is the first step toward protecting yourself and your organization. In the following slides, we'll explore each of these threats in more detail.</p>
-                        </div>
-                    </div>
+
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Threat Landscape Evolution</h4>
+                    <p class="text-gray-700">
+                        The cyber threat landscape is constantly evolving. Attackers continuously develop new techniques and exploit emerging technologies. Organizations must stay vigilant and adapt their security measures to address these evolving threats.
+                    </p>
                 </div>
             </div>
 
@@ -229,74 +203,97 @@
                         <i class="fas fa-fish text-yellow-600 text-4xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Phishing Attacks</h3>
-                    <p class="text-gray-600 text-center">How to identify and avoid phishing attempts</p>
+                    <p class="text-gray-600 text-center">Deceptive attempts to steal sensitive information</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                <div class="bg-yellow-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">What is Phishing?</h4>
                     <p class="text-gray-700 mb-4">
-                        Phishing remains one of the most common and effective attack vectors. Attackers create convincing emails, messages, or websites that appear to come from legitimate sources to trick recipients into revealing sensitive information or installing malware.
+                        Phishing is a type of social engineering attack where cybercriminals impersonate legitimate organizations to trick individuals into revealing sensitive information such as passwords, credit card numbers, or personal data.
                     </p>
-                    
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Common Types of Phishing</h4>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Email Phishing</h5>
-                            <p class="text-gray-600 text-sm">Mass-sent emails impersonating legitimate organizations.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Spear Phishing</h5>
-                            <p class="text-gray-600 text-sm">Targeted phishing attacks customized for specific individuals or organizations.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Whaling</h5>
-                            <p class="text-gray-600 text-sm">Phishing specifically targeting high-profile executives or senior employees.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Smishing & Vishing</h5>
-                            <p class="text-gray-600 text-sm">Phishing conducted via SMS text messages or voice calls.</p>
-                        </div>
+                    <p class="text-gray-700">
+                        These attacks typically come through email, text messages, or fake websites that appear legitimate but are designed to steal your information.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Common Phishing Tactics</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-yellow-600 mt-1 mr-2"></i>
+                                <span>Urgent action required messages</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-yellow-600 mt-1 mr-2"></i>
+                                <span>Fake security alerts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-yellow-600 mt-1 mr-2"></i>
+                                <span>Prize or lottery notifications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-yellow-600 mt-1 mr-2"></i>
+                                <span>Account verification requests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-yellow-600 mt-1 mr-2"></i>
+                                <span>Fake invoices or receipts</span>
+                            </li>
+                        </ul>
                     </div>
                     
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">How to Identify Phishing Attempts</h4>
-                    
-                    <ul class="space-y-3 text-gray-700">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Warning Signs</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Generic greetings ("Dear Customer")</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Spelling and grammar errors</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Suspicious sender addresses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Unexpected attachments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Mismatched URLs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">How to Protect Yourself</h4>
+                    <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Urgent or Threatening Language:</strong> Messages creating a sense of urgency or fear to prompt immediate action.</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Verify sender identity through independent channels</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Suspicious Sender Address:</strong> Email addresses that mimic legitimate ones with slight variations (e.g., support@amaz0n.com instead of amazon.com).</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Never click suspicious links or download unexpected attachments</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Poor Grammar and Spelling:</strong> Professional organizations typically proofread their communications.</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Type URLs directly into your browser</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Suspicious Links:</strong> Hover over links (without clicking) to see if the destination URL matches the claimed organization.</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Use multi-factor authentication</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Unexpected Attachments:</strong> Be wary of unexpected attachments, especially executable files (.exe, .scr, .zip).</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Report suspicious emails to IT security</span>
                         </li>
                     </ul>
-                </div>
-                
-                <div class="bg-red-50 rounded-xl p-6">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-exclamation-triangle text-red-500 text-xl mt-1"></i>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="text-lg font-semibold text-gray-800">Real-World Example</h4>
-                            <p class="text-gray-700">In 2020, Twitter experienced a major security breach when attackers used phone spear-phishing attacks to target specific employees. The attackers impersonated IT staff and tricked employees into providing their credentials, ultimately gaining access to Twitter's internal systems and high-profile accounts.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -306,293 +303,282 @@
                     <div class="w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-users text-purple-600 text-4xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Social Engineering Tactics</h3>
-                    <p class="text-gray-600 text-center">Understanding how attackers manipulate human psychology</p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Social Engineering</h3>
+                    <p class="text-gray-600 text-center">Manipulating people to divulge confidential information</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                    <p class="text-gray-700 mb-4">
-                        Social engineering exploits human psychology rather than technical vulnerabilities. These attacks rely on manipulating people into breaking security procedures or divulging confidential information.
+                <div class="bg-purple-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">What is Social Engineering?</h4>
+                    <p class="text-gray-700">
+                        Social engineering is the art of manipulating people to divulge confidential information or perform actions that compromise security. Rather than breaking in or finding software vulnerabilities, social engineers exploit human psychology and trust.
                     </p>
-                    
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Common Social Engineering Techniques</h4>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Pretexting</h5>
-                            <p class="text-gray-600 text-sm">Creating a fabricated scenario to extract information (e.g., impersonating a co-worker, IT support, or authority figure).</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Baiting</h5>
-                            <p class="text-gray-600 text-sm">Offering something enticing to spark curiosity and prompt actions that compromise security (e.g., infected USB drives labeled "Confidential").</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Quid Pro Quo</h5>
-                            <p class="text-gray-600 text-sm">Offering a service or benefit in exchange for information or access (e.g., fake IT support offering free assistance).</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Tailgating/Piggybacking</h5>
-                            <p class="text-gray-600 text-sm">Following an authorized person into a restricted area without proper authentication.</p>
-                        </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Common Techniques</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-purple-600 mt-1 mr-2"></i>
+                                <span><strong>Pretexting:</strong> Creating false scenarios to gain trust</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-purple-600 mt-1 mr-2"></i>
+                                <span><strong>Baiting:</strong> Offering something enticing to spark curiosity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-purple-600 mt-1 mr-2"></i>
+                                <span><strong>Quid pro quo:</strong> Offering services in exchange for information</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-purple-600 mt-1 mr-2"></i>
+                                <span><strong>Tailgating:</strong> Following someone into restricted areas</span>
+                            </li>
+                        </ul>
                     </div>
                     
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Defense Against Social Engineering</h4>
-                    
-                    <ul class="space-y-3 text-gray-700">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Psychological Triggers</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Authority (impersonating executives)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Urgency (creating time pressure)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Fear (threatening consequences)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                <span>Curiosity (intriguing offers)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Defense Strategies</h4>
+                    <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Verify Identities:</strong> Confirm requests through official channels, especially for sensitive information or unusual requests.</span>
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Verify identity before sharing information</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Be Skeptical:</strong> Question unexpected contacts, especially those creating urgency or offering things that seem too good to be true.</span>
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Be skeptical of unsolicited requests</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Follow Procedures:</strong> Adhere to security protocols even when inconvenient.</span>
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Follow established procedures for information sharing</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Report Incidents:</strong> Inform security teams about suspicious contacts or activities.</span>
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>When in doubt, consult with security team</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-purple-50 rounded-xl p-6">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-lightbulb text-purple-500 text-xl mt-1"></i>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="text-lg font-semibold text-gray-800">Remember</h4>
-                            <p class="text-gray-700">The most sophisticated security systems can be bypassed through social engineering. Always be vigilant and trust your instincts when something doesn't feel right.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Slide 5: Malware & Ransomware -->
+            <!-- Slide 5: Malware and Ransomware -->
             <div id="slide5" class="slide bg-white rounded-xl shadow-sm p-8 mb-8">
                 <div class="flex flex-col items-center justify-center mb-8">
                     <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-virus text-red-600 text-4xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Malware & Ransomware</h3>
-                    <p class="text-gray-600 text-center">Understanding malicious software and how to protect against it</p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Malware and Ransomware</h3>
+                    <p class="text-gray-600 text-center">Malicious software designed to harm or exploit systems</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                    <p class="text-gray-700 mb-4">
-                        Malware (malicious software) is designed to damage or gain unauthorized access to computer systems. Understanding different types of malware can help you recognize and prevent infections.
-                    </p>
-                    
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Types of Malware</h4>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Viruses</h5>
-                            <p class="text-gray-600 text-sm">Programs that attach to clean files and spread throughout a computer system when those files are opened.</p>
+                <div class="bg-red-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Types of Malware</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Viruses:</strong> Self-replicating programs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Worms:</strong> Spread across networks</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Trojans:</strong> Disguised malicious software</span>
+                                </li>
+                            </ul>
                         </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Worms</h5>
-                            <p class="text-gray-600 text-sm">Self-replicating malware that spreads across networks without requiring user interaction.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Trojans</h5>
-                            <p class="text-gray-600 text-sm">Malware disguised as legitimate software that performs malicious actions once installed.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Spyware</h5>
-                            <p class="text-gray-600 text-sm">Software that secretly monitors user activity and collects personal information.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Ransomware</h5>
-                            <p class="text-gray-600 text-sm">Malware that encrypts files and demands payment for the decryption key.</p>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-1">Rootkits</h5>
-                            <p class="text-gray-600 text-sm">Tools that provide unauthorized access to a computer while hiding their existence.</p>
-                        </div>
-                    </div>
-                    
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">How Malware Spreads</h4>
-                    
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Email Attachments:</strong> Malicious files attached to emails.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Malicious Downloads:</strong> Software from untrusted sources.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Infected Websites:</strong> Websites containing malicious code that executes when visited.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-angle-right text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Removable Media:</strong> Infected USB drives or external hard drives.</span>
-                        </li>
-                    </ul>
-                    
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Prevention Measures</h4>
-                    
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-shield-alt text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Keep Software Updated:</strong> Regularly update operating systems and applications.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-shield-alt text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Use Antivirus/Anti-malware Software:</strong> Install reputable security software.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-shield-alt text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Be Cautious with Email:</strong> Don't open suspicious attachments or links.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-shield-alt text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Back Up Data Regularly:</strong> Maintain offline backups to recover from ransomware.</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-red-50 rounded-xl p-6">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-exclamation-circle text-red-500 text-xl mt-1"></i>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="text-lg font-semibold text-gray-800">Ransomware: A Growing Threat</h4>
-                            <p class="text-gray-700 mb-2">Ransomware deserves special attention due to its increasing prevalence and devastating impact. Notable attacks include:</p>
-                            <ul class="space-y-1 text-gray-700">
-                                <li><strong>WannaCry (2017):</strong> Affected over 200,000 computers across 150 countries.</li>
-                                <li><strong>Colonial Pipeline (2021):</strong> Disrupted fuel supply to the eastern United States.</li>
+                        <div>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Spyware:</strong> Secretly monitors activities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Adware:</strong> Displays unwanted advertisements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-angle-right text-red-600 mt-1 mr-2"></i>
+                                    <span><strong>Rootkits:</strong> Hide deep in system files</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-orange-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Ransomware: A Growing Threat</h4>
+                    <p class="text-gray-700 mb-4">
+                        Ransomware is a type of malware that encrypts files on infected systems and demands payment for the decryption key. It has become one of the most significant cyber threats to organizations worldwide.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">How it spreads:</h5>
+                            <ul class="space-y-1 text-gray-700">
+                                <li>• Email attachments</li>
+                                <li>• Malicious websites</li>
+                                <li>• USB drives</li>
+                                <li>• Network vulnerabilities</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Impact:</h5>
+                            <ul class="space-y-1 text-gray-700">
+                                <li>• Data encryption/loss</li>
+                                <li>• Business disruption</li>
+                                <li>• Financial losses</li>
+                                <li>• Reputation damage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Prevention Measures</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Keep software and operating systems updated</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Use reputable antivirus software</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Regular data backups</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Avoid suspicious downloads and attachments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                            <span>Implement network segmentation</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Slide 6: Summary & Real-world Examples -->
+            <!-- Slide 6: Real-World Examples and Summary -->
             <div id="slide6" class="slide bg-white rounded-xl shadow-sm p-8 mb-8">
                 <div class="flex flex-col items-center justify-center mb-8">
                     <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-check-circle text-green-600 text-4xl"></i>
+                        <i class="fas fa-globe text-green-600 text-4xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Summary & Real-world Examples</h3>
-                    <p class="text-gray-600 text-center">Key takeaways and case studies of cyber attacks</p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Real-World Examples & Summary</h3>
+                    <p class="text-gray-600 text-center">Learning from actual cyber incidents</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Real-world Examples and Case Studies</h4>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-white p-5 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-2">Case Study: The Target Data Breach (2013)</h5>
-                            <p class="text-gray-600 mb-3"><strong>What Happened:</strong> Attackers gained access to Target's network through credentials stolen from an HVAC vendor. They installed malware on point-of-sale systems and stole credit card information from approximately 40 million customers.</p>
-                            <div class="bg-blue-50 p-3 rounded-lg">
-                                <p class="text-gray-700 font-medium">Key Lessons:</p>
-                                <ul class="list-disc pl-5 text-gray-600 text-sm">
-                                    <li>Third-party security is critical</li>
-                                    <li>Network segmentation could have limited the breach</li>
-                                    <li>Monitoring systems for unusual activity is essential</li>
-                                </ul>
-                            </div>
+                <div class="bg-yellow-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Notable Cyber Attacks</h4>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h5 class="font-semibold text-gray-800">WannaCry Ransomware (2017)</h5>
+                            <p class="text-gray-700">Affected over 300,000 computers worldwide, exploiting Windows vulnerabilities.</p>
                         </div>
-                        
-                        <div class="bg-white p-5 rounded-lg border border-gray-200">
-                            <h5 class="font-semibold text-gray-800 mb-2">Case Study: SolarWinds Supply Chain Attack (2020)</h5>
-                            <p class="text-gray-600 mb-3"><strong>What Happened:</strong> Attackers compromised SolarWinds' software development environment and inserted malicious code into updates of their Orion software. When customers installed these updates, the attackers gained access to their networks.</p>
-                            <div class="bg-blue-50 p-3 rounded-lg">
-                                <p class="text-gray-700 font-medium">Key Lessons:</p>
-                                <ul class="list-disc pl-5 text-gray-600 text-sm">
-                                    <li>Supply chain security is crucial</li>
-                                    <li>Even trusted software can be compromised</li>
-                                    <li>Advanced persistent threats require sophisticated defenses</li>
-                                </ul>
-                            </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h5 class="font-semibold text-gray-800">Equifax Data Breach (2017)</h5>
+                            <p class="text-gray-700">Personal information of 147 million people compromised due to unpatched software.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h5 class="font-semibold text-gray-800">SolarWinds Supply Chain Attack (2020)</h5>
+                            <p class="text-gray-700">Sophisticated attack affecting thousands of organizations through software updates.</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-green-50 rounded-xl p-6 mb-6">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Quick Tips</h4>
-                    <ul class="space-y-2">
+
+                <div class="bg-blue-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Key Takeaways</h4>
+                    <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span class="text-gray-700"><strong>Think before you click</strong> on links or open attachments, even if they appear to come from someone you know</span>
+                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-2"></i>
+                            <span>Cyber threats are constantly evolving and becoming more sophisticated</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span class="text-gray-700"><strong>Verify unusual requests</strong> from colleagues or management through a different communication channel</span>
+                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-2"></i>
+                            <span>Human factors are often the weakest link in cybersecurity</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span class="text-gray-700"><strong>Keep your software updated</strong> with the latest security patches</span>
+                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-2"></i>
+                            <span>Prevention is more cost-effective than recovery</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span class="text-gray-700"><strong>Back up important data regularly</strong> to protect against ransomware</span>
+                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-2"></i>
+                            <span>Regular training and awareness are essential</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span class="text-gray-700"><strong>Report suspicious emails or activities</strong> to your IT security team immediately</span>
+                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-2"></i>
+                            <span>Everyone has a role to play in cybersecurity</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-indigo-50 rounded-xl p-6">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Module Summary</h4>
-                    <p class="text-gray-700 mb-3">
-                        In this module, we've explored common cyber threats and attacks, including:
+
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Module Summary</h4>
+                    <p class="text-gray-700 mb-4">
+                        In this module, we've explored the most common cyber threats facing organizations today:
                     </p>
-                    <ul class="space-y-1 text-gray-700">
+                    <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
-                            <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
-                            <span>Various types of cyber threats organizations face</span>
+                            <i class="fas fa-dot-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Different types of cyber threats and threat actors</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
-                            <span>How to identify and avoid phishing attempts</span>
+                            <i class="fas fa-dot-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Phishing attacks and how to identify them</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
-                            <span>Social engineering tactics and defenses</span>
+                            <i class="fas fa-dot-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Social engineering tactics and psychological triggers</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
-                            <span>Different types of malware and how they spread</span>
+                            <i class="fas fa-dot-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Malware types and ransomware threats</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-angle-right text-indigo-500 mt-1 mr-2"></i>
-                            <span>Real-world examples and their lessons</span>
+                            <i class="fas fa-dot-circle text-blue-600 mt-1 mr-2"></i>
+                            <span>Real-world examples and prevention strategies</span>
                         </li>
                     </ul>
-                    <p class="text-gray-700 mt-3">
-                        Understanding these threats is essential for maintaining a strong security posture. In the next module, we'll discuss password security and authentication methods to further protect your accounts and information.
-                    </p>
                 </div>
             </div>
 
-            <div class="flex justify-between">
-                <a href="../novo-index.html" class="bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-xl transition flex items-center">
+            <!-- BOTÕES COPIADOS DO MÓDULO 1 -->
+            <div class="flex justify-between mt-8">
+                <a href="../novo-index.html" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center transition">
                     <i class="fas fa-home mr-2"></i> Back to Modules
                 </a>
                 <div class="flex space-x-3">
-                    <button id="prev-btn" onclick="previousSlide()" class="bg-teal-100 hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-xl transition flex items-center opacity-50 cursor-not-allowed">
+                    <button id="prev-btn" onclick="previousSlide()" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center transition disabled:opacity-50">
                         <i class="fas fa-arrow-left mr-2"></i> Previous
                     </button>
-                    <button id="next-btn" onclick="nextSlide()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-xl transition flex items-center">
+                    <button id="next-btn" onclick="nextSlide()" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center transition">
                         Next <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
@@ -637,9 +623,11 @@
             
             // Update button states
             if (currentSlide === 0) {
-                prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                prevBtn.classList.add('disabled:opacity-50');
+                prevBtn.disabled = true;
             } else {
-                prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                prevBtn.classList.remove('disabled:opacity-50');
+                prevBtn.disabled = false;
             }
             
             if (currentSlide === totalSlides - 1) {
